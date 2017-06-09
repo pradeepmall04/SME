@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="height:100%">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+    <script src="/Resources/Scripts/allscripts.js"></script>
+</head>
+<body style="height:100%">
+    @*<div class="container-fluid" style="height:100%">
+        <table style="width:100%;height:100%;">
+            <tr>
+                <td style="width:20%;min-width:260px;height:100%;border-right:1px solid rgb(0, 148, 255);vertical-align:top;padding-right:10px;">
+                    <div>
+                        <h2 class="text-primary" style="margin-top:7px;">
+                            <span class="glyphicon glyphicon-signal" style="font-size:21px;"></span> RB's SME
+                        </h2>
+
+                        <ul class="nav nav-pills nav-stacked" id="ulMenu">
+                            <li id="lihome"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-th"></span> Masters<span class="caret menucaret"></span></a>
+                                <ul class="nav nav-pills nav-stacked submenu bg-info">
+                                    <li><a href="#" aj-menuname="Company Master" aj-menuurl="/Home/companymaster">User Registration</a></li>
+                                    @*<li><a href="#" aj-menuname="Schedule Master" aj-menuurl="schedulemaster.html">Schedule Master</a></li>
+                                        <li><a href="#" aj-menuname="City Master" aj-menuurl="citymaster.html">City Master</a></li>
+                                        <li><a href="#" aj-menuname="Ledger Master" aj-menuurl="ledgermaster.html">Ledger Master</a></li>
+                                        <li><a href="#" aj-menuname="Address Master" aj-menuurl="addressmaster.html">Address Master</a></li>
+                                        <li><a href="#" aj-menuname="Department Master" aj-menuurl="departmentmaster.html">Department Master</a></li>
+                                        <li><a href="#" aj-menuname="Raw Material Master" aj-menuurl="rawmaterialmaster.html">Raw Material Master</a></li>
+                                        <li><a href="#" aj-menuname="Finished Good Master" aj-menuurl="finishedgoodmaster.html">Finished Good Master</a></li>*@
+                                @*</ul>
+                            </li>
+                            <li id="liUserRegistration">
+                                <a href="#"><span class="glyphicon glyphicon-play"></span>User Registration</a>*@
+
+                                @*<ul class="nav nav-pills nav-stacked submenu bg-info">
+                                        <li><a href="#" aj-menuname="Sales Order" aj-menuurl="salesorder.html">User Permission</a></li>
+                                        <li><a href="#">Sales Invoice</a></li>
+                                        <li><a href="#" aj-menuname="Quotation" aj-menuurl="quotation.html">Quotation</a></li>
+                                        <li><a href="#" aj-menuname="Sales Return" aj-menuurl="salesreturn.html">Sales Return</a></li>
+                                    </ul>*@
+
+                            @*</li>
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-equalizer"></span> View Company<span class="caret menucaret"></span></a>
+                                <ul class="nav nav-pills nav-stacked submenu bg-info">
+                                    <li id="liSearchCommpany"><a href="#" aj-menuname="Company Master" aj-menuurl="/Home/SearchCommpany">Search Commpany</a></li>
+                                    <li id="liRegCompany"><a href="#" aj-menuname="Issue From Manufacturing" aj-menuurl="issuemanufacturing.html">Register Company</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><span class="glyphicon glyphicon-certificate"></span> Reports & Queries<span class="caret menucaret"></span></a>
+                                <ul class="nav nav-pills nav-stacked submenu bg-info">
+                                    <li><a href="#">Job Work Order</a></li>
+                                    <li><a href="#">Job Work Challan</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td style="width:80%;min-width:1060px;height:100%;vertical-align:top;">
+                    <div style="width:100%;height:45px;border-bottom:1px solid rgb(0, 148, 255);">
+                        <div class="btn-group" style="float:right;margin-top:3px;">
+                            <button class="btn btn-primary">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span id="spnusername"></span>
+                            </button>
+                            <button id="btnlogout" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-log-out"></span>
+                            </button>
+                        </div>
+                        <span style="float:right;margin-top:10px;padding-right:10px;" class="text-primary">
+                            <span class="glyphicon glyphicon-bell"></span>
+                            <label class="badge text-primary">3</label>
+                        </span>
+                    </div>
+                    <div id="divTabContent" class="tab-content" style="width:100%">*@
+                        @*<iframe id="ifrmPage" style="width:100%;height:800px;"></iframe>*@
+                    @*</div>
+                </td>
+            </tr>
+        </table>
+    </div>*@
+</body>
+
+<style type="text/css">
+    .menucaret {
+        float: right;
+        margin-top: 7px;
+    }
+
+    .submenu {
+        padding-left: 25px;
+        display: none;
+    }
+
+        .submenu li a {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid rgb(3, 80, 163);
+        }
+
+    .popover-content table td {
+        padding-left: 7px;
+        padding-right: 7px;
+        white-space: nowrap;
+    }
+
+    .popover-content table tr:hover {
+        background-color: rgba(0, 148, 255,0.3);
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        $("#spnusername").text("Administrator");
+        $("#ulMenu li").click(function () {
+            event.stopPropagation();
+            $(this).find(".submenu").slideToggle();
+        });
+        $("#lihome").click(function () {
+            $("#ifrmPage").attr("src", "/Home/Dashbord");
+        });
+
+        $("#liUserRegistration").click(function () {
+            $("#ifrmPage").attr("src", "/Home/Regsitration");
+        });
+
+        $("#liRegCompany").click(function () {
+            $("#ifrmPage").attr("src", "/Home/CompanyMaster");
+        });
+
+        $("#liSearchCommpany").click(function () {
+            $("#ifrmPage").attr("src", "/Home/SearchCompany");
+        });
+        $("body").click(function () {
+            $(".taboption").popover("hide");
+        });
+
+        $("#ifrmPage").attr("src", "/Home/CompanyMaster");
+
+        $("#btnlogout").click(function () {
+            if (confirm("Would you like to logout?")) {
+                document.location.href = "../login/login";
+            }
+        });
+    });
+</script>
+</html>

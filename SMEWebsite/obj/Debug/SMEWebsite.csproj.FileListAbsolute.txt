@@ -1,0 +1,327 @@
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\ApplicationInsights.config
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\csc.exe
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\vbc.exe
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll.config
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\SMEWebsite.pdb
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\EntityFramework.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Owin.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Razor.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\WebGrease.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.Razor.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.pdb
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\EntityFramework.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\SME-MVC\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.dll
+D:\SME-MVC\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.pdb
+D:\SME-MVC\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.csprojResolveAssemblyReference.cache
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\ApplicationInsights.config
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\csc.exe
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\vbc.exe
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll.config
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\SMEWebsite.pdb
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\EntityFramework.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Owin.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Razor.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\WebGrease.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.Razor.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.pdb
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\EntityFramework.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.dll
+D:\Shubham\SME MVC\version1\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.pdb
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\ApplicationInsights.config
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\csc.exe
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\vbc.exe
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll.config
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\SMEWebsite.pdb
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\EntityFramework.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Owin.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Razor.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\WebGrease.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.Razor.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.pdb
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\EntityFramework.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\GOVIND\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.dll
+D:\GOVIND\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.pdb
+D:\GOVIND\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.csprojResolveAssemblyReference.cache
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\ApplicationInsights.config
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\csc.exe
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\System.Collections.Immutable.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\System.Reflection.Metadata.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\vbc.exe
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\roslyn\VBCSCompiler.exe.config
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll.config
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\SMEWebsite.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\SMEWebsite.pdb
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\EntityFramework.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Agent.Intercept.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Web.Infrastructure.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Owin.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Razor.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\WebGrease.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.DependencyCollector.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.Web.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AI.WindowsServer.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.ApplicationInsights.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Helpers.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Mvc.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Optimization.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.Razor.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Deployment.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\System.Web.WebPages.Razor.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Antlr3.Runtime.pdb
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Newtonsoft.Json.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\EntityFramework.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\EntityFramework.SqlServer.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Core.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Facebook.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.OAuth.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Google.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.Twitter.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.csprojResolveAssemblyReference.cache
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.dll
+D:\SME-WebServices\Latest_Code\SMEWebsite\SMEWebsite\obj\Debug\SMEWebsite.pdb

@@ -1,0 +1,375 @@
+﻿
+@{
+    ViewBag.Title = "Regsitration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Resources/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/date.js"></script>
+<script src="~/Content/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/CommonFunction.js"></script>
+<script src="/Resources/Scripts/allscripts.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<style>
+    .intro {
+        width: 250px;
+    }
+
+    .lbl {
+        width: 140px;
+    }
+
+    .lbll {
+        width: 145px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+
+    .txt {
+        height: 32px;
+    }
+
+    .txthw {
+        height: 32px;
+        width: 400px;
+    }
+
+    .txtm {
+        height: 32px;
+        width: 300px;
+    }
+</style>
+
+
+<div id="page-wrapper">
+    <div class="row">
+        <table style="width:655px" ;>
+            <tr>
+                <td style="text-align:center;height:80px;" colspan="2">
+                    <h3 class="text-primary">User Registration</h3>
+                </td>
+            </tr>          
+            <tr>
+                <td style="width:155px"><br /></td>
+                <td>
+                    <table style="width:500px;">
+                        <tr style="height:39px;">
+                            <td>
+                                <label for="ddlGroup" class="lbl">Group Type:</label>
+                            </td>
+                            <td>
+                                <select name="Type" id="ddlGroup" style="height:32px;width:400px">
+                                    <option value="0">-----Select------</option>
+                                    <option value="1">Super Admin</option>
+                                    <option value="2">Checker</option>
+                                    <option value="3">Maker</option>
+                                    <option value="4">User</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr style="height:39px;">
+                            <td>
+                                <label for="txtEmpCode" class="lbl">Emp Code:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="txtEmpCode" placeholder="Emp Code" id="txtEmpCode" class="txthw" />
+                            </td>
+                        </tr>
+                        <tr style="height:40px;">
+                            <td>
+                                <label for="txtUserName" class="lbl">User Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" name="txtUserName" placeholder="User Name" id="txtUserName" class="txthw" />
+                                   
+                            </td>
+                        </tr>
+                        <tr style="height:39px;">
+                            <td><label for="txtPassword" class="lbl">Password:</label></td>
+                            <td><input type="password" name="txtPassword" placeholder="Password" id="txtPassword" class="txthw" /></td>
+                        </tr>
+                        <tr style="height:39px;">
+                            <td><label for="txtCPassword" class="lbl">Confirm Password:</label></td>
+                            <td>
+                                <input type="password" name="txtCPassword" placeholder="Confirm Password" id="txtCPassword" class="txthw" />
+                            </td>
+                        </tr>
+                        <tr style="height:39px;">
+                            <td><label for="txtEmail" class="lbl">Email:</label></td>
+                            <td>
+                                <input type="text" name="txtEmail" placeholder="Email" id="txtEmail" class="txthw" />
+                            </td>
+                        </tr>
+                        <tr style="height:39px;">
+                            <td><label for="chkIsActive" class="lbl">Is Active:</label></td>
+                            <td>
+                                <input type="checkbox" name="chkIsActive" id="chkIsActive" checked="checked" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><br /></td>
+                        </tr>
+                        <tr>
+                            <td><br /></td>
+                            <td colspan="2" align="left">
+                                <button type="button" class="btn btn-primary" id="btnRegistartion">Save</button>
+                                <button type="button" class="btn btn-primary" id="btnReset">Reset</button>
+                                <button type="button" class="btn btn-primary" id="btnCancel">Cancel</button>
+                            </td>
+                        </tr>
+                        <tr style="height:50px;">
+                            <td colspan="2" style="text-align:center;">
+                                <span id="lblsuccessregistration" style="color:green; font:bold; text-align:center;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="width: 90%; margin-left:auto; margin-right:auto;">
+            <table id="tdGrid_head" style="border: thin solid #C0C0C0;border-radius: 0px; border-collapse: separate; width: 80%; padding:6px;" class="btn-primary">
+                <tr style="font-weight: bold;">
+                    <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+                    <th align="left" style="padding-left: 4px; width: 5%">Sr No</th>
+                    <th align="left" style="padding-left: 4px; width: 10%">Emp Code</th>
+                    <th align="left" style="padding-left: 4px; width: 20%">Name</th>
+                    <th align="left" style="padding-left: 4px; width: 10%">Type</th>
+                    <th align="left" style="padding-left: 4px; width: 10%">Email</th>
+                    <th align="left" style="padding-left: 4px; width: 10%">Status</th>                    
+                    <th align="left" style="padding-left: 4px; width: 5%">Action</th>
+                    <th align="left" style="padding-left: 4px; width: 5%">Assign Rights</th>
+                </tr>
+            </table>
+        </div>
+        <div style="width: 90%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+            <table id="tdGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 80%; padding:6px;"></table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        GetAllUser();
+        
+        $("#btnRegistartion").click(function () {
+            //Validation();
+            PasswordCheck();
+            if (RegistrationValidation())
+            InsertUser();
+        });
+
+        $("#btnReset").click(function () {
+            ResetRegistration();
+        });
+
+        $("#btnCancel").click(function () {
+
+        });
+
+        
+
+    //Validation for Number only
+    jQuery('.numbersOnly').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.,]/, '');
+    });
+
+    //Validation for Character only
+    jQuery('.CharacterOnly').keyup(function () {
+        this.value = this.value.replace(/[^a-z\. ,]/, '');
+    });
+
+ });
+    
+    function ResetRegistration()
+    {
+        $('#txtUserName').val('');
+        $('#txtEmpCode').val('');
+        $('#txtPassword').val('');
+        $('#txtCPassword').val('');
+        $('#txtEmail').val('');
+        $('#ddlGroup').val(0);
+        $("#chkIsActive").prop('checked', false);
+    }
+
+    //Save
+    function InsertUser() {
+        var Param_User = {
+            username: $('#txtUserName').val(),
+            empcode: $('#txtEmpCode').val(),
+            password: $('#txtPassword').val(),
+            email: $('#txtEmail').val(),
+            groupid: $('#ddlGroup').val(),
+            isactive: $("#chkIsActive").is(':checked') ? '1' : '0',
+            Action: 'I'
+        }
+
+        
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/InsertUserDetails',
+            async: false,
+            data: JSON.stringify(Param_User),
+            success: function (result) {
+                if (result.length > 2) {
+
+                    var data = JSON.parse(result);                    
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].userid + '</td><td align="left" style="padding-left: 4px"  width="5%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].empcode + '</td><td align="left" style="padding-left: 4px"  width="20%">' + data[i].username + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + UserType(data[i].groupid) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].email + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + Status(data[i].IsActive) + '</td><td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="editregistration(' + data[i].userid + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Edit</a></span></td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="assignrights(' + data[i].userid + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Assign Rights</a></span></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                    $("#lblsuccessregistration").text("Record saved successfully");
+                    ResetRegistration();
+                }
+            }
+        });
+    }
+
+    //Save
+    function GetAllUser() {        
+        
+        var Param_User = {
+            username: $('#txtUserName').val(),
+            empcode: $('#txtEmpCode').val(),
+            password: $('#txtPassword').val(),
+            email: $('#txtEmail').val(),
+            groupid: $('#ddlGroup').val(),
+            isactive: $("#chkIsActive").is(':checked') ? '1' : '0',
+            Action: 'S'
+        }
+
+
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/GetUserDetails',
+            async: false,
+            data: "",
+            success: function (result) {
+                if (result.length > 2) {
+                    
+                    var data = JSON.parse(result);                  
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].userid + '</td><td align="left" style="padding-left: 4px"  width="5%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].empcode + '</td><td align="left" style="padding-left: 4px"  width="20%">' + data[i].username + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + UserType(data[i].groupid) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].email + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + Status(data[i].IsActive) + '</td><td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="editregistration(' + data[i].userid + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Edit</a></span></td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="assignrights(' + data[i].userid + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Assign Rights</a></span></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                }
+            },
+            error:{
+
+            }
+        });
+    }
+
+
+    function Validation() {
+        debugger
+        var Lo_Obj = ["ddlGroup", "txtEmpCode", "txtUserName", "txtPassword", "txtCPassword", "txtEmail"];
+        var Ls_Msg = ["Group", "EmpCode", "User Name", "Password", "Confirm Password", "Email"];
+
+        if (!CheckMandatory(Lo_Obj, Ls_Msg)) {
+            return false;
+        }
+    }
+
+
+    function editregistration(ID)
+    {
+
+        var Param_User = {
+            userid : ID,
+            username: $('#txtUserName').val(),
+            empcode: $('#txtEmpCode').val(),
+            password: $('#txtPassword').val(),
+            email: $('#txtEmail').val(),
+            groupid: $('#ddlGroup').val(),
+            isactive: $("#chkIsActive").is(':checked') ? '1' : '0',
+            Action: 'S'
+        }
+
+
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/GetUserDetails',
+            async: false,
+            data: JSON.stringify(Param_User),
+            success: function (result) {
+                if (result.length > 2) {
+
+                    var data = JSON.parse(result);
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].userid + '</td><td align="left" style="padding-left: 4px"  width="5%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].empcode + '</td><td align="left" style="padding-left: 4px"  width="20%">' + data[i].username + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + UserType(data[i].groupid) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].email + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + Status(data[i].IsActive) + '</td><td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="editregistration(' + data[i].userid + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Edit</a></span></td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="assignrights(' + data[i].userid + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Assign Rights</a></span></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                }
+            },
+            error: {
+
+            }
+        });
+    }
+
+    function assignrights(ID)
+    {
+        var url = '@Url.Action("Registration", "Registration", new { userid = "ID" })'.replace("ID",ID);
+        window.location.href = url;
+    }
+
+    function PasswordCheck() {
+    var password = $("#txtPassword").val();
+    var confirmPassword = $("#txtCPassword").val();
+    if (password != confirmPassword) {
+        $("#txtCPassword").empty();
+        alert('Your Passwords Must Match');
+        return false;
+    } else {
+        return true;
+    }
+}
+
+    //Convert int to User Type
+    function Status(Is_Active) {
+        return Is_Active = 1 ? 'Active' : 'In-Active';
+    }
+
+    //Convert int to Company Type
+    function UserType(groupid) {
+        return groupid = 1 ? 'Super Admin' : groupid = 2 ? 'Checker' : groupid = 3 ? 'Maker' : groupid = 4 ? 'User' : 'N/A';
+
+    }
+</script>

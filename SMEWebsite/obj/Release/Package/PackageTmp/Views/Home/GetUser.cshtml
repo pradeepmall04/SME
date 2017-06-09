@@ -1,0 +1,198 @@
+﻿
+@{
+    ViewBag.Title = "GetUser";
+}
+
+<h2>GetUser</h2>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/date.js"></script>
+<script src="~/Content/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/CommonFunction.js"></script>
+<link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+<script src="/Resources/Scripts/allscripts.js"></script>
+<style>
+    .intro {
+        width: 250px;
+    }
+
+    .lbl {
+        width: 140px;
+    }
+
+    .lbll {
+        width: 145px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+
+    .txt {
+        height: 32px;
+    }
+
+    .txthw {
+        height: 32px;
+        width: 400px;
+    }
+
+    .txtm {
+        height: 32px;
+        width: 300px;
+    }
+</style>
+<div class="row">
+    <table style="width:855px" ;>
+        <tr style="height:69px;">
+            <td colspan="5">
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:155px"><br /></td>
+            <td colspan="4">
+                <table style="width:785px;">
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="txtEmpCode" class="lbl">Search User :</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCode" placeholder="User Code" id="txtCode" class="txthw" style="width:160px" />
+                        </td>
+                        <td>
+                            <input type="text" name="txtUser" placeholder="User Name" id="txtUser" class="txthw" style="width:260px" />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" id="btnSearch" style="width:70px">Search</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" id="btnAdd" style="width:140px">Add New User</button>
+                        </td>
+                    </tr>
+
+                    <tr style="height:150px;">
+                        <td colspan="5"><br /></td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div style="width: 90%; margin-left:auto; margin-right:auto;">
+    <table id="tdGrid_head" style="border: thin solid #C0C0C0;border-radius: 0px; border-collapse: separate; width: 80%; padding:6px;" class="btn-primary">
+        <tr style="font-weight: bold;">
+            <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+            <th align="left" style="padding-left: 4px; width: 5%">Sr No</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Emp Code</th>
+            <th align="left" style="padding-left: 4px; width: 20%">Name</th>
+            <th align="left" style="padding-left: 4px; width: 20%">Type</th>
+            <th align="left" style="padding-left: 4px; width: 20%">Email</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Status</th>            
+            <th align="left" style="padding-left: 4px; width: 5%">Action</th>
+        </tr>
+    </table>
+</div>
+<div style="width: 90%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+    <table id="tdGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 80%; padding:6px;"></table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {    
+        GetAllUser();
+        $("#btnAdd").click(function () {
+            alert("Add");            
+        });
+
+        $("#btnSearch").click(function () {          
+            if ($('#txtCode').val() == '' && $('#txtUser').val() == '') {
+                GetAllUser();
+            }
+            else {
+                SearchUser($('#txtCode').val(), $('#txtUser').val());
+            }
+
+        });
+
+    });
+    //Bind All Company
+    function GetAllUser() {
+        var Param_User = {           
+            Action: 'A'
+        }
+     
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/SearchUser',
+            async: false,
+            data: JSON.stringify(Param_User),
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].userid + '</td><td align="left" style="padding-left: 4px"  width="10%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].EmpCode + '</td><td align="left" style="padding-left: 4px"  width="22%">' + data[i].Name + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + UserType(data[i].groupid) + '</td><td align="left" style="padding-left: 4px"  width="12%">' + data[i].Email + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="12%">' + Status(data[i].IsActive) + '</td><td align="left" style="padding-left: 4px"  width="5%"><a> edit </a></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                }
+            }
+        });
+    }
+
+    //Bind Seach User
+    function SearchUser(EmpCode, UserName) {
+        var Param_User = {
+            Name: UserName,
+            EmpCode: EmpCode,            
+            Action: 'S'
+        }
+        debugger      
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/SearchUser',
+            async: false,
+            data: JSON.stringify(Param_User),
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].userid + '</td><td align="left" style="padding-left: 4px"  width="10%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].EmpCode + '</td><td align="left" style="padding-left: 4px"  width="22%">' + data[i].Name + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + UserType(data[i].groupid) + '</td><td align="left" style="padding-left: 4px"  width="12%">' + data[i].Email + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="12%">' + Status(data[i].IsActive) + '</td><td align="left" style="padding-left: 4px"  width="5%"><a> edit </a></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                }
+            }
+        });
+    }
+    
+
+    //Convert int to User Type
+    function Status(Is_Active) {
+        return Is_Active = 1 ? 'Active' : 'In-Active';
+    }
+
+    //Convert int to Company Type
+    function UserType(groupid) {
+        return groupid = 1 ? 'Super Admin' : groupid = 2 ? 'Checker' : groupid = 3 ? 'Maker' : groupid = 4 ? 'User' : 'N/A';
+
+    }
+
+</script>

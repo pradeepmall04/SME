@@ -1,0 +1,232 @@
+﻿
+@{
+    ViewBag.Title = "SearchCompany";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/date.js"></script>
+<script src="~/Content/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/CommonFunction.js"></script>
+<link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+<script src="/Resources/Scripts/allscripts.js"></script>
+<style>
+    .bg {
+        background-color: #d9edf7 !important;
+    }
+
+    .highlight {
+        background-color: #86bed9 !important;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .intro {
+        width: 250px;
+    }
+
+    .lbl {
+        width: 140px;
+    }
+
+    .lbll {
+        width: 145px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+
+    .txt {
+        height: 32px;
+    }
+
+    .txthw {
+        height: 32px;
+        width: 400px;
+    }
+
+    .txtm {
+        height: 32px;
+        width: 300px;
+    }
+</style>
+<div class="row">
+    <table style="width:855px" ;>
+        <tr>
+            <td colspan="5" style="text-align:center;">
+                <h3 class="text-primary">Search Company Details</h3>
+            </td>
+
+        </tr>
+        <tr style="height:40px;">
+            <td colspan="5">
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:155px"><br /></td>
+            <td colspan="4">
+                <table style="width:785px;">
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="txtEmpCode" class="lbl">Search Company :</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompanyCode" placeholder="Company Code" id="txtCompanyCode" class="txthw" style="width:160px" />
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompany" placeholder="Company Name" id="txtCompany" class="txthw" style="width:260px" />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" id="btnSearch" style="width:70px">Search</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary" id="btnAdd" style="width:140px">Add New Company</button>
+                        </td>
+                    </tr>
+
+                    <tr style="height:50px;">
+                        <td colspan="5"><br /></td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div style="width: 70%; margin-left:auto; margin-right:auto;">
+    <table id="tdGrid_head" style="border: thin solid #C0C0C0;border-radius: 0px; border-collapse: separate; width: 99%; padding:6px;" class="btn-primary">
+        <tr style="font-weight: bold;">
+            <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+            <th align="left" style="padding-left: 4px; width: 5%">Sr No</th>
+            <th align="left" style="padding-left: 4px; width: 7%">Code</th>
+            <th align="left" style="padding-left: 4px; width: 15%">Name</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Type</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Phone</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Email</th>
+            <th align="left" style="padding-left: 4px; width: 2%">Action</th>
+        </tr>
+    </table>
+</div>
+<div style="width: 70%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+    <table id="tdGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 98%; padding:6px;"></table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        GetAllCompany();
+        $("#btnAdd").click(function () {
+            var url = '@Url.Action("AddCompany", "Home")';
+            window.location.href = url;
+        });
+
+        $("#btnSearch").click(function () {
+            SearchCompany($('#txtCompanyCode').val(), $('#txtCompany').val());
+        });
+
+    });
+    //Bind All Company
+    function GetAllCompany() {
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/GetAllCompanyDetails',
+            async: false,
+            data: "",
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="7%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">C0' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="23%">' + data[i].Name + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + CompanyType(data[i].Type) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].PhoneNumber + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + data[i].Email + '</td><td align="left" style="padding-left: 4px"  width="5%">';
+                        HTML = HTML + '<span id="facilityspan" onclick="findcompany(' + data[i].Id + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Continue</a></span></td>'
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                    $('#tdGrid tr').hover(function () {
+                        $(this).addClass('highlight');
+                    }, function () {
+                        $(this).removeClass('highlight');
+                    });
+                }
+            }
+        });
+    }
+
+    function findcompany(ID)
+    {
+        var obj = {};
+        obj.ID = "CompanyID";
+        obj.value = ID;
+        
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/SetSession',
+            async: false,
+            data: JSON.stringify(obj),
+            success: function (result) {
+                
+                var url = '@Url.Action("CompanyMaster", "Home")';
+                window.location.href = url;
+            },
+            error: {
+
+            }
+
+        });
+        
+    }
+
+
+    //Bind Seach Company
+    function SearchCompany(SearchKey, CompanyName) {
+        debugger
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/SearchCompanyDetails',
+            async: false,
+            data: '{SearchKey:"' + SearchKey + '",CompayName:"' + CompanyName + '"}',
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="7%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">C0' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="23%">' + data[i].Name + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + CompanyType(data[i].Type) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].PhoneNumber + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + data[i].Email + '</td><td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="findcompany(' + data[i].Id + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Continue</a></span></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                    $('#tdGrid tr').hover(function () {
+                        $(this).addClass('highlight');
+                    }, function () {
+                        $(this).removeClass('highlight');
+                    });
+                }
+            }
+        });
+    }
+    //Convert int to Company Type
+    function CompanyType(Type) {
+        return Type = 1 ? 'Propritership' : Type = 2 ? 'Partnership' : Type = 3 ? 'Pvt  Ltd' :
+               Type = 4 ? 'Closely Held Ltd Co' : Type = 5 ? 'Listed Co' : Type = 6 ? 'Trust' :
+               Type = 7 ? 'LLP' : Type = 8 ? 'HUF' : 'N/A';
+    }
+</script>

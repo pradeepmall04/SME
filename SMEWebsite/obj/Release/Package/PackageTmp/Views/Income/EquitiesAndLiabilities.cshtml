@@ -1,0 +1,1475 @@
+﻿
+@{
+    ViewBag.Title = "EquitiesAndLiabilities";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Resources/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/date.js"></script>
+<script src="~/Content/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/CommonFunction.js"></script>
+<script src="/Resources/Scripts/allscripts.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<style>
+.txt{
+
+    width:90px;
+    margin: 1px;
+}
+
+.tblincome td{
+    margin:6px;
+}
+.tblincome{
+    width:670px;    
+}
+
+.disabledtext
+{
+    pointer-events:none;
+}
+
+.btn {
+        width: 100px;
+}
+</style>
+<h2>
+    Equities And Liabilities
+</h2>
+<form>
+
+    <div>
+        @*<table>
+            <tr>
+                <td>*@
+
+
+                    <table class="tblEquitiesAndLiabilities" style="width:800px">
+                        <tr style="height:69px;">
+                            <td style="width:110px"></td>
+                            <td>
+                                <table style="width:700px">
+                                    <tr style="height:39px;">
+                                        <td>
+                                            <label for="ddlCompPrefer" class="lbl">Company :</label>
+                                            <input id="compidsession" type="hidden" />
+                                        </td>
+                                        <td colspan="2">
+                                            <select name="Year" id="ddlcompany">
+                                                <option value="0">-----Select-----</option>
+                                            </select>
+                                        </td>
+
+                                        <td>
+                                            <label for="ddlCompPrefer" class="lbl">Constitution:</label>
+                                            <input id="compidsession" type="hidden" />
+                                        </td>
+                                        <td colspan="2">
+                                            <select name="Year" id="ddlyear">
+                                                <option value="0">-----Select-----</option>
+                                                <option value="1">1 Year</option>
+                                                <option value="3">3 Years</option>
+                                                <option value="5">5 Years</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Year:</td>
+                                        <td style="width:100px;"><input id="txtyear_1" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_2" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_3" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_4" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_5" type="text" class="txt numbersOnly1" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <b>NetWorth</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Share Capital :</td>
+                                        <td><input id="txtsharecapital_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsharecapital_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsharecapital_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsharecapital_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsharecapital_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Reserves & Surplus :</td>
+                                        <td><input id="txtreserveandsurplus_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtreserveandsurplus_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtreserveandsurplus_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtreserveandsurplus_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtreserveandsurplus_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total NetWorth :</td>
+                                        <td><input id="txttotalnetworth_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalnetworth_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalnetworth_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalnetworth_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalnetworth_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <b>Long Term Liabilities</b>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Long Term Borrowings</td>
+                                        <td><input id="txtlongtermborrowings_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlongtermborrowings_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlongtermborrowings_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlongtermborrowings_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlongtermborrowings_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Other Long Term Liabilities :</td>
+                                        <td><input id="txtotherlongtermliabilities_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherlongtermliabilities_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherlongtermliabilities_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherlongtermliabilities_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherlongtermliabilities_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Total Long term Liabilities :</td>
+                                        <td><input id="txttotallongtermliabilities_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotallongtermliabilities_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotallongtermliabilities_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotallongtermliabilities_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotallongtermliabilities_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <b>Current Liabilities</b>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>Short Term Bank Finance :</td>
+                                        <td><input id="txtshorttermbank_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermbank_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermbank_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermbank_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermbank_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Trade Payables :</td>
+                                        <td><input id="txttradepayables_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txttradepayables_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txttradepayables_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txttradepayables_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txttradepayables_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Statutory dues :</td>
+                                        <td><input id="txtstatutorydues_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstatutorydues_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstatutorydues_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstatutorydues_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstatutorydues_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Other Current liabilities :</td>
+                                        <td><input id="txtothercurrentliabilities_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentliabilities_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentliabilities_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentliabilities_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentliabilities_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Current Liabilities :</td>
+                                        <td><input id="txtotalcurrentliabilities_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalcurrentliabilities_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalcurrentliabilities_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalcurrentliabilities_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalcurrentliabilities_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Equities & Liabilities :</td>
+                                        <td><input id="txtotalequitiesliabilities_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalequitiesliabilities_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalequitiesliabilities_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalequitiesliabilities_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtotalequitiesliabilities_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <b> Assets</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            Non Current Assets
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Net Fixed Assets-Tangible :</td>
+                                        <td><input id="txtnetfixedassetstangible_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetstangible_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetstangible_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetstangible_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetstangible_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Net Fixed Assets-Intangible :</td>
+                                        <td><input id="txtnetfixedassetsintangible_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetsintangible_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetsintangible_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetsintangible_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtnetfixedassetsintangible_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Capital work in Progress :</td>
+                                        <td><input id="txtcapitalworkprogress_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtcapitalworkprogress_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtcapitalworkprogress_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtcapitalworkprogress_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtcapitalworkprogress_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other non Current Assets :</td>
+                                        <td><input id="txtothernoncurrentassets_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothernoncurrentassets_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothernoncurrentassets_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothernoncurrentassets_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothernoncurrentassets_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <b>Current Assets</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <b>Inventories</b>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>Raw Materials :</td>
+                                        <td><input id="txtrawmaterial_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtrawmaterial_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtrawmaterial_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtrawmaterial_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtrawmaterial_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>WIP :</td>
+                                        <td><input id="txtwip_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtwip_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtwip_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtwip_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtwip_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stores And Consumables :</td>
+                                        <td><input id="txtstoreandconsumables_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstoreandconsumables_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstoreandconsumables_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstoreandconsumables_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtstoreandconsumables_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Finished Goods :</td>
+                                        <td><input id="txtfinishedgoods_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinishedgoods_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinishedgoods_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinishedgoods_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinishedgoods_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Inventories :</td>
+                                        <td><input id="txttotalinventories_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalinventories_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalinventories_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalinventories_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalinventories_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <b> Debtors/ Trade Receivables</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>Less than 90 days :</td>
+                                        <td><input id="txtlessthan90days_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlessthan90days_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlessthan90days_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlessthan90days_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtlessthan90days_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>More than 90 days :</td>
+                                        <td><input id="txtmorethan90days_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmorethan90days_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmorethan90days_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmorethan90days_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmorethan90days_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Debtors :</td>
+                                        <td><input id="txttotaldebtors_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotaldebtors_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotaldebtors_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotaldebtors_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotaldebtors_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Short Term loans & Advs :</td>
+                                        <td><input id="txtshorttermloansandadvances_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermloansandadvances_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermloansandadvances_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermloansandadvances_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtshorttermloansandadvances_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other Current Assets :</td>
+                                        <td><input id="txtothercurrentassets_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentassets_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentassets_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentassets_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtothercurrentassets_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Assets :</td>
+                                        <td><input id="txttotalassets_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalassets_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalassets_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalassets_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalassets_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Check :</td>
+                                        <td><input id="txtcheck_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtcheck_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtcheck_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtcheck_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtcheck_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td colspan="5" align="left">
+                                            <button type="button" class="btn btn-primary" id="btnincomeNext">Save</button>
+                                            <button type="button" class="btn btn-primary" id="btnincomeReset">Reset</button>
+                                            <button type="button" class="btn btn-primary" id="btnincomeCancel">Cancel</button>
+                                        </td>
+                                       
+                                    </tr>
+                                    <tr>
+                                       
+                                        <td colspan="6" align="left">
+                                            <div style="width: 100%; margin-left:auto; margin-right:auto;">
+                                                <table id="tdCUGrid_head" style="border: thin solid #C0C0C0; border-radius: 0px; font-weight:bold; border-collapse: separate; width: 99%; padding:6px;" class="btn-primary">
+                                                    <tr>
+                                                        <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+                                                        <th align="left" style="padding-left: 0px;">Sr No</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 7%;">Company Name</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 15%;">Years</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; text-align:left; width: 12%;">Total <br />Equities Liabilities</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 20%;">Total Assets</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 8%;">Checked</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 7%;">Download</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 8%;">Delete</th>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div style="width: 100%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+                                                <table id="tdCUGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 99%; padding:6px;" class="table"></table>
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+</div>
+    <div id="exceldiv">
+
+    </div>
+</form>
+
+<script>
+
+    function hideTextBox()
+    {
+        var cnt = $('#ddlyear').val();
+              
+
+            for (var i = 1; i <= 5; i++) {
+                if (i <= cnt) {
+                    $('#txtsharecapital_' + i).css("display", "");
+                    $('#txtreserveandsurplus_' + i).css("display", "");
+                    $('#txtotherlongtermliabilities_' + i).css("display", "");
+                    $('#txtlongtermborrowings_' + i).css("display", "");
+                    $('#txtyear_' + i).css("display", "");
+                    $('#txttotalnetworth_' + i).css("display", "");
+                    $('#txttotallongtermliabilities_' + i).css("display", "");
+                    $('#txtshorttermbank_' + i).css("display", "");
+                    $('#txttradepayables_' + i).css("display", "");
+                    $('#txtstatutorydues_' + i).css("display", "");
+                    $('#txtothercurrentliabilities_' + i).css("display", "");
+                    $('#txtotalcurrentliabilities_' + i).css("display", "");
+                    $('#txtotalequitiesliabilities_' + i).css("display", "");
+                    $('#txtnetfixedassetstangible_' + i).css("display", "");
+                    $('#txtnetfixedassetsintangible_' + i).css("display", "");
+                    $('#txtcapitalworkprogress_' + i).css("display", "");
+                    $('#txtothernoncurrentassets_' + i).css("display", "");
+                    $('#txtrawmaterial_' + i).css("display", "");
+                    $('#txtwip_' + i).css("display", "");
+                    $('#txtstoreandconsumables_' + i).css("display", "");
+                    $('#txtfinishedgoods_' + i).css("display", "");
+                    $('#txttotalinventories_' + i).css("display", "");
+                    $('#txtlessthan90days_' + i).css("display", "");
+                    $('#txtmorethan90days_' + i).css("display", "");
+                    $('#txttotaldebtors_' + i).css("display", "");
+                    $('#txtshorttermloansandadvances_' + i).css("display", "");
+                    $('#txtothercurrentassets_' + i).css("display", "");
+                    $('#txttotalassets_' + i).css("display", "");
+                    $('#txtcheck_' + i).css("display", "");
+                }
+                else
+                {
+                    $('#txtsharecapital_' + i).css("display", "none");
+                    $('#txtreserveandsurplus_' + i).css("display", "none");
+                    $('#txtotherlongtermliabilities_' + i).css("display", "none");
+                    $('#txtlongtermborrowings_' + i).css("display", "none");
+                    $('#txtlongtermborrowings_' + i).css("display", "none");
+                    $('#txtyear_' + i).css("display", "none");
+                    $('#txttotalnetworth_' + i).css("display", "none");
+                    $('#txttotallongtermliabilities_' + i).css("display", "none");
+                    $('#txtshorttermbank_' + i).css("display", "none");
+                    $('#txttradepayables_' + i).css("display", "none");
+                    $('#txtstatutorydues_' + i).css("display", "none");
+                    $('#txtothercurrentliabilities_' + i).css("display", "none");
+                    $('#txtotalcurrentliabilities_' + i).css("display", "none");
+                    $('#txtotalequitiesliabilities_' + i).css("display", "none");
+                    $('#txtnetfixedassetstangible_' + i).css("display", "none");
+                    $('#txtnetfixedassetsintangible_' + i).css("display", "none");
+                    $('#txtcapitalworkprogress_' + i).css("display", "none");
+                    $('#txtothernoncurrentassets_' + i).css("display", "none");
+                    $('#txtrawmaterial_' + i).css("display", "none");
+                    $('#txtwip_' + i).css("display", "none");
+                    $('#txtstoreandconsumables_' + i).css("display", "none");
+                    $('#txtfinishedgoods_' + i).css("display", "none");
+                    $('#txttotalinventories_' + i).css("display", "none");
+                    $('#txtlessthan90days_' + i).css("display", "none");
+                    $('#txtmorethan90days_' + i).css("display", "none");
+                    $('#txttotaldebtors_' + i).css("display", "none");
+                    $('#txtshorttermloansandadvances_' + i).css("display", "none");
+                    $('#txtothercurrentassets_' + i).css("display", "none");
+                    $('#txttotalassets_' + i).css("display", "none");
+                    $('#txtcheck_' + i).css("display", "none");
+                }
+            }        
+    }
+
+    jQuery('.numbersOnly').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.,]/, '');
+    });
+
+    $(document).ready(function(){
+
+        $('#txtsharecapital_1').keyup(function () {
+        Sharecapitalyearone();
+        });
+        $('#txtreserveandsurplus_1').keyup(function () {
+            Sharecapitalyearone();
+        });
+
+        $('#ddlyear').change(function () {
+          
+            hideTextBox();
+        });
+        
+        
+        $('#btnincomeNext').click(function () {
+            InsertEquiLib();
+        });
+
+
+        $('#txtsharecapital_2').keyup(function () {
+            Sharecapitalyeartwo();
+        });
+        $('#txtreserveandsurplus_2').keyup(function () {
+            Sharecapitalyeartwo();
+        });
+
+        $('#txtsharecapital_3').keyup(function () {
+            Sharecapitalyearthree();
+        });
+        $('#txtreserveandsurplus_3').keyup(function () {
+            Sharecapitalyearthree();
+        });
+
+
+        $('#txtsharecapital_4').keyup(function () {
+            Sharecapitalyearfour();
+        });
+        $('#txtreserveandsurplus_4').keyup(function () {
+            Sharecapitalyearfour();
+        });
+
+
+        $('#txtsharecapital_5').keyup(function () {
+            Sharecapitalyearfive();
+        });
+        $('#txtreserveandsurplus_5').keyup(function () {
+            Sharecapitalyearfive();
+        });
+
+        ///long term liabilities
+        $('#txtlongtermborrowings_1').keyup(function () {
+            longTermLiabilitiesOne();
+        });
+        $('#txtotherlongtermliabilities_1').keyup(function () {
+            longTermLiabilitiesOne();
+        });
+
+
+        $('#txtlongtermborrowings_2').keyup(function () {
+            longTermLiabilitiesTwo();
+        });
+        $('#txtotherlongtermliabilities_2').keyup(function () {
+            longTermLiabilitiesTwo();
+        });
+
+
+        $('#txtlongtermborrowings_3').keyup(function () {
+            longTermLiabilitiesThree();
+        });
+        $('#txtotherlongtermliabilities_3').keyup(function () {
+            longTermLiabilitiesThree();
+        });
+
+
+        $('#txtlongtermborrowings_4').keyup(function () {
+            longTermLiabilitiesFour();
+        });
+        $('#txtotherlongtermliabilities_4').keyup(function () {
+            longTermLiabilitiesFour();
+        });
+
+
+        $('#txtlongtermborrowings_5').keyup(function () {
+            longTermLiabilitiesFive();
+        });
+        $('#txtotherlongtermliabilities_5').keyup(function () {
+            longTermLiabilitiesFive();
+        });
+        
+        
+        $('#txtshorttermbank_2').keyup(function () {
+            totalCurrentLiabilitiesTwo();
+        });
+        $('#txtstatutorydues_2').keyup(function () {
+            totalCurrentLiabilitiesTwo();
+        });
+        $('#txttradepayables_2').keyup(function () {
+            totalCurrentLiabilitiesTwo();
+        });
+        $('#txtothercurrentliabilities_2').keyup(function () {
+            totalCurrentLiabilitiesTwo();
+        });
+
+
+        $('#txtshorttermbank_3').keyup(function () {
+            totalCurrentLiabilitiesThree();
+        });
+        $('#txtstatutorydues_3').keyup(function () {
+            totalCurrentLiabilitiesThree();
+        });
+        $('#txttradepayables_3').keyup(function () {
+            totalCurrentLiabilitiesThree();
+        });
+        $('#txtothercurrentliabilities_3').keyup(function () {
+            totalCurrentLiabilitiesThree();
+        });
+
+
+        $('#txtshorttermbank_4').keyup(function () {
+            totalCurrentLiabilitiesFour();
+        });
+        $('#txtstatutorydues_4').keyup(function () {
+            totalCurrentLiabilitiesFour();
+        });
+        $('#txttradepayables_4').keyup(function () {
+            totalCurrentLiabilitiesFour();
+        });
+        $('#txtothercurrentliabilities_4').keyup(function () {
+            totalCurrentLiabilitiesFour();
+        });
+
+
+        $('#txtshorttermbank_5').keyup(function () {
+            totalCurrentLiabilitiesFive();
+        });
+        $('#txtstatutorydues_5').keyup(function () {
+            totalCurrentLiabilitiesFive();
+        });
+        $('#txttradepayables_5').keyup(function () {
+            totalCurrentLiabilitiesFive();
+        });
+        $('#txtothercurrentliabilities_5').keyup(function () {
+            totalCurrentLiabilitiesFive();
+        });
+
+        $('#txtshorttermbank_1').keyup(function () {
+            totalCurrentLiabilitiesOne();
+        });
+        $('#txtstatutorydues_1').keyup(function () {
+            totalCurrentLiabilitiesOne();
+        });
+        $('#txttradepayables_1').keyup(function () {
+            totalCurrentLiabilitiesOne();
+        });
+        $('#txtothercurrentliabilities_1').keyup(function () {
+            totalCurrentLiabilitiesOne();
+        });
+
+        ///inventories
+
+        $('#txtrawmaterial_1').keyup(function () {
+            totalInventoriesOne();
+        });
+        $('#txtwip_1').keyup(function () {
+            totalInventoriesOne();
+        });
+        $('#txtstoreandconsumables_1').keyup(function () {
+            totalInventoriesOne();
+        });
+        $('#txtfinishedgoods_1').keyup(function () {
+            totalInventoriesOne();
+        });
+        
+        $('#txtrawmaterial_2').keyup(function () {
+            totalInventoriesTwo();
+        });
+        $('#txtwip_2').keyup(function () {
+            totalInventoriesTwo();
+        });
+        $('#txtstoreandconsumables_2').keyup(function () {
+            totalInventoriesTwo();
+        });
+        $('#txtfinishedgoods_2').keyup(function () {
+            totalInventoriesTwo();
+        });
+
+
+        $('#txtrawmaterial_3').keyup(function () {
+            totalInventoriesThree();
+        });
+        $('#txtwip_3').keyup(function () {
+            totalInventoriesThree();
+        });
+        $('#txtstoreandconsumables_3').keyup(function () {
+            totalInventoriesThree();
+        });
+        $('#txtfinishedgoods_3').keyup(function () {
+            totalInventoriesThree();
+        });
+
+        $('#txtrawmaterial_4').keyup(function () {
+            totalInventoriesFour();
+        });
+        $('#txtwip_4').keyup(function () {
+            totalInventoriesFour();
+        });
+        $('#txtstoreandconsumables_4').keyup(function () {
+            totalInventoriesFour();
+        });
+        $('#txtfinishedgoods_4').keyup(function () {
+            totalInventoriesFour();
+        });
+
+
+        $('#txtrawmaterial_5').keyup(function () {
+            totalInventoriesFive();
+        });
+        $('#txtwip_5').keyup(function () {
+            totalInventoriesFive();
+        });
+        $('#txtstoreandconsumables_5').keyup(function () {
+            totalInventoriesFive();
+        });
+        $('#txtfinishedgoods_5').keyup(function () {
+            totalInventoriesFive();
+        });
+
+        ///Debtors
+        $('#txtlessthan90days_1').keyup(function () {
+            totalDebtorsOne();
+        });
+        $('#txtmorethan90days_1').keyup(function () {
+            totalDebtorsOne();
+        });
+
+        $('#txtlessthan90days_2').keyup(function () {
+            totalDebtorsTwo();
+        });
+        $('#txtmorethan90days_2').keyup(function () {
+            totalDebtorsTwo();
+        });
+
+        $('#txtlessthan90days_3').keyup(function () {
+            totalDebtorsThree();
+        });
+        $('#txtmorethan90days_3').keyup(function () {
+            totalDebtorsThree();
+        });
+
+        $('#txtlessthan90days_4').keyup(function () {
+            totalDebtorsFour();
+        });
+        $('#txtmorethan90days_4').keyup(function () {
+            totalDebtorsFour();
+        });
+
+        $('#txtlessthan90days_5').keyup(function () {
+            totalDebtorsFive();
+        });
+        $('#txtmorethan90days_5').keyup(function () {
+            totalDebtorsFive();
+        });
+
+
+        /////Total Asset
+
+        $('#txtnetfixedassetstangible_1').keyup(function () {
+            totalAssetsOne();
+        });
+        $('#txtnetfixedassetsintangible_1').keyup(function () {
+            totalAssetsOne();
+        });
+        $('#txtcapitalworkprogress_1').keyup(function () {
+            totalAssetsOne();
+        });
+        $('#txtothernoncurrentassets_1').keyup(function () {
+            totalAssetsOne();
+        });
+        $('#txtothercurrentassets_1').keyup(function () {
+            totalAssetsOne();
+        });
+        $('#txtshorttermloansandadvances_1').keyup(function () {
+            totalAssetsOne();
+        });
+
+        $('#txtnetfixedassetstangible_2').keyup(function () {
+            totalAssetsTwo();
+        });
+        $('#txtnetfixedassetsintangible_2').keyup(function () {
+            totalAssetsTwo();
+        });
+        $('#txtcapitalworkprogress_2').keyup(function () {
+            totalAssetsTwo();
+        });
+        $('#txtothernoncurrentassets_2').keyup(function () {
+            totalAssetsTwo();
+        });
+        $('#txtothercurrentassets_2').keyup(function () {
+            totalAssetsTwo();
+        });
+        $('#txtshorttermloansandadvances_2').keyup(function () {
+            totalAssetsTwo();
+        });
+
+
+        $('#txtnetfixedassetstangible_4').keyup(function () {
+            totalAssetsFour();
+        });
+        $('#txtnetfixedassetsintangible_4').keyup(function () {
+            totalAssetsFour();
+        });
+        $('#txtcapitalworkprogress_4').keyup(function () {
+            totalAssetsFour();
+        });
+        $('#txtothernoncurrentassets_4').keyup(function () {
+            totalAssetsFour();
+        });
+        $('#txtothercurrentassets_4').keyup(function () {
+            totalAssetsFour();
+        });
+        $('#txtshorttermloansandadvances_4').keyup(function () {
+            totalAssetsFour();
+        });
+
+
+        $('#txtnetfixedassetstangible_3').keyup(function () {
+            totalAssetsThree();
+        });
+        $('#txtnetfixedassetsintangible_3').keyup(function () {
+            totalAssetsThree();
+        });
+        $('#txtcapitalworkprogress_3').keyup(function () {
+            totalAssetsThree();
+        });
+        $('#txtothernoncurrentassets_3').keyup(function () {
+            totalAssetsThree();
+        });
+        $('#txtothercurrentassets_3').keyup(function () {
+            totalAssetsThree();
+        });
+        $('#txtshorttermloansandadvances_3').keyup(function () {
+            totalAssetsThree();
+        });
+
+
+        $('#txtnetfixedassetstangible_5').keyup(function () {
+            totalAssetsFive();
+        });
+        $('#txtnetfixedassetsintangible_5').keyup(function () {
+            totalAssetsFive();
+        });
+        $('#txtcapitalworkprogress_5').keyup(function () {
+            totalAssetsFive();
+        });
+        $('#txtothernoncurrentassets_5').keyup(function () {
+            totalAssetsFive();
+        });
+        $('#txtothercurrentassets_5').keyup(function () {
+            totalAssetsFive();
+        });
+
+        $('#txtshorttermloansandadvances_5').keyup(function () {
+            totalAssetsFive();
+        });
+
+        getcompdetails();
+    })
+
+    function InsertEquiLib() {
+        var cnt = $('#ddlyear').val();
+
+        var EquitiesLiabilities = new Array();
+
+        for (var i = 1; i <= cnt; i++) {
+
+            var Param_User = {
+              
+                CompId: $('#ddlcompany').val(),
+                Year: $('#txtyear_' + i).val(),
+                ShareCapital: $('#txtsharecapital_' + i).val(),
+                ReserveSurplus: $('#txtreserveandsurplus_' + i).val(),
+                TotalNetWorth: $('#txttotalnetworth_' + i).val(),
+                LongBorrowings: $('#txtlongtermborrowings_' + i).val(),
+                LongLiabilities: $('#txtotherlongtermliabilities_' + i).val(),
+                totalliabilities: $('#txttotallongtermliabilities_' + i).val(),
+                bankfinance: $('#txtshorttermbank_' + i).val(),
+                tradepayables: $('#txttradepayables_' + i).val(),
+                statutorydues: $('#txtstatutorydues_' + i).val(),
+                othercurrentliabilities: $('#txtothercurrentliabilities_' + i).val(),
+                totalcurrentliabilities: $('#txtotalcurrentliabilities_' + i).val(),
+                totalequitiesliabilities: $('#txtotalequitiesliabilities_' + i).val(),
+                netfiextangible: $('#txtnetfixedassetstangible_' + i).val(),
+                netfixedintangible: $('#txtnetfixedassetsintangible_' + i).val(),
+                capitalwork: $('#txtcapitalworkprogress_' + i).val(),
+                othernoncurrentAssets: $('#txtothernoncurrentassets_' + i).val(),
+                currentAssets: $('#txtothercurrentassets_' + i).val(),
+                RawMaterials: $('#txtrawmaterial_' + i).val(),
+                WIP: $('#txtwip_' + i).val(),
+                storesConsumables: $('#txtstoreandconsumables_' + i).val(),
+                FinishedGoods: $('#txtfinishedgoods_' + i).val(),
+                TotalInventories: $('#txttotalinventories_' + i).val(),
+                Lessdays: $('#txtlessthan90days_' + i).val(),
+                Moredays: $('#txtmorethan90days_' + i).val(),
+                TotalDebtors: $('#txttotaldebtors_' + i).val(),
+                ShortTermloans: $('#txtshorttermloansandadvances_' + i).val(),
+                OthercurrentAssets: $('#txtothercurrentassets_' + i).val(),
+                TotalAssets: $('#txttotalassets_' + i).val(),
+                check: $('#txtcheck_' + i).val()                
+            }
+            EquitiesLiabilities.push(Param_User);
+        }
+
+        $.ajax({
+            type: "POST",/*method type*/
+            contentType: "application/json; charset=utf-8",
+            url: "/Income/InsertEquitiesAndLiabilities",/*Target function that will be return result*/
+            data: JSON.stringify(EquitiesLiabilities),
+            dataType: "json",
+            success: function (data) {
+                
+
+                 data = JSON.parse(data);
+                 var HTML = "";
+                $("#tdCUGrid").empty();
+                for (var i = 0; i < data.length; i++) {                    
+                    HTML = HTML + '<tr>';
+                    
+                    HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="7%">' + parseInt(i + 1) + '</td>';
+                    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + data[i].CompanyName + '</td><td align="left" style="padding-left: 4px"  width="12%">' + data[i].Years + '</td>';
+                    
+                    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="20%">' + data[i].Total_Equities_Liabilities + '</td>';
+                    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="8%">' + data[i].Total_Assets + '</td><td align="left" style="padding-left: 4px"  width="8%">' + data[i].Checked + '</td>';
+                    
+                    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="8%"><span id="promotorspan" onclick="Download(' + data[i].Id + ',' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Download</a></span></td>';
+                    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="8%"><span id="promotorspan" onclick="deleteEquilib(' + data[i].Id + ',' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Delete</a></span></td>';
+                    HTML = HTML + '</tr>';                    
+                }
+                $("#tdCUGrid").html(HTML);
+                $('#tdCUGrid tr').hover(function () {
+                    $(this).addClass('highlight');
+                }, function () {
+                    $(this).removeClass('highlight');
+                });
+            },
+
+            error: function (result) {
+                alert(result);
+            }
+        });
+    }
+
+    function Sharecapitalyearone()
+    {
+        var one = $('#txtsharecapital_1').val() == "" ? 0 : $('#txtsharecapital_1').val();
+        var two = $('#txtreserveandsurplus_1').val() == "" ? 0 : $('#txtreserveandsurplus_1').val();
+        $('#txttotalnetworth_1').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesOne();
+    }
+
+    function Sharecapitalyeartwo() {
+        var one = $('#txtsharecapital_2').val() == "" ? 0 : $('#txtsharecapital_2').val();
+        var two = $('#txtreserveandsurplus_2').val() == "" ? 0 : $('#txtreserveandsurplus_2').val();
+        $('#txttotalnetworth_2').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesTwo();
+    }
+
+    function Sharecapitalyearthree() {
+        var one = $('#txtsharecapital_3').val() == "" ? 0 : $('#txtsharecapital_3').val();
+        var two = $('#txtreserveandsurplus_3').val() == "" ? 0 : $('#txtreserveandsurplus_3').val();
+        $('#txttotalnetworth_3').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesThree();
+    }
+
+    function Sharecapitalyearfour() {
+        var one = $('#txtsharecapital_4').val() == "" ? 0 : $('#txtsharecapital_4').val();
+        var two = $('#txtreserveandsurplus_4').val() == "" ? 0 : $('#txtreserveandsurplus_4').val();
+        $('#txttotalnetworth_4').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesFour();
+    }
+
+    function Sharecapitalyearfive() {
+        var one = $('#txtsharecapital_5').val() == "" ? 0 : $('#txtsharecapital_5').val();
+        var two = $('#txtreserveandsurplus_5').val() == "" ? 0 : $('#txtreserveandsurplus_5').val();
+        $('#txttotalnetworth_5').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesFive();
+    }
+
+    function longTermLiabilitiesOne() {
+        var one = $('#txtlongtermborrowings_1').val()=="" ? 0 : $('#txtlongtermborrowings_1').val();
+        var two = $('#txtotherlongtermliabilities_1').val() == "" ? 0 : $('#txtotherlongtermliabilities_1').val();
+        $('#txttotallongtermliabilities_1').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesOne();
+    }
+
+    function longTermLiabilitiesTwo() {
+        var one = $('#txtlongtermborrowings_2').val() == "" ? 0 : $('#txtlongtermborrowings_2').val();
+        var two = $('#txtotherlongtermliabilities_2').val() == "" ? 0 : $('#txtotherlongtermliabilities_2').val();
+        $('#txttotallongtermliabilities_2').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesTwo();
+    }
+
+    function longTermLiabilitiesThree() {
+        var one = $('#txtlongtermborrowings_3').val() == "" ? 0 : $('#txtlongtermborrowings_3').val();
+        var two = $('#txtotherlongtermliabilities_3').val() == "" ? 0 : $('#txtotherlongtermliabilities_3').val();
+        $('#txttotallongtermliabilities_3').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesThree();
+    }
+
+    function longTermLiabilitiesFour() {
+        var one = $('#txtlongtermborrowings_4').val() == "" ? 0 : $('#txtlongtermborrowings_4').val();
+        var two = $('#txtotherlongtermliabilities_4').val() == "" ? 0 : $('#txtotherlongtermliabilities_4').val();
+        $('#txttotallongtermliabilities_4').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesFour();
+    }
+
+    function longTermLiabilitiesFive() {
+        var one = $('#txtlongtermborrowings_5').val() == "" ? 0 : $('#txtlongtermborrowings_5').val();
+        var two = $('#txtotherlongtermliabilities_5').val() == "" ? 0 : $('#txtotherlongtermliabilities_5').val();
+        $('#txttotallongtermliabilities_5').val((parseInt(one) + parseInt(two)));
+        totalEquitiesAndLiabilitiesFive();
+    }
+
+    function totalCurrentLiabilitiesOne() {
+       
+        var one = $('#txtshorttermbank_1').val() == "" ? 0 : $('#txtshorttermbank_1').val();
+        var two = $('#txtstatutorydues_1').val() == "" ? 0 : $('#txtstatutorydues_1').val();
+        var three = $('#txttradepayables_1').val() == "" ? 0 : $('#txttradepayables_1').val();
+        var four = $('#txtothercurrentliabilities_1').val() == "" ? 0 : $('#txtothercurrentliabilities_1').val();
+        
+        $('#txtotalcurrentliabilities_1').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalEquitiesAndLiabilitiesOne();
+    }
+
+    function totalCurrentLiabilitiesTwo() {
+
+        var one = $('#txtshorttermbank_2').val() == "" ? 0 : $('#txtshorttermbank_2').val();
+        var two = $('#txtstatutorydues_2').val() == "" ? 0 : $('#txtstatutorydues_2').val();
+        var three = $('#txttradepayables_2').val() == "" ? 0 : $('#txttradepayables_2').val();
+        var four = $('#txtothercurrentliabilities_2').val() == "" ? 0 : $('#txtothercurrentliabilities_2').val();
+
+        $('#txtotalcurrentliabilities_2').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalEquitiesAndLiabilitiesTwo();
+    }
+
+    function totalCurrentLiabilitiesThree() {
+
+        var one = $('#txtshorttermbank_3').val() == "" ? 0 : $('#txtshorttermbank_3').val();
+        var two = $('#txtstatutorydues_3').val() == "" ? 0 : $('#txtstatutorydues_3').val();
+        var three = $('#txttradepayables_3').val() == "" ? 0 : $('#txttradepayables_3').val();
+        var four = $('#txtothercurrentliabilities_3').val() == "" ? 0 : $('#txtothercurrentliabilities_3').val();
+
+        $('#txtotalcurrentliabilities_3').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalEquitiesAndLiabilitiesThree();
+    }
+
+    function totalCurrentLiabilitiesFour() {
+
+        var one = $('#txtshorttermbank_4').val() == "" ? 0 : $('#txtshorttermbank_4').val();
+        var two = $('#txtstatutorydues_4').val() == "" ? 0 : $('#txtstatutorydues_4').val();
+        var three = $('#txttradepayables_4').val() == "" ? 0 : $('#txttradepayables_4').val();
+        var four = $('#txtothercurrentliabilities_4').val() == "" ? 0 : $('#txtothercurrentliabilities_4').val();
+
+        $('#txtotalcurrentliabilities_4').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalEquitiesAndLiabilitiesFour();
+    }
+
+    function totalCurrentLiabilitiesFive() {
+
+        var one = $('#txtshorttermbank_5').val() == "" ? 0 : $('#txtshorttermbank_5').val();
+        var two = $('#txtstatutorydues_5').val() == "" ? 0 : $('#txtstatutorydues_5').val();
+        var three = $('#txttradepayables_5').val() == "" ? 0 : $('#txttradepayables_5').val();
+        var four = $('#txtothercurrentliabilities_5').val() == "" ? 0 : $('#txtothercurrentliabilities_5').val();
+
+        $('#txtotalcurrentliabilities_5').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalEquitiesAndLiabilitiesFive();
+    }
+
+    function totalEquitiesAndLiabilitiesOne()
+    {
+        var one = $('#txttotalnetworth_1').val();
+        var two = $('#txttotallongtermliabilities_1').val();
+        var three = $('#txtotalcurrentliabilities_1').val();
+        $('#txtotalequitiesliabilities_1').val((parseInt(one) + parseInt(two) + parseInt(three)));
+        checkOne();
+    }
+
+    function totalEquitiesAndLiabilitiesTwo() {
+        var one = $('#txttotalnetworth_2').val();
+        var two = $('#txttotallongtermliabilities_2').val();
+        var three = $('#txtotalcurrentliabilities_2').val();
+        $('#txtotalequitiesliabilities_2').val((parseInt(one) + parseInt(two) + parseInt(three)));
+        checkTwo();
+    }
+
+    function totalEquitiesAndLiabilitiesThree() {
+        var one = $('#txttotalnetworth_3').val();
+        var two = $('#txttotallongtermliabilities_3').val();
+        var three = $('#txtotalcurrentliabilities_3').val();
+        $('#txtotalequitiesliabilities_3').val((parseInt(one) + parseInt(two) + parseInt(three)));
+        checkThree();
+    }
+
+    function totalEquitiesAndLiabilitiesFour() {
+        var one = $('#txttotalnetworth_4').val();
+        var two = $('#txttotallongtermliabilities_4').val();
+        var three = $('#txtotalcurrentliabilities_4').val();
+        $('#txtotalequitiesliabilities_4').val((parseInt(one) + parseInt(two) + parseInt(three)));
+        checkFour();
+    }
+
+    function totalEquitiesAndLiabilitiesFive() {
+        var one = $('#txttotalnetworth_5').val();
+        var two = $('#txttotallongtermliabilities_5').val();
+        var three = $('#txtotalcurrentliabilities_5').val();
+        $('#txtotalequitiesliabilities_5').val((parseInt(one) + parseInt(two) + parseInt(three)));
+        checkFive();
+    }
+
+    function totalInventoriesOne()
+    {
+        var one = $('#txtrawmaterial_1').val() == "" ? 0 : $('#txtrawmaterial_1').val();
+        var two = $('#txtwip_1').val() == "" ? 0 : $('#txtwip_1').val();
+        var three = $('#txtstoreandconsumables_1').val() == "" ? 0 : $('#txtstoreandconsumables_1').val();
+        var four = $('#txtfinishedgoods_1').val() == "" ? 0 : $('#txtfinishedgoods_1').val();
+        $('#txttotalinventories_1').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalAssetsOne();
+    }
+
+    function totalInventoriesTwo() {
+        var one = $('#txtrawmaterial_2').val() == "" ? 0 : $('#txtrawmaterial_2').val();
+        var two = $('#txtwip_2').val() == "" ? 0 : $('#txtwip_2').val();
+        var three = $('#txtstoreandconsumables_2').val() == "" ? 0 : $('#txtstoreandconsumables_2').val();
+        var four = $('#txtfinishedgoods_2').val() == "" ? 0 : $('#txtfinishedgoods_2').val();
+        $('#txttotalinventories_2').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalAssetsTwo();
+    }
+
+    function totalInventoriesThree() {
+        var one = $('#txtrawmaterial_3').val() == "" ? 0 : $('#txtrawmaterial_3').val();
+        var two = $('#txtwip_3').val() == "" ? 0 : $('#txtwip_3').val();
+        var three = $('#txtstoreandconsumables_3').val() == "" ? 0 : $('#txtstoreandconsumables_3').val();
+        var four = $('#txtfinishedgoods_3').val() == "" ? 0 : $('#txtfinishedgoods_3').val();
+        $('#txttotalinventories_3').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalAssetsThree();
+    }
+
+    function totalInventoriesFour() {
+        var one = $('#txtrawmaterial_4').val() == "" ? 0 : $('#txtrawmaterial_4').val();
+        var two = $('#txtwip_4').val() == "" ? 0 : $('#txtwip_4').val();
+        var three = $('#txtstoreandconsumables_4').val() == "" ? 0 : $('#txtstoreandconsumables_4').val();
+        var four = $('#txtfinishedgoods_4').val() == "" ? 0 : $('#txtfinishedgoods_4').val();
+        $('#txttotalinventories_4').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalAssetsFour();
+    }
+
+    function totalInventoriesFive() {
+        var one = $('#txtrawmaterial_5').val() == "" ? 0 : $('#txtrawmaterial_5').val();
+        var two = $('#txtwip_5').val() == "" ? 0 : $('#txtwip_5').val();
+        var three = $('#txtstoreandconsumables_5').val() == "" ? 0 : $('#txtstoreandconsumables_5').val();
+        var four = $('#txtfinishedgoods_5').val() == "" ? 0 : $('#txtfinishedgoods_5').val();
+        $('#txttotalinventories_5').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four)));
+        totalAssetsFive();
+    }
+
+    function totalDebtorsOne() {
+        var one = $('#txtlessthan90days_1').val() == "" ? 0 : $('#txtlessthan90days_1').val();
+        var two = $('#txtmorethan90days_1').val() == "" ? 0 : $('#txtmorethan90days_1').val();
+        $('#txttotaldebtors_1').val((parseInt(one) + parseInt(two)));
+        totalAssetsOne();
+    }
+
+    function totalDebtorsTwo() {
+        var one = $('#txtlessthan90days_2').val() == "" ? 0 : $('#txtlessthan90days_2').val();
+        var two = $('#txtmorethan90days_2').val() == "" ? 0 : $('#txtmorethan90days_2').val();
+        $('#txttotaldebtors_2').val((parseInt(one) + parseInt(two)));
+        totalAssetsTwo();
+    }
+
+    function totalDebtorsThree() {
+        var one = $('#txtlessthan90days_3').val() == "" ? 0 : $('#txtlessthan90days_3').val();
+        var two = $('#txtmorethan90days_3').val() == "" ? 0 : $('#txtmorethan90days_3').val();
+        $('#txttotaldebtors_3').val((parseInt(one) + parseInt(two)));
+        totalAssetsThree();
+    }
+
+    function totalDebtorsFour() {
+        var one = $('#txtlessthan90days_4').val() == "" ? 0 : $('#txtlessthan90days_4').val();
+        var two = $('#txtmorethan90days_4').val() == "" ? 0 : $('#txtmorethan90days_4').val();
+        $('#txttotaldebtors_4').val((parseInt(one) + parseInt(two)));
+        totalAssetsFour();
+    }
+
+    function totalDebtorsFive() {
+        var one = $('#txtlessthan90days_5').val() == "" ? 0 : $('#txtlessthan90days_5').val();
+        var two = $('#txtmorethan90days_5').val() == "" ? 0 : $('#txtmorethan90days_5').val();
+        $('#txttotaldebtors_5').val((parseInt(one) + parseInt(two)));
+        totalAssetsFive();
+    }
+
+    function totalAssetsOne()
+    {
+        var one = $('#txtnetfixedassetstangible_1').val() == "" ? 0 : $('#txtnetfixedassetstangible_1').val();
+        var two = $('#txtnetfixedassetsintangible_1').val() == "" ? 0 : $('#txtnetfixedassetsintangible_1').val();
+        var three = $('#txtcapitalworkprogress_1').val() == "" ? 0 : $('#txtcapitalworkprogress_1').val();
+        var four = $('#txtothernoncurrentassets_1').val() == "" ? 0 : $('#txtothernoncurrentassets_1').val();
+        var five = $('#txttotalinventories_1').val();
+        var six = $('#txttotaldebtors_1').val();
+        var seven = $('#txtothercurrentassets_1').val() == "" ? 0 : $('#txtothercurrentassets_1').val();
+        var eight = $('#txtshorttermloansandadvances_1').val() == "" ? 0 : $('#txtshorttermloansandadvances_1').val();
+        
+        $('#txttotalassets_1').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight)));
+        checkOne();
+    }
+
+    function totalAssetsFive() {
+        var one = $('#txtnetfixedassetstangible_5').val() == "" ? 0 : $('#txtnetfixedassetstangible_5').val();
+        var two = $('#txtnetfixedassetsintangible_5').val() == "" ? 0 : $('#txtnetfixedassetsintangible_5').val();
+        var three = $('#txtcapitalworkprogress_5').val() == "" ? 0 : $('#txtcapitalworkprogress_5').val();
+        var four = $('#txtothernoncurrentassets_5').val() == "" ? 0 : $('#txtothernoncurrentassets_5').val();
+        var five = $('#txttotalinventories_5').val();
+        var six = $('#txttotaldebtors_5').val();
+        var seven = $('#txtothercurrentassets_5').val() == "" ? 0 : $('#txtothercurrentassets_5').val();
+        var eight = $('#txtshorttermloansandadvances_5').val() == "" ? 0 : $('#txtshorttermloansandadvances_5').val();
+
+        $('#txttotalassets_5').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight)));
+        checkFive();
+    }
+
+    function totalAssetsTwo() {
+        var one = $('#txtnetfixedassetstangible_2').val() == "" ? 0 : $('#txtnetfixedassetstangible_2').val();
+        var two = $('#txtnetfixedassetsintangible_2').val() == "" ? 0 : $('#txtnetfixedassetsintangible_2').val();
+        var three = $('#txtcapitalworkprogress_2').val() == "" ? 0 : $('#txtcapitalworkprogress_2').val();
+        var four = $('#txtothernoncurrentassets_2').val() == "" ? 0 : $('#txtothernoncurrentassets_2').val();
+        var five = $('#txttotalinventories_2').val();
+        var six = $('#txttotaldebtors_2').val();
+        var seven = $('#txtothercurrentassets_2').val() == "" ? 0 : $('#txtothercurrentassets_2').val();
+        var eight = $('#txtshorttermloansandadvances_2').val() == "" ? 0 : $('#txtshorttermloansandadvances_2').val();
+
+        $('#txttotalassets_2').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight)));
+        checkTwo();
+    }
+
+    function totalAssetsThree() {
+        var one = $('#txtnetfixedassetstangible_3').val() == "" ? 0 : $('#txtnetfixedassetstangible_3').val();
+        var two = $('#txtnetfixedassetsintangible_3').val() == "" ? 0 : $('#txtnetfixedassetsintangible_3').val();
+        var three = $('#txtcapitalworkprogress_3').val() == "" ? 0 : $('#txtcapitalworkprogress_3').val();
+        var four = $('#txtothernoncurrentassets_3').val() == "" ? 0 : $('#txtothernoncurrentassets_3').val();
+        var five = $('#txttotalinventories_3').val();
+        var six = $('#txttotaldebtors_3').val();
+        var seven = $('#txtothercurrentassets_3').val() == "" ? 0 : $('#txtothercurrentassets_3').val();
+        var eight = $('#txtshorttermloansandadvances_3').val() == "" ? 0 : $('#txtshorttermloansandadvances_3').val();
+
+        $('#txttotalassets_3').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight)));
+        checkThree();
+    }
+
+    function totalAssetsFour() {
+        var one = $('#txtnetfixedassetstangible_4').val() == "" ? 0 : $('#txtnetfixedassetstangible_4').val();
+        var two = $('#txtnetfixedassetsintangible_4').val() == "" ? 0 : $('#txtnetfixedassetsintangible_4').val();
+        var three = $('#txtcapitalworkprogress_4').val() == "" ? 0 : $('#txtcapitalworkprogress_4').val();
+        var four = $('#txtothernoncurrentassets_4').val() == "" ? 0 : $('#txtothernoncurrentassets_4').val();
+        var five = $('#txttotalinventories_4').val();
+        var six = $('#txttotaldebtors_4').val();
+        var seven = $('#txtothercurrentassets_4').val() == "" ? 0 : $('#txtothercurrentassets_4').val();
+        var eight = $('#txtshorttermloansandadvances_4').val() == "" ? 0 : $('#txtshorttermloansandadvances_4').val();
+        
+        $('#txttotalassets_4').val((parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight)));
+        checkFour();
+    }
+
+    function checkOne()
+    {
+        var one = $('#txttotalassets_1').val();
+        var two = $('#txtotalequitiesliabilities_1').val();
+        $('#txtcheck_1').val((parseInt(two) - parseInt(one)));
+    }
+
+    function checkTwo() {
+        var one = $('#txttotalassets_2').val();
+        var two = $('#txtotalequitiesliabilities_2').val();
+        $('#txtcheck_2').val((parseInt(two) - parseInt(one)));
+    }
+
+    function checkThree() {
+        var one = $('#txttotalassets_3').val();
+        var two = $('#txtotalequitiesliabilities_3').val();
+        $('#txtcheck_3').val((parseInt(two) - parseInt(one)));
+    }
+
+    function checkFour() {
+        var one = $('#txttotalassets_4').val();
+        var two = $('#txtotalequitiesliabilities_4').val();
+        $('#txtcheck_4').val((parseInt(two) - parseInt(one)));
+    }
+
+    function checkFive() {
+        var one = $('#txttotalassets_5').val();
+        var two = $('#txtotalequitiesliabilities_5').val();
+        $('#txtcheck_5').val((parseInt(two) - parseInt(one)));
+    }
+
+    function GetSession()
+    {
+        var objget = {};
+        objget.ID = "CompanyID";
+
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/GetSession',
+            async: false,
+            data: JSON.stringify(objget),
+            success: function (result) {
+                $("#compidsession").val(result);
+            },
+            error: {
+
+            }
+
+        });
+    }
+
+    function getcompdetails() {
+        var obj = {};
+        obj.type = "CDS";
+        obj.compid = 0;
+
+        $.ajax({
+            type: "POST",/*method type*/
+            contentType: "application/json; charset=utf-8",
+            url: "/Home/GetCompanyDetailList",
+            data: JSON.stringify(obj),
+            dataType: "json",
+            success: function (data) {
+                var objdata = JSON.parse(data);
+                $('#ddlcompany').empty();
+                var str = "";
+                var strzero = '<option  value="0">-----Select------</option>';
+                for (var i = 0; i < objdata.length; i++) {
+
+                    str = str + '<option  value=' + objdata[i].Id + '>' + objdata[i].Name + '</option>';
+                }
+                str = strzero + str;
+                $('#ddlcompany').append(str);
+                //$("#ddlcompany").prop('selectedIndex', 1);
+                //$("#ddlcompany").change();
+            },
+
+            error: function (result) {
+                alert(result);
+            }
+        });
+    }
+
+    function capitalize(s) {
+        return s.toUpperCase();
+    }
+
+    function Download(Id,CompId)
+    {
+        var Param_User = {
+            Id: 0,
+            CompId: CompId,
+            Action: "S"
+        };
+
+        $.ajax({
+            type: "POST",/*method type*/
+            contentType: "application/json; charset=utf-8",
+            url: "/Income/DownloadEquiLib",/*Target function that will be return result*/
+            data: JSON.stringify(Param_User),
+            dataType: "json",
+            success: function (data) {
+
+                $('#exceldiv').html(data);
+                GenerateCSV();
+            },
+            error(tt) {
+            }
+        });
+    }
+
+    function GenerateCSV() {
+        var data_type = 'data:application/vnd.ms-excel';
+        var table_div = document.getElementById('exceldiv');
+        var table_html = table_div.outerHTML.replace(/ /g, '%20');
+        var a = document.createElement('a');
+        a.href = data_type + ', ' + table_html;
+        a.download = 'exported_table.xls';
+        a.click();
+    }
+
+    function deleteEquilib(Id,CompId)
+    {
+        var Param_User = {
+            Id: Id,
+            CompId: CompId,
+            Action: "D"
+        };
+
+        if (confirm("Are you sure to delete this record.??")) {
+            $.ajax({
+                type: "POST",/*method type*/
+                contentType: "application/json; charset=utf-8",
+                url: "/Income/DownloadEquiLib",/*Target function that will be return result*/
+                data: JSON.stringify(Param_User),
+                dataType: "json",
+                success: function (data) {
+
+                    data = JSON.parse(data);
+                    var HTML = "";
+                    $("#tdCUGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="7%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="15%">' + data[i].CompanyName + '</td><td align="left" style="padding-left: 4px"  width="12%">' + data[i].Years + '</td>';
+
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="20%">' + data[i].Total_Equities_Liabilities + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="8%">' + data[i].Total_Assets + '</td><td align="left" style="padding-left: 4px"  width="8%">' + data[i].Checked + '</td>';
+
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="8%"><span id="promotorspan" onclick="Download(' + data[i].Id + ',' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Download</a></span></td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="8%"><span id="promotorspan" onclick="deleteEquilib(' + data[i].Id + ',' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Delete</a></span></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdCUGrid").html(HTML);
+                    $('#tdCUGrid tr').hover(function () {
+                        $(this).addClass('highlight');
+                    }, function () {
+                        $(this).removeClass('highlight');
+                    });
+                },
+                error(tt) {
+                }
+            });
+        }
+    }
+</script>
+
+
+

@@ -1,0 +1,784 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .txt {
+        width: 90px;
+        height: 22PX;
+    }
+</style>
+
+<table class="tblincome" style="width:900px">
+    <tr style="height:69px;">
+        <td style="width:110px">
+            <table style="width:900px;">
+                <tr>
+                    <td colspan="1"></td>
+                    <td colspan="5" class="text-primary" style="font-size:25px;height:25px">INCOME & EXPENSESE</td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr style="height:39px;">
+                    <td>
+                        Company
+                        <input id="compidsession" type="hidden" />
+                    </td>
+                    <td colspan="2">
+                        &nbsp;&nbsp;
+                        <select name="Company" id="ddlcompany" style="height: 25px; width: 198px;">
+                            <option value="0">-----Select-----</option>
+                        </select>
+                    </td>
+                    <td>&nbsp; No Of Year</td>
+                    <td colspan="3">
+                        &nbsp;&nbsp;
+                        <select name="Year" id="ddlyear" style="height: 25px; width: 192px;">
+                            <option value="0">-----Select-----</option>
+                            <option value="1">1 Year</option>
+                            <option value="3">3 Years</option>
+                            <option value="5">5 Years</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Financial Year</td>
+                    <td style="width:110px;">&nbsp;&nbsp;&nbsp;<input id="txtyear_1" type="text" class="txt numbersOnly1" value="0" /></td>
+                    <td style="width:110px;">&nbsp;&nbsp;<input id="txtyear_2" type="text" class="txt numbersOnly1" value="0" /></td>
+                    <td style="width:110px;">&nbsp;&nbsp;&nbsp;<input id="txtyear_3" type="text" class="txt numbersOnly1" value="0" /></td>
+                    <td style="width:110px;">&nbsp;&nbsp;&nbsp;<input id="txtyear_4" type="text" class="txt numbersOnly1" value="0" /></td>
+                    <td style="width:110px;">&nbsp;<input id="txtyear_5" type="text" class="txt numbersOnly1" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:18px">REVENUE FROM OPERATIONS (Domestic Sales)</td></tr>
+                <tr>
+                    <td font size="3;">1.Excise duty</td>
+                    <td><p id="ExcisedutyRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExciseduty_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExcisedutyRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExciseduty_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExcisedutyRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExciseduty_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExcisedutyRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExciseduty_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExcisedutyRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExciseduty_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.VAT paid</td>
+                    <td><p id="VATpaidRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtVATpaid_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="VATpaidRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtVATpaid_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="VATpaidRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtVATpaid_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="VATpaidRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtVATpaid_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="VATpaidRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtVATpaid_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="DomesticTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDomesticTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DomesticTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDomesticTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DomesticTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDomesticTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DomesticTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDomesticTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DomesticTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDomesticTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td class="text-primary" style="font-size:18px">OTHER INCOME</td></tr>
+                <tr>
+                    <td>1.Job work Receipts</td>
+                    <td><p id="ReceiptsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtReceipts_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ReceiptsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtReceipts_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ReceiptsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtReceipts_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ReceiptsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtReceipts_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ReceiptsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtReceipts_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.Interest from Banks</td>
+                    <td><p id="BanksRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBanks_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BanksRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBanks_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BanksRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBanks_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BanksRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBanks_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BanksRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBanks_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.Interest on Fixed Deposit</td>
+                    <td><p id="DepositRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDeposit_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepositRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDeposit_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepositRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDeposit_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepositRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDeposit_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepositRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDeposit_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>4.Other Income</td>
+                    <td><p id="OtherIncomeRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncome_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncome_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncome_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncome_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncome_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="OtherIncomeTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncomeTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncomeTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncomeTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncomeTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherIncomeTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherIncomeTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:20px">EXPENDITURE (Marerial Consumed)</td></tr>
+                <tr>
+                    <td>1.Opening Stock of Raw Materials</td>
+                    <td><p id="RawMaterialsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawMaterialsTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawMaterialsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawMaterialsTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawMaterialsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawMaterialsTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawMaterialsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawMaterialsTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawMaterialsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawMaterialsTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.Add:Purchases during the year</td>
+                    <td><p id="PurchasesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPurchases_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PurchasesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPurchases_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PurchasesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPurchases_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PurchasesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPurchases_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PurchasesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPurchases_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.Less:closing Stock of Raw Materials</td>
+                    <td><p id="closingRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosing_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosing_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosing_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosing_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosing_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>4.Cost of Raw materials Consumed</td>
+                    <td><p id="CostofRawmaterialsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCostofRawmaterials_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CostofRawmaterialsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCostofRawmaterials_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CostofRawmaterialsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCostofRawmaterials_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CostofRawmaterialsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCostofRawmaterials_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CostofRawmaterialsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCostofRawmaterials_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="RawmaterialsTotal_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawmaterialsTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawmaterialsTotal_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawmaterialsTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawmaterialsTotal_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawmaterialsTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawmaterialsTotal_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawmaterialsTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RawmaterialsTotal_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRawmaterialsTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:18px">INCREASE / DECREASE  IN WIP & FINISHEDGOODS</td></tr>
+                <tr>
+                    <td>1.Opening Stock of Work In Progress</td>
+                    <td><p id="OpeningStockRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningStock_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningStockRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningStock_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningStockRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningStock_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningStockRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningStock_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningStockRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningStock_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.Closing Stock of Work In Progress</td>
+                    <td><p id="ClosingStockRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtClosingStock_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ClosingStockRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtClosingStock_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ClosingStockRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtClosingStock_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ClosingStockRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtClosingStock_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ClosingStockRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtClosingStock_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.Increase/(Decrease) of Work In Progress</td>
+                    <td><p id="IncreaseProgressRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseProgress_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseProgressRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseProgress_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseProgressRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseProgress_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseProgressRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseProgress_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseProgressRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseProgress_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>4.Opening Stock of Finished Goods</td>
+                    <td><p id="OpeningGoodsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningGoods_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningGoodsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningGoods_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningGoodsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningGoods_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningGoodsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningGoods_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningGoodsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningGoods_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>5.closing Stock of Finished Goods</td>
+                    <td><p id="closingGoodsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingGoods_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingGoodsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingGoods_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingGoodsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingGoods_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingGoodsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingGoods_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingGoodsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingGoods_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>6.Increase/(Decrease) in Finished Goods</td>
+                    <td><p id="IncreaseGoodsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseGoods_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseGoodsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseGoods_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseGoodsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseGoods_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseGoodsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseGoods_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseGoodsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseGoods_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>7.Opening Stock of  Stock of Fuel & Consumables</td>
+                    <td><p id="OpeningConsumablesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningConsumables_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningConsumablesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningConsumables_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningConsumablesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningConsumables_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningConsumablesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningConsumables_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OpeningConsumablesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOpeningConsumables_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>8.closing Stock of Stock of Fuel & Consumables</td>
+                    <td><p id="closingConsumablesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingConsumables_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingConsumablesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingConsumables_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingConsumablesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingConsumables_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingConsumablesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingConsumables_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="closingConsumablesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtclosingConsumables_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>9.Increase/(Decrease) in  Stock of Fuel & Consumables</td>
+                    <td><p id="IncreaseConsumablesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseConsumables_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseConsumablesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseConsumables_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseConsumablesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseConsumables_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseConsumablesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseConsumables_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncreaseConsumablesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncreaseConsumables_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="finishedGoodsTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtfinishedGoodsTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="finishedGoodsTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtfinishedGoodsTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="finishedGoodsTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtfinishedGoodsTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="finishedGoodsTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtfinishedGoodsTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="finishedGoodsTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtfinishedGoodsTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:18px">EMPLOYEE BENEFIT EXPENSE</td></tr>
+                <tr>
+                    <td>1.Salaries and wages</td>
+                    <td><p id="SalariesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSalaries_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SalariesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSalaries_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SalariesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSalaries_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SalariesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSalaries_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SalariesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSalaries_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.Contributions to provident and other funds </td>
+                    <td><p id="ContributionsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtContributions_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ContributionsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtContributions_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ContributionsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtContributions_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ContributionsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtContributions_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ContributionsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtContributions_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.Staff welfare expenses</td>
+                    <td><p id="StaffRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtStaff_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="StaffRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtStaff_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="StaffRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtStaff_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="StaffRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtStaff_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="StaffRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtStaff_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="ExpenseTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExpenseTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExpenseTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExpenseTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExpenseTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExpenseTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExpenseTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExpenseTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ExpenseTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtExpenseTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:18px">FINANCIAL COSTS</td></tr>
+                <tr>
+                    <td>1.Bank interest</td>
+                    <td><p id="BankinterestRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankinterest_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankinterestRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankinterest_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankinterestRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankinterest_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankinterestRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankinterest_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankinterestRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankinterest_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.LC charges</td>
+                    <td><p id="LCchargesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLCcharges_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LCchargesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLCcharges_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LCchargesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLCcharges_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LCchargesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLCcharges_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LCchargesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLCcharges_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.Bank Charges</td>
+                    <td><p id="BankchargesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankcharges_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankchargesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankcharges_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankchargesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankcharges_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankchargesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankcharges_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BankchargesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBankcharges_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>4.Mortigage charges</td>
+                    <td><p id="MortigageRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMortigage_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MortigageRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMortigage_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MortigageRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMortigage_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MortigageRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMortigage_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MortigageRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMortigage_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>5.Interest on Unsecured Loans</td>
+                    <td><p id="UnsecuredLoansRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtUnsecuredLoans_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="UnsecuredLoansRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtUnsecuredLoans_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="UnsecuredLoansRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtUnsecuredLoans_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="UnsecuredLoansRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtUnsecuredLoans_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="UnsecuredLoansRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtUnsecuredLoans_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>6.Foreign exchange fluctation loss</td>
+                    <td><p id="ForeignRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtForeign_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ForeignRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtForeign_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ForeignRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtForeign_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ForeignRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtForeign_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ForeignRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtForeign_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>7.Interest on Term Loans</td>
+                    <td><p id="TermLoansRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTermLoans_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TermLoansRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTermLoans_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TermLoansRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTermLoans_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TermLoansRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTermLoans_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TermLoansRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTermLoans_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="FinancialTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinancialTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinancialTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinancialTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinancialTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinancialTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinancialTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinancialTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinancialTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinancialTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:18px">MISCELLANEOUS EXPENSES </td></tr>
+                <tr>
+                    <td>1.Miscellanseous Expenses</td>
+                    <td><p id="MiscellanseousRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseous_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseous_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseous_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseous_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseous_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.Depreciation</td>
+                    <td><p id="DepreciationRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDepreciation_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepreciationRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDepreciation_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepreciationRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDepreciation_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepreciationRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDepreciation_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DepreciationRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDepreciation_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="MiscellanseousTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseousTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseousTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseouslTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseousTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscellanseousTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMiscellanseousTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:18px">OTHER EXPENSES (Manufacturing Expenses)</td></tr>
+                <tr>
+                    <td>1.Factory Expenses</td>
+                    <td><p id="FactoryExpensesRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFactoryExpenses_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FactoryExpensesRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFactoryExpenses_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FactoryExpensesRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFactoryExpenses_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FactoryExpensesRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFactoryExpenses_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FactoryExpensesRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFactoryExpenses_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.Safty Consumables A/C</td>
+                    <td><p id="SaftyRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSafty_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SaftyRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSafty_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SaftyRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSafty_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SaftyRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSafty_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SaftyRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSafty_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.Labour Charges</td>
+                    <td><p id="LabourRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLabour_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LabourRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLabour_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LabourRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLabour_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LabourRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLabour_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="LabourRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtLabour_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>4.Job Work </td>
+                    <td><p id="JobWorkRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtJobWork_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="JobWorkRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtJobWork_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="JobWorkRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtJobWork_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="JobWorkRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtJobWork_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="JobWorkRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtJobWork_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>5.Water & Effluent Treatment Charges </td>
+                    <td><p id="WaterRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWater_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WaterRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWater_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WaterRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWater_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WaterRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWater_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WaterkRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWater_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>6.Analytical Charges </td>
+                    <td><p id="AnalyticalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAnalytical_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AnalyticalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAnalytical_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AnalyticalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAnalytical_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AnalyticalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAnalytical_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AnalyticalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAnalytical_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>7.Power & Fuel</td>
+                    <td><p id="PowerFuelRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPowerFuel_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PowerFuelRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPowerFuel_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PowerFuelRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPowerFuel_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PowerFuelRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPowerFuel_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PowerFuelRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPowerFuel_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>8.Repairs & Maintenance</td>
+                    <td><p id="RepairsRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRepairs_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RepairsRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRepairs_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RepairsRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRepairs_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RepairsRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRepairs_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RepairsRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRepairs_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>9.Weighing charges</td>
+                    <td><p id="WeighingRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWeighing_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WeighingRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWeighing_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WeighingRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWeighing_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WeighingRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWeighing_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="WeighingRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtWeighing_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="OtherExpensesTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherExpensesTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherExpensesTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherExpensesTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherExpensesTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherExpensesTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherExpensesTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherExpensesTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OtherExpensesTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOtherExpensesTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr><td colspan="6" class="text-primary" style="font-size:18px">ADMINSTRATION & SELLING EXPENSES</td></tr>
+                <tr>
+                    <td>1.Advertisment expenses</td>
+                    <td><p id="AdvertismentRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdvertisment_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdvertismentRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdvertisment_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdvertismentRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdvertisment_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdvertismentRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdvertisment_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdvertismentRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdvertisment_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>2.Audit Fee</td>
+                    <td><p id="AuditRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAudit_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAudit_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAudit_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAudit_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAudit_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>3.Business promotion expenses</td>
+                    <td><p id="BusinesspromotionRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBusinesspromotion_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BusinesspromotionRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBusinesspromotion_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BusinesspromotionRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBusinesspromotion_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BusinesspromotionRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBusinesspromotion_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="BusinesspromotionRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtBusinesspromotion_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>4.Commuication expenses</td>
+                    <td><p id="CommuicationRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCommuication_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CommuicationRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCommuication_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CommuicationRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCommuication_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CommuicationRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCommuication_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="CommuicationRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtCommuication_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>5.Computer Maintainence</td>
+                    <td><p id="ComputerRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtComputer_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ComputerRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtComputer_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ComputerRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtComputer_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ComputerRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtComputer_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ComputerRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtComputer_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>6.Discount</td>
+                    <td><p id="DiscountRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDiscount_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DiscountRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDiscount_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DiscountRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDiscount_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DiscountRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDiscount_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="DiscountRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtDiscount_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>7.Hire Charges</td>
+                    <td><p id="HireRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtHire_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="HireRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtHire_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="HireRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtHire_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="HireRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtHire_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="HireRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtHire_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>8.Income Tax Representation Fee </td>
+                    <td><p id="IncomeTaxRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncomeTax_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncomeTaxRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncomeTax_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncomeTaxRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncomeTax_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncomeTaxRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncomeTax_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="IncomeTaxRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtIncomeTax_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>9.Insurance Charges </td>
+                    <td><p id="InsuranceRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtInsurance_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="InsuranceRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtInsurance_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="InsuranceRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtInsurance_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="InsuranceRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtInsurance_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="InsuranceRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtInsurance_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>10.Misc Expenses</td>
+                    <td><p id="MiscRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMisc_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMisc_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMisc_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMisc_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MiscRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMisc_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>11.Medical Expenses</td>
+                    <td><p id="MedicalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMedical_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MedicalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMedical_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MedicalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMedical_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MedicalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMedical_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="MedicalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtMedical_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>12.Office Rent</td>
+                    <td><p id="OfficeRentRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOfficeRent_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OfficeRentRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOfficeRent_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OfficeRentRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOfficeRent_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OfficeRentRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOfficeRent_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="OfficeRentRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtOfficeRent_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>13.Pooja Expenses & office expenses</td>
+                    <td><p id="PoojaRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPooja_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PoojaRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPooja_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PoojaRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPooja_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PoojaRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPooja_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PoojaRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPooja_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>14.Printing & Stationery</td>
+                    <td><p id="PrintingRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPrinting_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PrintingRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPrinting_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PrintingRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPrinting_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PrintingRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPrinting_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="PrintingRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtPrinting_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>15.Professional Charges/ Consultancy Charges</td>
+                    <td><p id="ProfessionalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtProfessional_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ProfessionalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtProfessional_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ProfessionalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtProfessional_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ProfessionalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtProfessional_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="ProfessionalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtProfessional_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>16.Security Charges</td>
+                    <td><p id="SecurityRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSecurity_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SecurityRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSecurity_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SecurityRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSecurity_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SecurityRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSecurity_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="SecurityRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtSecurity_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>17.Tax Audit Fee</td>
+                    <td><p id="AuditFeeRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAuditFee_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditFeeRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAuditFee_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditFeeRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAuditFee_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditFeeRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAuditFee_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AuditFeeRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAuditFee_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>18.Travelling & Conveyence</td>
+                    <td><p id="TravellingRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTravelling_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TravellingRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTravelling_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TravellingRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTravelling_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TravellingRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTravelling_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="TravellingRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtTravelling_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td>19.Rate & Taxes</td>
+                    <td><p id="RateRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRate_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RateRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRate_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RateRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRate_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RateRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRate_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="RateRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtRate_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="AdminstrationTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdminstrationTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdminstrationTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdminstrationTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdminstrationTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdminstrationTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdminstrationTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdminstrationTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="AdminstrationTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtAdminstrationTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-primary" style="font-size:15px">TOTAL</td>
+                    <td><p id="FinalTotalRupee_1" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinalTotal_1" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinalTotalRupee_2" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinalTotal_2" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinalTotalRupee_3" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinalTotal_3" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinalTotalRupee_4" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinalTotal_4" type="text" class="txt numbersOnly" value="0" /></td>
+                    <td><p id="FinalTotalRupee_5" style="float: left;" class="text-primary">&#x20b9;</p>&nbsp;<input id="txtFinalTotal_5" type="text" class="txt numbersOnly" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><br /></td>
+                </tr>
+                <tr>
+                    <td><br /></td>
+                    <td colspan="5" align="left">
+                        &nbsp;&nbsp;&nbsp;<button type="button" style="width:100px" class="btn btn-primary" id="btnCompanyNext">Next</button>
+                        <button type="button" style="width:100px" class="btn btn-primary" id="btnCompanyReset">Reset</button>
+                        <button type="button" style="width:100px" class="btn btn-primary" id="btnCompanyCancel">Cancel</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6"><br /></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<div style="width: 99%; margin-left:auto; margin-right:auto;">
+    <table id="tdGrid_head" style="border: thin solid #C0C0C0;border-radius: 0px; border-collapse: separate; width: 85%; padding:6px;" class="btn-primary">
+        <tr style="font-weight: bold;">
+            <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+            <th align="left" style="padding-left: 4px; width: 5%">Sr No</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Code</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Name</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Name</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Type</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Phone</th>
+            <th align="left" style="padding-left: 4px; width: 10%">Email</th>
+            <th align="left" style="padding-left: 4px; width: 5%">Action</th>
+        </tr>
+    </table>
+</div>
+<div style="width: 99%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+    <table id="tdGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 85%; padding:6px;"></table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    })
+
+    jQuery('.numbersOnly').keyup(function () {
+        //Note 1
+        $('#txtDomesticTotal_1').val(parseFloat($('#txtExciseduty_1').val()) + parseFloat($('#txtVATpaid_1').val()));
+        $('#txtDomesticTotal_2').val(parseFloat($('#txtExciseduty_2').val()) + parseFloat($('#txtVATpaid_2').val()));
+        $('#txtDomesticTotal_3').val(parseFloat($('#txtExciseduty_3').val()) + parseFloat($('#txtVATpaid_3').val()));
+        $('#txtDomesticTotal_4').val(parseFloat($('#txtExciseduty_4').val()) + parseFloat($('#txtVATpaid_4').val()));
+        $('#txtDomesticTotal_5').val(parseFloat($('#txtExciseduty_5').val()) + parseFloat($('#txtVATpaid_5').val()));
+
+        //Note 2
+        $('#txtOtherIncomeTotal_1').val(parseFloat($('#txtReceipts_1').val()) + parseFloat($('#txtBanks_1').val()) + parseFloat($('#txtDeposit_1').val()) + parseFloat($('#txtOtherIncome_1').val()));
+        $('#txtOtherIncomeTotal_2').val(parseFloat($('#txtReceipts_2').val()) + parseFloat($('#txtBanks_2').val()) + parseFloat($('#txtDeposit_2').val()) + parseFloat($('#txtOtherIncome_2').val()));
+        $('#txtOtherIncomeTotal_3').val(parseFloat($('#txtReceipts_3').val()) + parseFloat($('#txtBanks_3').val()) + parseFloat($('#txtDeposit_3').val()) + parseFloat($('#txtOtherIncome_3').val()));
+        $('#txtOtherIncomeTotal_4').val(parseFloat($('#txtReceipts_4').val()) + parseFloat($('#txtBanks_4').val()) + parseFloat($('#txtDeposit_4').val()) + parseFloat($('#txtOtherIncome_4').val()));
+        $('#txtOtherIncomeTotal_5').val(parseFloat($('#txtReceipts_5').val()) + parseFloat($('#txtBanks_5').val()) + parseFloat($('#txtDeposit_5').val()) + parseFloat($('#txtOtherIncome_5').val()));
+
+        //Note 4
+        $('#txtfinishedGoodsTotal_1').val(parseFloat($('#txtOpeningStock_1').val()) + parseFloat($('#txtClosingStock_1').val()) + parseFloat($('#txtIncreaseProgress_1').val()) +
+                                          parseFloat($('#txtOpeningGoods_1').val()) + parseFloat($('#txtclosingGoods_1').val()) + parseFloat($('#txtIncreaseGoods_1').val()) +
+                                          parseFloat($('#txtOpeningConsumables_1').val()) + parseFloat($('#txtclosingConsumables_1').val()) + parseFloat($('#txtIncreaseConsumables_1').val()));
+
+        $('#txtfinishedGoodsTotal_2').val(parseFloat($('#txtOpeningStock_2').val()) + parseFloat($('#txtClosingStock_2').val()) + parseFloat($('#txtIncreaseProgress_2').val()) +
+                                          parseFloat($('#txtOpeningGoods_2').val()) + parseFloat($('#txtclosingGoods_2').val()) + parseFloat($('#txtIncreaseGoods_2').val()) +
+                                          parseFloat($('#txtOpeningConsumables_2').val()) + parseFloat($('#txtclosingConsumables_2').val()) + parseFloat($('#txtIncreaseConsumables_2').val()));
+
+        $('#txtfinishedGoodsTotal_3').val(parseFloat($('#txtOpeningStock_3').val()) + parseFloat($('#txtClosingStock_3').val()) + parseFloat($('#txtIncreaseProgress_3').val()) +
+                                          parseFloat($('#txtOpeningGoods_3').val()) + parseFloat($('#txtclosingGoods_3').val()) + parseFloat($('#txtIncreaseGoods_3').val()) +
+                                          parseFloat($('#txtOpeningConsumables_3').val()) + parseFloat($('#txtclosingConsumables_3').val()) + parseFloat($('#txtIncreaseConsumables_3').val()));
+
+        $('#txtfinishedGoodsTotal_4').val(parseFloat($('#txtOpeningStock_4').val()) + parseFloat($('#txtClosingStock_4').val()) + parseFloat($('#txtIncreaseProgress_4').val()) +
+                                          parseFloat($('#txtOpeningGoods_4').val()) + parseFloat($('#txtclosingGoods_4').val()) + parseFloat($('#txtIncreaseGoods_4').val()) +
+                                          parseFloat($('#txtOpeningConsumables_4').val()) + parseFloat($('#txtclosingConsumables_4').val()) + parseFloat($('#txtIncreaseConsumables_4').val()));
+
+        $('#txtfinishedGoodsTotal_5').val(parseFloat($('#txtOpeningStock_5').val()) + parseFloat($('#txtClosingStock_5').val()) + parseFloat($('#txtIncreaseProgress_5').val()) +
+                                          parseFloat($('#txtOpeningGoods_5').val()) + parseFloat($('#txtclosingGoods_5').val()) + parseFloat($('#txtIncreaseGoods_5').val()) +
+                                          parseFloat($('#txtOpeningConsumables_5').val()) + parseFloat($('#txtclosingConsumables_5').val()) + parseFloat($('#txtIncreaseConsumables_5').val()));
+        //Note 5
+        $('#txtExpenseTotal_1').val(parseFloat($('#txtSalaries_1').val()) + parseFloat($('#txtContributions_1').val()) + parseFloat($('#txtStaff_1').val()));
+        $('#txtExpenseTotal_2').val(parseFloat($('#txtSalaries_2').val()) + parseFloat($('#txtContributions_2').val()) + parseFloat($('#txtStaff_2').val()));
+        $('#txtExpenseTotal_3').val(parseFloat($('#txtSalaries_3').val()) + parseFloat($('#txtContributions_3').val()) + parseFloat($('#txtStaff_3').val()));
+        $('#txtExpenseTotal_4').val(parseFloat($('#txtSalaries_4').val()) + parseFloat($('#txtContributions_4').val()) + parseFloat($('#txtStaff_4').val()));
+        $('#txtExpenseTotal_5').val(parseFloat($('#txtSalaries_5').val()) + parseFloat($('#txtContributions_5').val()) + parseFloat($('#txtStaff_5').val()));
+
+        //Note 6
+        $('#txtFinancialTotal_1').val(parseFloat($('#BankinterestRupee_1').val()) + parseFloat($('#txtLCcharges_1').val()) + parseFloat($('#txtBankcharges_1').val()) +
+                                      parseFloat($('#txtMortigage_1').val()) + parseFloat($('#txtUnsecuredLoans_1').val()) + parseFloat($('#txtForeign_1').val()) + parseFloat($('#txtTermLoans_1').val()));
+
+        $('#txtFinancialTotal_2').val(parseFloat($('#BankinterestRupee_2').val()) + parseFloat($('#txtLCcharges_2').val()) + parseFloat($('#txtBankcharges_2').val()) +
+                                    parseFloat($('#txtMortigage_2').val()) + parseFloat($('#txtUnsecuredLoans_2').val()) + parseFloat($('#txtForeign_2').val()) + parseFloat($('#txtTermLoans_2').val()));
+
+        $('#txtFinancialTotal_3').val(parseFloat($('#BankinterestRupee_3').val()) + parseFloat($('#txtLCcharges_3').val()) + parseFloat($('#txtBankcharges_3').val()) +
+                                            parseFloat($('#txtMortigage_3').val()) + parseFloat($('#txtUnsecuredLoans_3').val()) + parseFloat($('#txtForeign_3').val()) + parseFloat($('#txtTermLoans_3').val()));
+
+        $('#txtFinancialTotal_4').val(parseFloat($('#BankinterestRupee_4').val()) + parseFloat($('#txtLCcharges_4').val()) + parseFloat($('#txtBankcharges_4').val()) +
+                                            parseFloat($('#txtMortigage_4').val()) + parseFloat($('#txtUnsecuredLoans_4').val()) + parseFloat($('#txtForeign_4').val()) + parseFloat($('#txtTermLoans_4').val()));
+
+        $('#txtFinancialTotal_5').val(parseFloat($('#BankinterestRupee_5').val()) + parseFloat($('#txtLCcharges_5').val()) + parseFloat($('#txtBankcharges_5').val()) +
+                                            parseFloat($('#txtMortigage_5').val()) + parseFloat($('#txtUnsecuredLoans_5').val()) + parseFloat($('#txtForeign_5').val()) + parseFloat($('#txtTermLoans_5').val()));
+        //Note 7
+        $('#txtMiscellanseousTotal_1').val(parseFloat($('#txtMiscellanseous_1').val()) + parseFloat($('#txtDepreciation_1').val()));
+        $('#txtMiscellanseousTotal_2').val(parseFloat($('#txtMiscellanseous_2').val()) + parseFloat($('#txtDepreciation_2').val()));
+        $('#txtMiscellanseouslTotal_3').val(parseFloat($('#txtMiscellanseous_3').val()) + parseFloat($('#txtDepreciation_3').val()));
+        $('#txtMiscellanseousTotal_4').val(parseFloat($('#txtMiscellanseous_4').val()) + parseFloat($('#txtDepreciation_4').val()));
+        $('#txtMiscellanseousTotal_5').val(parseFloat($('#txtMiscellanseous_5').val()) + parseFloat($('#txtDepreciation_5').val()));
+
+        //Note 3
+        $('#txtRawmaterialsTotal_1').val(parseFloat($('#txtRawMaterialsTotal_1').val()) + parseFloat($('#txtPurchases_1').val()) + parseFloat($('#txtclosing_1').val()) + parseFloat($('#txtCostofRawmaterials_1').val()));
+        $('#txtRawmaterialsTotal_2').val(parseFloat($('#txtRawMaterialsTotal_2').val()) + parseFloat($('#txtPurchases_2').val()) + parseFloat($('#txtclosing_2').val()) + parseFloat($('#txtCostofRawmaterials_2').val()));
+        $('#txtRawmaterialsTotal_3').val(parseFloat($('#txtRawMaterialsTotal_3').val()) + parseFloat($('#txtPurchases_3').val()) + parseFloat($('#txtclosing_3').val()) + parseFloat($('#txtCostofRawmaterials_3').val()));
+        $('#txtRawmaterialsTotal_4').val(parseFloat($('#txtRawMaterialsTotal_4').val()) + parseFloat($('#txtPurchases_4').val()) + parseFloat($('#txtclosing_4').val()) + parseFloat($('#txtCostofRawmaterials_4').val()));
+        $('#txtRawmaterialsTotal_5').val(parseFloat($('#txtRawMaterialsTotal_5').val()) + parseFloat($('#txtPurchases_5').val()) + parseFloat($('#txtclosing_5').val()) + parseFloat($('#txtCostofRawmaterials_5').val()));
+    })
+
+    jQuery('.numbersOnly').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.,]/, '');
+    });
+
+</script>

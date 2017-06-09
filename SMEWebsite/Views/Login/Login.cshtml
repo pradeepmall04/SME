@@ -1,0 +1,229 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<link href="~/Resources/Styles/jquery-ui.css" rel="stylesheet" />
+<link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/date.js"></script>
+<script src="~/Content/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/CommonFunction.js"></script>
+<script src="/Resources/Scripts/allscripts.js"></script>
+<script src="~/Scripts/jquery-ui.js"></script>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="height:100%">
+<head>
+    <title>RB's SME</title>
+    <style>
+        .bg {
+            background-image: url('../../Resources/banner-1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .capbox {
+            background-color: #92D433;
+            border: #B3E272 0px solid;
+            border-width: 0px 12px 0px 0px;
+            display: inline-block;
+            *display: inline;
+            zoom: 1; /* FOR IE7-8 */
+            padding: 8px 40px 8px 8px;
+        }
+
+        .capbox-inner {
+            font: bold 11px arial, sans-serif;
+            color: #000000;
+            background-color: #DBF3BA;
+            margin: 5px auto 0px auto;
+            padding: 3px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        #CaptchaDiv {
+            font: bold 17px verdana, arial, sans-serif;
+            font-style: italic;
+            color: #000000;
+            background-color: #FFFFFF;
+            padding: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        #CaptchaInput {
+            margin: 1px 0px 1px 0px width: 135px;
+        }
+    </style>
+
+</head>
+<body class="bg" style="height:100%;">
+    <div style="width:100%;height:100%;position:absolute;background-color:black;opacity:0.05"></div>
+    <div class="container-fluid aj-loginbgimg" style="height:100%">
+        <div class="panel" style="width:350px;border:1px solid #0094ff;opacity:0.95;display:none;top:150px;position:absolute;background-color:aliceblue;">
+            <div class="panel-heading text-center">
+                <h2 class="text-primary" style="margin-top:7px;">
+                    <span class="glyphicon glyphicon-list" style="font-size:21px;"></span> RB's SME
+                </h2>
+                <hr style="margin:0px" />
+            </div>
+            <div class="panel-body" style="padding-top:0px;">
+                <div class="input-group" style="margin-top:0px">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </span>
+                    <input type="text" id="txtemailaddress" class="form-control" placeholder="User Name" aj-mandatory="yes" />
+                </div>
+                <div class="input-group" style="margin-top:10px;">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </span>
+                    <input type="password" id="txtpassword" class="form-control" placeholder="Password" aj-mandatory="yes" />
+                </div>
+
+                <div class="input-group" style="margin-top:10px;">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-qrcode"></span>
+                    </span>
+                    <input type="text" id="txtcaptcha" class="form-control" placeholder="Enter captcha text from image" aj-mandatory="yes" />
+                </div>
+                <div style="text-align:center;vertical-align:middle;margin-top:5px;">
+                    <input type="hidden" id="hdncaptcha">
+                    <div id="CaptchaDiv" oncopy="javascript: return false;"></div>
+                    <span id="imgrefresh" class="glyphicon glyphicon-refresh" onclick="refresh()"></span>
+                    <span>Letters are case-sensitive</span>
+                </div>
+                <div id="diverrormsg" style="text-align:center;color:red"></div>
+                <div>
+                    <input type="button" id="btnlogin" value="Login" style="margin-top:10px;width:155px;" class="btn btn-primary" onclick="Checklogin()" />
+                    <input type="button" id="btnReset" value="Reset" style="margin-top:10px;width:155px;" class="btn btn-primary" />
+                    <a href="#" data-toggle="popover" data-trigger="focus"
+                       data-content="Please go to <a target='_blank' href='http://SME.in'>http://SME.in</a> Contact section. You can either call us or drop a mail. We will reach you as soon as possible." style="margin-top:10px;float:left">Need help?</a>
+                    <a id="aforgotpassword" style="margin-top:10px;float:right">Forgot you password?</a>
+                </div>
+                <div style="margin-top:25px;text-align:center">
+                    <a>&copy; 2016 SME</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*</form>*@
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="popover"]').popover({ html: true });
+        setformlocation();
+        $(".panel").show();
+        $(window).resize(function () {
+            setformlocation();
+        });
+        $("#btnReset").click(function () {
+            $('#txtemailaddress').val("");
+            $('#txtpassword').val("");
+            $("#txtcaptcha").val("");
+            refresh();
+        });
+    });
+    function setformlocation() {
+        var ww = $(window).width() / 2;
+        var pw = $(".panel").width() / 2;
+        $(".panel").css({ "left": ww - pw });
+    }
+
+    // Captcha Script
+    function Checklogin() {
+        if (CaptchaValidation()) {
+            var username = $('#txtemailaddress').val();
+            var password = $('#txtpassword').val();
+            var obj = {};
+            obj.username = username;
+            obj.password = password;
+
+            $.ajax({
+                type: "POST",/*method type*/
+                contentType: "application/json; charset=utf-8",
+                url: "/Login/CheckLogin",/*Target function that will be return result*/
+                data: JSON.stringify(obj),
+                dataType: "json",
+                success: function (data) {                  
+                    if (data >= 1) {
+                        var url = '@Url.Action("SearchCompany", "Home")';
+                        window.location.href = url;
+                    }
+                    else {
+                        alert("UserId and Password is Not Match");
+                    }
+                },
+
+                error: function (result) {
+                    alert(result);
+                }
+            });
+        }
+    }
+
+
+    function CaptchaValidation() {
+        var why = "";
+        var txtcaptcha = document.getElementById("txtcaptcha").value;
+        //alert("Test");
+        if (txtcaptcha == "") {
+            why += "- Please Enter CAPTCHA Code.\n";
+        }
+        if (txtcaptcha != "") {
+            if (!ValidCaptcha()) {
+                why += "- The CAPTCHA Code Does Not Match.\n";
+            }
+            else {
+                return true;
+            }
+        }
+        if (why != "") {
+            alert(why);
+            refresh();
+            return false;
+        }
+    }
+
+
+    var code = makeid();
+    document.getElementById("hdncaptcha").value = code;
+    document.getElementById("CaptchaDiv").innerHTML = code;
+
+    // Validate input against the generated number
+    function ValidCaptcha() {
+        var str1 = removeSpaces(document.getElementById('hdncaptcha').value);
+        var str2 = removeSpaces(document.getElementById('txtcaptcha').value);
+        if (str1 == str2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Remove the spaces from the entered and generated code
+    function removeSpaces(string) {
+        return string.split(' ').join('');
+    }
+
+    function makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        return text;
+    }
+
+    function refresh() {
+        var code = makeid();
+        document.getElementById("hdncaptcha").value = code;
+        document.getElementById("CaptchaDiv").innerHTML = code;
+    }
+
+</script>
+</html>
+

@@ -1,0 +1,221 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Registration</h2>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/date.js"></script>
+<script src="~/Content/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/CommonFunction.js"></script>
+<link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+<script src="/Resources/Scripts/allscripts.js"></script>
+
+<style>
+    .display {
+        background-color: transparent;
+        margin-left: 10%;
+        margin-bottom: 2px;
+    }
+
+        .display td {
+            border: 1px solid black;
+            font-style: normal;
+            padding-left: 10px;
+            height: 30px;
+        }
+
+        .display th {
+            border: 1px solid black;
+            font-style: normal;
+            padding-left: 10px;
+            height: 30px;
+        }
+
+    .nr {
+    }
+</style>
+
+<table id="tblitem" class="display" width="80%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Parent Menu</th>
+            <th>Child Menu</th>
+            <th>Is Read</th>
+            <th>Is Write</th>
+            <th>Is Delete</th>
+        </tr>
+    </thead>
+</table>
+<div style="height:2%;">
+
+</div>
+
+<div style="text-align:center;">
+    <button type="button" class="btn btn-primary" id="btnDocumentNext">Save</button>
+</div>
+
+
+<div id="divmsg" style="text-align:center; color:green; font:bold;">
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        
+
+                    var name = GetParameterValues('userid');
+
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+            var obj = {};
+            obj.userid = name;
+            obj.Action = "S";
+
+
+        $.ajax({
+            type: "POST",/*method type*/
+            contentType: "application/json; charset=utf-8",
+            url: "/Registration/getmenu",/*Target function that will be return result*/
+            data: JSON.stringify(obj),//'{"compid":"' + compid + '","userid":"' + userid + '","filepath":"' + filepath + '","check":"Y"}',/*parameter pass data is parameter name param is value */
+            dataType: "json",
+            success: function (data) {
+
+                data = JSON.parse(data);
+                var str = "";
+                for(var i = 0; i < data.length;i++)
+                {
+                    str = str + "<tr><td class='nr'>" + data[i].Id + "</td><td>" + data[i].ParentName + "<input id='hdn" + i + "' type='hidden' value='" + data[i].ParentId + "'/></td><td>" + data[i].Menu_Name + "</td><td><input id='chkisread_" + i + "' type='checkbox' /></td><td><input id='chkiswrite_" + i + "' type='checkbox' /></td><td><input id='chkisdelete_" + i + "' type='checkbox' /></td></tr>";
+                }
+                $("#tblitem").append(str);
+            },
+
+            error: function (result) {
+                alert(result);
+            }
+        });
+
+        $("#btnDocumentNext").click(function () {
+            var rowcnt = $("#tblitem tr").length;
+
+
+            var name = GetParameterValues('userid');
+
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+
+
+            debugger;
+            for(var i =1;i < rowcnt;i++)
+            {
+
+                var tt = document.getElementById("tblitem").rows[i].cells[0].innerHTML;
+
+                var rolid = document.getElementById("hdn" + (i - 1)).value;
+                var isread = document.getElementById("chkisread_" + (i - 1)).checked;
+                var iswrite = document.getElementById("chkiswrite_" + (i - 1)).checked;
+
+                var isdelete = document.getElementById("chkisdelete_" + (i - 1)).checked;
+
+
+                var obj = {};
+                obj.menuid = tt;
+                obj.roleid = rolid;
+                obj.create_by = 1;
+                obj.modifiedby = 2;
+                obj.isview = 'Y';
+                obj.isRead = isread;
+                obj.isWrite = iswrite;
+                obj.isDelete = isdelete;
+                obj.userid = name;
+                obj.action = 'I';
+                $.ajax({
+                    type: "POST",/*method type*/
+                    contentType: "application/json; charset=utf-8",
+                    url: "/Registration/InsertMenu",
+                    data: JSON.stringify(obj),
+                    dataType: "json",
+                    success: function (data) {
+                        if (i == rowcnt)
+                            $("#divmsg").html("Record saved successfully");
+                    },
+
+                    error: function (result) {
+                        alert(result);
+                    }
+                });
+            }
+
+        });
+    })
+
+
+
+    $(window).load(function () {
+        
+        window.setTimeout(function () {
+           
+            var name = GetParameterValues('userid');
+
+            function GetParameterValues(param) {
+                var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < url.length; i++) {
+                    var urlparam = url[i].split('=');
+                    if (urlparam[0] == param) {
+                        return urlparam[1];
+                    }
+                }
+            }
+
+            var obj = {};
+            obj.userid = name;
+            obj.Action = "S";
+
+            
+            $.ajax({
+                type: "POST",/*method type*/
+                contentType: "application/json; charset=utf-8",
+                url: "/Registration/getmenu",/*Target function that will be return result*/
+                data: JSON.stringify(obj),//'{"compid":"' + compid + '","userid":"' + userid + '","filepath":"' + filepath + '","check":"Y"}',/*parameter pass data is parameter name param is value */
+                dataType: "json",
+                success: function (data) {
+                    
+                    data = JSON.parse(data);
+                    var str = "";
+                    for (var i = 0; i < data.length; i++) {
+                        $("#chkisread_" + i).prop('checked', data[i].IsRead);
+                        $("#chkiswrite_" + i).prop('checked', data[i].IsWrite);
+                        $("#chkisdelete_" + i).prop('checked', data[i].Isdelete);
+                    }
+                    $("#tblitem").append(str);
+                },
+
+                error: function (result) {
+                    alert(result);
+                }
+            });
+        }, 1000);
+
+        
+    });
+
+   
+</script>

@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CustomerRegistration" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICustomerRegistration_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BussinessLogicLayer" />
+      <xsd:import schemaLocation="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd3" />
+      <xsd:import schemaLocation="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICustomerRegistration_CompanyInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CompanyInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CustomerInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CustomerInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomerInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_MachineDetailsInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:MachineDetailsInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_MachineDetailsInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MachineDetailsInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_BankDetailsInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:BankDetailsInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_BankDetailsInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BankDetailsInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_FacilitiesTypesInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:FacilitiesTypesInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_FacilitiesTypesInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FacilitiesTypesInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_ProposeTypesInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProposeTypesInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_ProposeTypesInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProposeTypesInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_AssociateInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_AssociateInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CollateralsSummaryInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollateralsSummaryInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CollateralsSummaryInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollateralsSummaryInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_PerformanceEstimatesInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerformanceEstimatesInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_PerformanceEstimatesInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerformanceEstimatesInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_DocumentDetailsInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:DocumentDetailsInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_DocumentDetailsInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DocumentDetailsInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_ScoreInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScoreInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_ScoreInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScoreInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetDocumentDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetDocumentDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCompanyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCompanyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCityDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCityDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetStateDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetStateDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAllCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAllCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCustomerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCustomerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAllCompanyInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCompanyInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAllCompanyInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCompanyInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_SearchCompanyDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCompanyDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_SearchCompanyDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCompanyDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_UserRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegistration" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_UserRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAllUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUser" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAllUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_StatutoryInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:StatutoryInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_StatutoryInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StatutoryInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetSMEMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSMEMapping" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetSMEMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSMEMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_SmeMenuMasterInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:SmeMenuMasterInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_SmeMenuMasterInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SmeMenuMasterInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetDocumentsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentsList" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetDocumentsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetMenuList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuList" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetMenuList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_Checkfileexist_InputMessage">
+    <wsdl:part name="parameters" element="tns:Checkfileexist" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_Checkfileexist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckfileexistResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetPromotorsDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPromotorsDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetPromotorsDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPromotorsDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetFacilitiesTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFacilitiesTypes" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetFacilitiesTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFacilitiesTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetProposeTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProposeTypes" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetProposeTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProposeTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetMachineDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMachineDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetMachineDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMachineDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAssociate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssociate" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetAssociate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssociateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCollateralsSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollateralsSummary" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetCollateralsSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollateralsSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetPerformanceEstimates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceEstimates" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetPerformanceEstimates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceEstimatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetScore_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScore" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetScore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetStatutoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatutoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetStatutoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatutoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_UserMasterInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserMasterInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_UserMasterInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserMasterInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetUserMaster_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserMaster" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetUserMaster_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetConstitution_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConstitution" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_GetConstitution_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConstitutionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_InsertCompanyIncome_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyIncome" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_InsertCompanyIncome_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_InsertCompanyLiabilities_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyLiabilities" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_InsertCompanyLiabilities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCompanyLiabilitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CompanyIncomeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyIncomeDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CompanyIncomeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyIncomeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CompanyEquitiesAndLiabilitiesDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyEquitiesAndLiabilitiesDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_CompanyEquitiesAndLiabilitiesDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompanyEquitiesAndLiabilitiesDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_LoanDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoanDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerRegistration_LoanDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoanDetailsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICustomerRegistration">
+    <wsdl:operation name="CompanyInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/CompanyInsert" message="tns:ICustomerRegistration_CompanyInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/CompanyInsertResponse" message="tns:ICustomerRegistration_CompanyInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/CustomerInsert" message="tns:ICustomerRegistration_CustomerInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/CustomerInsertResponse" message="tns:ICustomerRegistration_CustomerInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MachineDetailsInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/MachineDetailsInsert" message="tns:ICustomerRegistration_MachineDetailsInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/MachineDetailsInsertResponse" message="tns:ICustomerRegistration_MachineDetailsInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BankDetailsInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/BankDetailsInsert" message="tns:ICustomerRegistration_BankDetailsInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/BankDetailsInsertResponse" message="tns:ICustomerRegistration_BankDetailsInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FacilitiesTypesInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/FacilitiesTypesInsert" message="tns:ICustomerRegistration_FacilitiesTypesInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/FacilitiesTypesInsertResponse" message="tns:ICustomerRegistration_FacilitiesTypesInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProposeTypesInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/ProposeTypesInsert" message="tns:ICustomerRegistration_ProposeTypesInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/ProposeTypesInsertResponse" message="tns:ICustomerRegistration_ProposeTypesInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/AssociateInsert" message="tns:ICustomerRegistration_AssociateInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/AssociateInsertResponse" message="tns:ICustomerRegistration_AssociateInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollateralsSummaryInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/CollateralsSummaryInsert" message="tns:ICustomerRegistration_CollateralsSummaryInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/CollateralsSummaryInsertResponse" message="tns:ICustomerRegistration_CollateralsSummaryInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerformanceEstimatesInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/PerformanceEstimatesInsert" message="tns:ICustomerRegistration_PerformanceEstimatesInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/PerformanceEstimatesInsertResponse" message="tns:ICustomerRegistration_PerformanceEstimatesInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DocumentDetailsInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/DocumentDetailsInsert" message="tns:ICustomerRegistration_DocumentDetailsInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/DocumentDetailsInsertResponse" message="tns:ICustomerRegistration_DocumentDetailsInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScoreInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/ScoreInsert" message="tns:ICustomerRegistration_ScoreInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/ScoreInsertResponse" message="tns:ICustomerRegistration_ScoreInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetDocumentDetails" message="tns:ICustomerRegistration_GetDocumentDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetDocumentDetailsResponse" message="tns:ICustomerRegistration_GetDocumentDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCompanyDetails" message="tns:ICustomerRegistration_GetCompanyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCompanyDetailsResponse" message="tns:ICustomerRegistration_GetCompanyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCityDetails" message="tns:ICustomerRegistration_GetCityDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCityDetailsResponse" message="tns:ICustomerRegistration_GetCityDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStateDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetStateDetails" message="tns:ICustomerRegistration_GetStateDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetStateDetailsResponse" message="tns:ICustomerRegistration_GetStateDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/Test" message="tns:ICustomerRegistration_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/TestResponse" message="tns:ICustomerRegistration_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/Login" message="tns:ICustomerRegistration_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/LoginResponse" message="tns:ICustomerRegistration_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAllCompany" message="tns:ICustomerRegistration_GetAllCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAllCompanyResponse" message="tns:ICustomerRegistration_GetAllCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCustomerDetails" message="tns:ICustomerRegistration_GetCustomerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCustomerDetailsResponse" message="tns:ICustomerRegistration_GetCustomerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompanyInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAllCompanyInsert" message="tns:ICustomerRegistration_GetAllCompanyInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAllCompanyInsertResponse" message="tns:ICustomerRegistration_GetAllCompanyInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompanyDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/SearchCompanyDetails" message="tns:ICustomerRegistration_SearchCompanyDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/SearchCompanyDetailsResponse" message="tns:ICustomerRegistration_SearchCompanyDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRegistration">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/UserRegistration" message="tns:ICustomerRegistration_UserRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/UserRegistrationResponse" message="tns:ICustomerRegistration_UserRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAllUser" message="tns:ICustomerRegistration_GetAllUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAllUserResponse" message="tns:ICustomerRegistration_GetAllUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StatutoryInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/StatutoryInsert" message="tns:ICustomerRegistration_StatutoryInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/StatutoryInsertResponse" message="tns:ICustomerRegistration_StatutoryInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSMEMapping">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetSMEMapping" message="tns:ICustomerRegistration_GetSMEMapping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetSMEMappingResponse" message="tns:ICustomerRegistration_GetSMEMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SmeMenuMasterInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/SmeMenuMasterInsert" message="tns:ICustomerRegistration_SmeMenuMasterInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/SmeMenuMasterInsertResponse" message="tns:ICustomerRegistration_SmeMenuMasterInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetDocumentsList" message="tns:ICustomerRegistration_GetDocumentsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetDocumentsListResponse" message="tns:ICustomerRegistration_GetDocumentsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetMenuList" message="tns:ICustomerRegistration_GetMenuList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetMenuListResponse" message="tns:ICustomerRegistration_GetMenuList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Checkfileexist">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/Checkfileexist" message="tns:ICustomerRegistration_Checkfileexist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/CheckfileexistResponse" message="tns:ICustomerRegistration_Checkfileexist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotorsDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetPromotorsDetails" message="tns:ICustomerRegistration_GetPromotorsDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetPromotorsDetailsResponse" message="tns:ICustomerRegistration_GetPromotorsDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilitiesTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetFacilitiesTypes" message="tns:ICustomerRegistration_GetFacilitiesTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetFacilitiesTypesResponse" message="tns:ICustomerRegistration_GetFacilitiesTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProposeTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetProposeTypes" message="tns:ICustomerRegistration_GetProposeTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetProposeTypesResponse" message="tns:ICustomerRegistration_GetProposeTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetMachineDetails" message="tns:ICustomerRegistration_GetMachineDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetMachineDetailsResponse" message="tns:ICustomerRegistration_GetMachineDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssociate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAssociate" message="tns:ICustomerRegistration_GetAssociate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetAssociateResponse" message="tns:ICustomerRegistration_GetAssociate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollateralsSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCollateralsSummary" message="tns:ICustomerRegistration_GetCollateralsSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetCollateralsSummaryResponse" message="tns:ICustomerRegistration_GetCollateralsSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceEstimates">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetPerformanceEstimates" message="tns:ICustomerRegistration_GetPerformanceEstimates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetPerformanceEstimatesResponse" message="tns:ICustomerRegistration_GetPerformanceEstimates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScore">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetScore" message="tns:ICustomerRegistration_GetScore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetScoreResponse" message="tns:ICustomerRegistration_GetScore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatutoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetStatutoryDetails" message="tns:ICustomerRegistration_GetStatutoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetStatutoryDetailsResponse" message="tns:ICustomerRegistration_GetStatutoryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserMasterInsert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/UserMasterInsert" message="tns:ICustomerRegistration_UserMasterInsert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/UserMasterInsertResponse" message="tns:ICustomerRegistration_UserMasterInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMaster">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetUserMaster" message="tns:ICustomerRegistration_GetUserMaster_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetUserMasterResponse" message="tns:ICustomerRegistration_GetUserMaster_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConstitution">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/GetConstitution" message="tns:ICustomerRegistration_GetConstitution_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/GetConstitutionResponse" message="tns:ICustomerRegistration_GetConstitution_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompanyIncome">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/InsertCompanyIncome" message="tns:ICustomerRegistration_InsertCompanyIncome_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/InsertCompanyIncomeResponse" message="tns:ICustomerRegistration_InsertCompanyIncome_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompanyLiabilities">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/InsertCompanyLiabilities" message="tns:ICustomerRegistration_InsertCompanyLiabilities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/InsertCompanyLiabilitiesResponse" message="tns:ICustomerRegistration_InsertCompanyLiabilities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyIncomeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/CompanyIncomeDetails" message="tns:ICustomerRegistration_CompanyIncomeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/CompanyIncomeDetailsResponse" message="tns:ICustomerRegistration_CompanyIncomeDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompanyEquitiesAndLiabilitiesDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/CompanyEquitiesAndLiabilitiesDetails" message="tns:ICustomerRegistration_CompanyEquitiesAndLiabilitiesDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/CompanyEquitiesAndLiabilitiesDetailsResponse" message="tns:ICustomerRegistration_CompanyEquitiesAndLiabilitiesDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoanDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerRegistration/LoanDetails" message="tns:ICustomerRegistration_LoanDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerRegistration/LoanDetailsResponse" message="tns:ICustomerRegistration_LoanDetails_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ICustomerRegistration" type="tns:ICustomerRegistration">
+    <wsp:PolicyReference URI="#WSHttpBinding_ICustomerRegistration_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CompanyInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/CompanyInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/CustomerInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MachineDetailsInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/MachineDetailsInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BankDetailsInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/BankDetailsInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FacilitiesTypesInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/FacilitiesTypesInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProposeTypesInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/ProposeTypesInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/AssociateInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollateralsSummaryInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/CollateralsSummaryInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerformanceEstimatesInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/PerformanceEstimatesInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DocumentDetailsInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/DocumentDetailsInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScoreInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/ScoreInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetDocumentDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetCityDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetStateDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompany">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetAllCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCompanyInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetAllCompanyInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCompanyDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/SearchCompanyDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRegistration">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/UserRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUser">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetAllUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatutoryInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/StatutoryInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSMEMapping">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetSMEMapping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SmeMenuMasterInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/SmeMenuMasterInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocumentsList">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetDocumentsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenuList">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetMenuList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Checkfileexist">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/Checkfileexist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPromotorsDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetPromotorsDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFacilitiesTypes">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetFacilitiesTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProposeTypes">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetProposeTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetMachineDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssociate">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetAssociate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollateralsSummary">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetCollateralsSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceEstimates">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetPerformanceEstimates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScore">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetScore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatutoryDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetStatutoryDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserMasterInsert">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/UserMasterInsert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMaster">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetUserMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConstitution">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/GetConstitution" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompanyIncome">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/InsertCompanyIncome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCompanyLiabilities">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/InsertCompanyLiabilities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyIncomeDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/CompanyIncomeDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompanyEquitiesAndLiabilitiesDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/CompanyEquitiesAndLiabilitiesDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoanDetails">
+      <soap12:operation soapAction="http://tempuri.org/ICustomerRegistration/LoanDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerRegistration">
+    <wsdl:port name="WSHttpBinding_ICustomerRegistration" binding="tns:WSHttpBinding_ICustomerRegistration">
+      <soap12:address location="http://49.50.95.141:8056/Customer/CustomerRegistration.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://49.50.95.141:8056/Customer/CustomerRegistration.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewBag.Title = "LoanType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Company Loan Details</h2>
+<style>
+    .txtSize {
+        width: 140px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+</style>
+
+
+<div>
+    <table style="width:80%">
+        <tr>
+            <td colspan="6">
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:90px"><b>Company :</b></td>
+            <td colspan="2">
+                <select name="Year" id="ddlcompany" style="width:300px;height:25px">
+                    <option value="0">-----Select-----</option>
+                </select>
+            </td>
+            <td style="width:90px"><b>Loan Type :</b></td>
+            <td colspan="2" style="width:300px">
+                <select name="LoanType" id="ddlLoanType" style="width:300px;height:25px">
+                    <option value="0">-----Select-----</option>
+                    <option value="1">Term Loan-1</option>
+                    <option value="2">Term Loan-2</option>
+                    <option value="3">Term Loan-3</option>
+                    <option value="4">Business Loan-1</option>
+                    <option value="5">Business Loan-2</option>
+                    <option value="6">Business Loan-3</option>
+                    <option value="7">Business Loan-4</option>
+                    <option value="8">Business Loan-5</option>
+                    <option value="9"> Unsecured Loan-1</option>
+                    <option value="10"> Unsecured Loan-2</option>
+                    <option value="11"> Unsecured Loan-3</option>
+                    <option value="12"> Unsecured Loan-4</option>
+                    <option value="13"> Unsecured Loan-5</option>
+                    <option value="14"> Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <hr />
+            </td>
+        </tr>
+        <tr>
+            <td><b>Year</b> </td>
+            <td><input id="txtYear_5" type="text" class="txtSize numbersOnly" /></td>
+            <td><input id="txtYear_1" type="text" class="txtSize numbersOnly" /></td>
+            <td><input id="txtYear_2" type="text" class="txtSize numbersOnly"></td>
+            <td><input id="txtYear_3" type="text" class="txtSize numbersOnly" /></td>
+            <td><input id="txtYear_4" type="text" class="txtSize numbersOnly" /></td>
+        </tr>
+        <tr>
+            <td><b>Opening :</b></td>
+            <td><input id="txtOpening_1" type="text" class="txtSize numbersOnly" placeholder="Opening" value="0" /></td>
+            <td><input id="txtOpening_2" type="text" class="txtSize numbersOnly" placeholder="Opening" value="0" /></td>
+            <td><input id="txtOpening_3" type="text" class="txtSize numbersOnly" placeholder="Opening" value="0" /></td>
+            <td><input id="txtOpening_4" type="text" class="txtSize numbersOnly" placeholder="Opening" value="0" /></td>
+            <td><input id="txtOpening_5" type="text" class="txtSize numbersOnly" placeholder="Opening" value="0" /></td>
+        </tr>
+        <tr>
+            <td><b>Interest :</b></td>
+            <td><input id="txtInterest_1" type="text" class="txtSize numbersOnly" placeholder="Interest" value="0" /></td>
+            <td><input id="txtInterest_2" type="text" class="txtSize numbersOnly" placeholder="Interest" value="0" /></td>
+            <td><input id="txtInterest_3" type="text" class="txtSize numbersOnly" placeholder="Interest" value="0" /></td>
+            <td><input id="txtInterest_4" type="text" class="txtSize numbersOnly" placeholder="Interest" value="0" /></td>
+            <td><input id="txtInterest_5" type="text" class="txtSize numbersOnly" placeholder="Interest" value="0" /></td>
+        </tr>
+        <tr>
+            <td><b>Principal :</b></td>
+            <td><input id="txtPrincipal_1" type="text" class="txtSize numbersOnly" placeholder="Principal" value="0" /></td>
+            <td><input id="txtPrincipal_2" type="text" class="txtSize numbersOnly" placeholder="Principal" value="0" /></td>
+            <td><input id="txtPrincipal_3" type="text" class="txtSize numbersOnly" placeholder="Principal" value="0" /></td>
+            <td><input id="txtPrincipal_4" type="text" class="txtSize numbersOnly" placeholder="Principal" value="0" /></td>
+            <td><input id="txtPrincipal_5" type="text" class="txtSize numbersOnly" placeholder="Principal" value="0" /></td>
+        </tr>
+        <tr>
+            <td><b>Closing :</b></td>
+            <td><input id="txtClosing_1" type="text" class="txtSize numbersOnly" placeholder="Closing" value="0" /></td>
+            <td><input id="txtClosing_2" type="text" class="txtSize numbersOnly" placeholder="Closing" value="0" /></td>
+            <td><input id="txtClosing_3" type="text" class="txtSize numbersOnly" placeholder="Closing" value="0" /></td>
+            <td><input id="txtClosing_4" type="text" class="txtSize numbersOnly" placeholder="Closing" value="0" /></td>
+            <td><input id="txtClosing_5" type="text" class="txtSize numbersOnly" placeholder="Closing" value="0" /></td>
+        </tr>
+        <tr>
+            <td><b>Total :</b></td>
+            <td><input id="txtTotal_1" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td><input id="txtTotal_2" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td><input id="txtTotal_3" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td><input id="txtTotal_4" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td><input id="txtTotal_5" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <hr />
+            </td>
+        </tr>
+        <tr class="Other">
+            <td><b>Other</b> </td>
+            <td><b>Working Capital Loan</b></td>
+            <td><b>LC Charges</b></td>
+            <td><b>BC Charges</b></td>
+            <td><b>Other Charges</b></td>
+            <td>@*<b>Total</b>*@</td>
+        </tr>
+        <tr class="Other">
+            <td><b></b></td>
+            <td><input id="txtWC_Loan" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td><input id="txtLC" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td><input id="txtBC" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td><input id="txtOther" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" /></td>
+            <td>@*<input id="txtTotal" type="text" class="txtSize numbersOnly" placeholder="Total" value="0" />*@</td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan="6" align="center">
+                <button type="button" class="btn btn-primary" id="btnLoanSave">Save</button>
+                <button type="button" class="btn btn-primary" id="btnincomeReset">Reset</button>
+                <button type="button" class="btn btn-primary" id="btnincomeCancel">Cancel</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <div style="width: 100%; margin-left:auto; margin-right:auto;">
+                    <table id="tdPEGrid_head" style="border: thin solid #C0C0C0;border-radius: 0px; border-collapse: separate; width: 99%; padding:6px;" class="btn-primary">
+                        <tr style="font-weight: bold;">
+                            <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+                            <th align="left" style="padding-left: 4px; width: 5%">Sr No</th>
+                            <th align="left" style="padding-left: 4px; width: 18%">Company</th>
+                            <th align="left" style="padding-left: 4px; width: 12%">Loan</th>
+                            <th align="left" style="padding-left: 4px; width: 6%">Year</th>
+                            <th align="left" style="padding-left: 4px; width: 7%">Opening</th>
+                            <th align="left" style="padding-left: 4px; width: 7%">Interest</th>
+                            <th align="left" style="padding-left: 4px; width: 7%">Principal</th>
+                            <th align="left" style="padding-left: 4px; width: 7%">Closing</th>
+                            <th align="left" style="padding-left: 4px; width: 12%">Download</th>
+                            <th align="left" style="padding-left: 4px; width: 8%">Action</th>
+                        </tr>
+                    </table>
+                </div>
+                <div style="width: 100%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+                    <table id="tdPEGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 99%; padding:6px;" class="table"></table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        Visiblity(0);
+        CurrentYear();
+        getcompdetails();
+
+        $('#txtOpening_1, #txtInterest_1,#txtPrincipal_1,#txtClosing_1').keyup(function () {
+
+            var First = parseFloat($('#txtOpening_1').val());
+            var Second = parseFloat($('#txtInterest_1').val());
+            var third = parseFloat($('#txtPrincipal_1').val());
+            var four = parseFloat($('#txtClosing_1').val());
+            $('#txtTotal_1').val((parseFloat($('#txtOpening_1').val()) - parseFloat($('#txtPrincipal_1').val())));
+            $('#txtTotal_1').val((parseFloat($('#txtOpening_1').val()) - parseFloat($('#txtPrincipal_1').val())) + parseFloat($('#txtClosing_1').val()));
+        });
+        $('#txtOpening_2, #txtInterest_2,txtPrincipal_2,txtClosing_2').keyup(function () {
+            var First = parseInt($('#txtOpening_2').val());
+            var Second = parseInt($('#txtInterest_2').val())
+            var third = parseInt($('#txtPrincipal_2').val())
+            var four = parseInt($('#txtClosing_2').val());
+            var five = parseInt($('#txtClosing_2').val());
+            $('#txtTotal_2').val(parseFloat(First) + parseFloat(Second) + parseFloat(third) + parseFloat(four) + parseFloat(five));
+        });
+        $('#txtOpening_3, #txtInterest_3,txtPrincipal_3,txtClosing3').keyup(function () {
+            var First = parseInt($('#txtOpening_3').val());
+            var Second = parseInt($('#txtInterest_3').val());
+            var third = parseInt($('#txtPrincipal_3').val());
+            var four = parseInt($('#txtClosing_3').val());
+            var five = parseInt($('#txtClosing_3').val());
+            $('#txtTotal_3').val(parseFloat(First) + parseFloat(Second) + parseFloat(third) + parseFloat(four) + parseFloat(five));
+        });
+        $('#txtOpening_4, #txtInterest_4,txtPrincipal_4,txtClosing_4').keyup(function () {
+            var First = parseInt($('#txtOpening_4').val());
+            var Second = parseInt($('#txtInterest_4').val());
+            var third = parseInt($('#txtPrincipal_4').val());
+            var four = parseInt($('#txtClosing_4').val());
+            var five = parseInt($('#txtClosing_4').val());
+            $('#txtTotal_4').val(parseFloat(First) + parseFloat(Second) + parseFloat(third) + parseFloat(four) + parseFloat(five));
+        });
+        $('#txtOpening_5, #txtInterest_5,txtPrincipal_5,txtClosing_5').keyup(function () {
+            var First = parseInt($('#txtOpening_5').val());
+            var Second = parseInt($('#txtInterest_5').val());
+            var third = parseInt($('#txtPrincipal_5').val());
+            var four = parseInt($('#txtClosing_5').val());
+            var five = parseInt($('#txtClosing_5').val());
+            $('#txtTotal_5').val(parseFloat(First) + parseFloat(Second) + parseFloat(third) + parseFloat(four) + parseFloat(five));
+        });
+        $('#btnLoanSave').click(function () {
+            SaveIncome();
+        })
+    });
+
+    $("#ddlLoanType").change(function () {
+        Visiblity(this.value);
+    });
+
+    function Visiblity(value) {
+        if (value == '14') {
+            $("input[type=text]").attr('disabled', true);
+            $("#txtWC_Loan").removeAttr('disabled');
+            $("#txtLC").removeAttr('disabled');
+            $("#txtBC").removeAttr('disabled');
+            $("#txtOther").removeAttr('disabled');
+        }
+        else {
+            $("input").removeAttr('disabled');
+            $("#txtWC_Loan").attr('disabled', true);
+            $("#txtLC").attr('disabled', true);
+            $("#txtBC").attr('disabled', true);
+            $("#txtOther").attr('disabled', true);
+        }
+    }
+    function SaveIncome() {
+        var Loan = new Array();
+        if ($('#ddlLoanType').val() == '14') {
+            var param_user = {
+                Company: $('#ddlcompany').val(),
+                Year: $('#txtYear_' + i).val(),
+                Loan_Type: $('#ddlLoanType').val(),
+                Opening: 0,//$('#txtOpening_' + i).val(),
+                Interest: 0,// $('#txtInterest_' + i).val(),
+                Principal: 0,//$('#txtPrincipal_' + i).val(),
+                Closing: 0,//$('#txtClosing_' + i).val(),
+                WC_Loan: $('#txtWC_Loan').val(),
+                LC_Charges: $('#txtLC').val(),
+                BC_Charges: $('#txtBC').val(),
+                Other_Charges: $('#txtOther').val(),
+                Total: $('#txtTotal_' + i).val()
+            }
+            Loan.push(param_user);
+        }
+        else {
+            for (var i = 1; i <= 5; i++) {
+                var param_user = {
+                    Company: $('#ddlcompany').val(),
+                    Year: $('#txtYear_' + i).val(),
+                    Loan_Type: $('#ddlLoanType').val(),
+                    Opening: $('#txtOpening_' + i).val(),
+                    Interest: $('#txtInterest_' + i).val(),
+                    Principal: $('#txtPrincipal_' + i).val(),
+                    Closing: $('#txtClosing_' + i).val(),
+                    WC_Loan: $('#txtWC_Loan').val(),
+                    LC_Charges: $('#txtLC').val(),
+                    BC_Charges: $('#txtBC').val(),
+                    Other_Charges: $('#txtOther').val(),
+                    Total: $('#txtTotal_' + i).val()
+                }
+                Loan.push(param_user);
+            }
+        }
+        $.ajax({
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            url: "/Income/InsertLoanType",
+            data: JSON.stringify(Loan),
+            dataType: "json",
+            success: function (data) {
+
+            },
+
+            error: function (result) {
+                alert(result);
+            }
+        });
+    }
+
+    function getcompdetails() {
+        var obj = {};
+        obj.type = "CDS";
+        obj.compid = 0;
+
+        $.ajax({
+            type: "POST",/*method type*/
+            contentType: "application/json; charset=utf-8",
+            url: "/Home/GetCompanyDetailList",
+            data: JSON.stringify(obj),
+            dataType: "json",
+            success: function (data) {
+                var objdata = JSON.parse(data);
+                $('#ddlcompany').empty();
+                var str = "";
+                var strzero = '<option value="0">-----Select------</option>';
+                for (var i = 0; i < objdata.length; i++) {
+                    str = str + '<option value=' + objdata[i].Id + '>' + objdata[i].Name + '</option>';
+                }
+                str = strzero + str;
+                $('#ddlcompany').append(str);
+            },
+
+            error: function (result) {
+                alert(result);
+            }
+        });
+    }
+
+    $('.numbersOnly').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.,]/, '');
+    });
+
+    function CurrentYear() {
+        var dteNow = new Date();
+        var intYear = dteNow.getFullYear();
+        $("#txtYear_1").val(intYear);
+        $("#txtYear_2").val(intYear - 1);
+        $("#txtYear_3").val(intYear - 2);
+        $("#txtYear_4").val(intYear - 3);
+        $("#txtYear_5").val(intYear);
+    }
+</script>
+

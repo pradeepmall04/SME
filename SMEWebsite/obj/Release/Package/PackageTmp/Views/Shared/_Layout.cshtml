@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @*<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+    <script src="/Resources/Scripts/allscripts.js"></script>*@
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <style type="text/css">
+        .menucaret {
+            float: right;
+            margin-top: 7px;
+        }
+
+        .submenu {
+            padding-left: 25px;
+            display: none;
+        }
+
+            .submenu li a {
+                padding-top: 3px;
+                padding-bottom: 3px;
+                border-bottom: 1px solid rgb(3, 80, 163);
+            }
+
+        .popover-content table td {
+            padding-left: 7px;
+            padding-right: 7px;
+            white-space: nowrap;
+        }
+
+        .popover-content table tr:hover {
+            background-color: rgba(0, 148, 255,0.3);
+        }
+
+        .containerdiv {
+            margin-left: 0px;
+            height: 100%;
+        }
+
+            .containerdiv table {
+                width: 98%;
+                height: 100%;
+            }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+
+
+    <div class="containerdiv">
+        <table>
+            <tr>
+                <td style="padding-left: 15px;">
+                    <h2 class="text-primary" style="margin-top:7px;">
+                        <span class="glyphicon glyphicon-signal" style="font-size:21px;"></span> RB's SME
+                    </h2>
+                </td>
+                <td>
+                    <div style="width:100%;height:45px;border-bottom:0px solid rgb(0, 148, 255);">
+                        <div class="btn-group" style="float:right;margin-top:3px;">
+                            <button class="btn btn-primary" style="width:120px;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <span id="spnusername"></span>
+                            </button>
+                            <button id="btnlogout" class="btn btn-primary" style="width:80px;">
+                                <span class="glyphicon glyphicon-log-out"></span>
+                            </button>
+                        </div>
+                        @*<span style="float:right;margin-top:10px;padding-right:10px;" class="text-primary">
+                                <span class="glyphicon glyphicon-bell"></span>
+                                <label class="badge text-primary">3</label>
+                            </span>*@
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="vertical-align: 0px; width:19%; border-right:1px solid #F0F0F0;">
+
+                    <div id="divsubmenu">
+
+                    </div>
+                </td>
+                <td>
+                    <div style="margin-left:20px;width:100%;min-width:1060px;height:100%;vertical-align:top;">
+                        @RenderBody()
+                    </div>
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+
+
+
+
+
+    <div id="divfooter">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+</body>
+<script type="text/javascript">
+    $(function () {
+        $("#spnusername").text("Administrator");
+
+        $("body").click(function () {
+            $(".taboption").popover("hide");
+        });
+
+
+        $("#btnlogout").click(function () {
+            if (confirm("Would you like to logout?")) {
+                document.location.href = "../login/login";
+            }
+        });
+
+
+
+        var obj = {};
+        obj.userid = 0;
+        $.ajax({
+            type: "POST",/*method type*/
+            contentType: "application/json; charset=utf-8",
+            url: "/Home/GetMenulist",
+            data: JSON.stringify(obj),
+            dataType: "json",
+            success: function (data) {
+
+                $('#divsubmenu').html(data);
+
+            },
+
+            error: function (result) {
+                alert(result);
+            }
+        });
+
+
+    });
+
+
+    function checktest(test) {
+        event.stopPropagation();
+        $(test).find(".submenu").slideToggle();
+    }
+
+
+    var div = document.getElementById("divfooter");
+    var height = screen.height;
+
+
+
+</script>
+</html>

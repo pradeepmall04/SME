@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cacfeaf9-5a37-4543-ae1e-ade045ac04e8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://49.50.95.141:8056/Customer/CustomerRegistration.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CustomerRegistration.xsd" MetadataType="Schema" ID="9e1eb913-57a6-4378-97e2-7937cce483dc" SourceId="1" SourceUrl="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd1" />
+    <MetadataFile FileName="CustomerRegistration1.xsd" MetadataType="Schema" ID="d2270615-dc66-41eb-b2d9-45a0a6766bf2" SourceId="1" SourceUrl="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd0" />
+    <MetadataFile FileName="CustomerRegistration2.xsd" MetadataType="Schema" ID="2c7676a0-ba8a-4e06-935c-e8f5cbde204c" SourceId="1" SourceUrl="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd3" />
+    <MetadataFile FileName="CustomerRegistration3.xsd" MetadataType="Schema" ID="e882396f-c611-46c9-b0c2-1abf7484b3b8" SourceId="1" SourceUrl="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd4" />
+    <MetadataFile FileName="CustomerRegistration4.xsd" MetadataType="Schema" ID="a83bfec1-679b-498b-be12-7d61e612e8ce" SourceId="1" SourceUrl="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?xsd=xsd2" />
+    <MetadataFile FileName="CustomerRegistration.disco" MetadataType="Disco" ID="10ddd2c8-bc2f-4c3a-b0c3-380754e5904f" SourceId="1" SourceUrl="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?disco" />
+    <MetadataFile FileName="CustomerRegistration.wsdl" MetadataType="Wsdl" ID="c4328cd0-9e28-4efa-aa1e-1ad21f7a82ce" SourceId="1" SourceUrl="http://49.50.95.141:8056/Customer/CustomerRegistration.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

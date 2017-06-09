@@ -1,0 +1,1036 @@
+﻿@{
+    ViewBag.Title = "Income";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/table2csv.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<h2>Income</h2>
+<style>
+    .txt {
+        width: 90px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+
+    .disabledtext {
+        pointer-events: none;
+    }
+    /*#testexcel td{
+        border:1px solid black;
+    }*/
+
+</style>
+<form action="#" method="post">
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <table class="tblincome" style="width:800px">
+                        <tr style="height:69px;">
+                            <td style="width:110px"></td>
+                            <td>
+                                <table style="width:700px;">
+                                    <tr style="height:39px;">
+                                        <td>
+                                            <label for="ddlCompPrefer" class="lbl">Company :</label>
+                                            <input id="compidsession" type="hidden" />
+                                        </td>
+                                        <td colspan="2">
+                                            <select name="Company" id="ddlcompany">
+                                                <option value="0">-----Select-----</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <label for="ddlCompPrefer" class="lbl">Total Year:</label>
+                                        </td>
+                                        <td colspan="3">
+                                            <select name="Year" id="ddlyear">
+                                                <option value="0">-----Select-----</option>
+                                                <option value="1">1 Year</option>
+                                                <option value="3">3 Years</option>
+                                                <option value="5">5 Years</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year:</td>
+                                        <td style="width:100px;"><input id="txtyear_1" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_2" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_3" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_4" type="text" class="txt numbersOnly1" value="0" /></td>
+                                        <td style="width:100px;"><input id="txtyear_5" type="text" class="txt numbersOnly1" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Income </b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sale:</td>
+                                        <td><input id="txtsale_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsale_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsale_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsale_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtsale_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other Income:</td>
+                                        <td><input id="txtincome_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtincome_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtincome_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtincome_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtincome_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>Total Income :</b>
+                                        </td>
+                                        <td><input id="txttotalincome_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalincome_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalincome_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalincome_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttotalincome_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Expenditure</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Raw material Consumed:</td>
+                                        <td><input id="txtconsumed_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumed_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumed_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumed_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumed_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stores & Consumables:</td>
+                                        <td><input id="txtconsumables_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumables_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumables_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumables_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtconsumables_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Direct Manpower:</td>
+                                        <td><input id="txtmanpower_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmanpower_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmanpower_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmanpower_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtmanpower_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Power & Fuel:</td>
+                                        <td><input id="txtflue_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtflue_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtflue_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtflue_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtflue_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other Direct manufacturing:</td>
+                                        <td><input id="txtotherdirect_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherdirect_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherdirect_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherdirect_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtotherdirect_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Changes in inventories:</td>
+                                        <td><input id="txtinventories_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtinventories_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtinventories_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtinventories_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtinventories_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Administrative:</td>
+                                        <td><input id="txtadministrative_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtadministrative_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtadministrative_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtadministrative_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtadministrative_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Selling & Distribution:</td>
+                                        <td><input id="txtselling_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtselling_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtselling_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtselling_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtselling_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b> Total Operating Expenditure:</b></td>
+                                        <td><input id="txtExpenditure_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtExpenditure_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtExpenditure_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtExpenditure_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtExpenditure_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>EBIDTA:</b></td>
+                                        <td><input id="txtEBIDTA_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtEBIDTA_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtEBIDTA_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtEBIDTA_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtEBIDTA_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>PBT</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Depriciation:</td>
+                                        <td><input id="txtdepriciation_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtdepriciation_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtdepriciation_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtdepriciation_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtdepriciation_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Finance Cost:</td>
+                                        <td><input id="txtfinancecost_1" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinancecost_2" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinancecost_3" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinancecost_4" type="text" class="txt numbersOnly" value="0" /></td>
+                                        <td><input id="txtfinancecost_5" type="text" class="txt numbersOnly" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>PBT:</b></td>
+                                        <td><input id="txtPBT_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPBT_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPBT_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPBT_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPBT_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tax:</td>
+                                        <td><input id="txttax_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttax_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttax_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttax_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txttax_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>PAT:</b></td>
+                                        <td><input id="txtPAT_1" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPAT_2" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPAT_3" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPAT_4" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                        <td><input id="txtPAT_5" type="text" class="txt numbersOnly disabledtext" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6">
+                                            <hr />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><br /></td>
+                                        <td colspan="6" align="left">
+                                            <button type="button" class="btn btn-primary" id="btnincomeNext">Save</button>
+                                            <button type="button" class="btn btn-primary" id="btnincomeReset">Reset</button>
+                                            <button type="button" class="btn btn-primary" id="btnincomeCancel">Cancel</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td colspan="7" align="left">
+                                            <div style="width: 100%; margin-left:auto; margin-right:auto;">
+                                                <table id="tdCUGrid_head" style="border: thin solid #C0C0C0; border-radius: 0px; font-weight:bold; border-collapse: separate; width: 99%; padding:6px;" class="btn-primary">
+                                                    <tr>
+                                                        <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+                                                        <th align="left" style="padding-left: 0px;">Sr No</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 7%;">Company Name</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 15%;">Years</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; text-align:left; width: 12%;">Total Income</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 20%;">Total Expenditure</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 8%;">EBIDTA</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 8%;">PBT</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 8%;">TAX</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 8%;">PAT</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 7%;">Download</th>
+                                                        <th align="left" style="padding-left: 0px; padding-top:4px; padding-bottom:4px; text-align:left; width: 8%;">Delete</th>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div style="width: 100%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+                                                <table id="tdCUGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 99%; padding:6px;" class="table"></table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        
+    </div>
+    <div id="exceldiv">
+
+    </div>
+</form>
+<script type="text/javascript">
+
+    function hideTextBox() {
+        var cnt = $('#ddlyear').val();
+
+        
+
+        for (var i = 1; i <= 5; i++) {
+            
+            if (i <= cnt)
+            {
+                $('#txtyear_' + i).css("display", "");
+                $('#txtsale_' + i).css("display", "");
+                $('#txtincome_' + i).css("display", "");
+                $('#txttotalincome_' + i).css("display", "");
+                $('#txtconsumed_' + i).css("display", "");
+                $('#txtconsumables_' + i).css("display", "");
+                $('#txtmanpower_' + i).css("display", "");
+                $('#txtflue_' + i).css("display", "");
+                $('#txtotherdirect_' + i).css("display", "");
+                $('#txtinventories_' + i).css("display", "");
+                $('#txtadministrative_' + i).css("display", "");
+                $('#txtselling_' + i).css("display", "");
+                $('#txtExpenditure_' + i).css("display", "");
+                $('#txtEBIDTA_' + i).css("display", "");
+                $('#txtdepriciation_' + i).css("display", "");
+                $('#txtfinancecost_' + i).css("display", "");
+                $('#txtPBT_' + i).css("display", "");
+                $('#txttax_' + i).css("display", "");
+                $('#txtPAT_' + i).css("display", "");
+               
+            }
+            else{
+                $('#txtyear_' + i).css("display", "none");
+                $('#txtsale_' + i).css("display", "none");
+                $('#txtincome_' + i).css("display", "none");
+                $('#txttotalincome_' + i).css("display", "none");
+                $('#txtconsumed_' + i).css("display", "none");
+                $('#txtconsumables_' + i).css("display", "none");
+                $('#txtmanpower_' + i).css("display", "none");
+                $('#txtflue_' + i).css("display", "none");
+                $('#txtotherdirect_' + i).css("display", "none");
+                $('#txtinventories_' + i).css("display", "none");
+                $('#txtadministrative_' + i).css("display", "none");
+                $('#txtselling_' + i).css("display", "none");
+                $('#txtExpenditure_' + i).css("display", "none");
+                $('#txtEBIDTA_' + i).css("display", "none");
+                $('#txtdepriciation_' + i).css("display", "none");
+                $('#txtfinancecost_' + i).css("display", "none");
+                $('#txtPBT_' + i).css("display", "none");
+                $('#txttax_' + i).css("display", "none");
+                $('#txtPAT_' + i).css("display", "none");
+            }
+           }
+         }
+
+
+
+    jQuery('.numbersOnly').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.,]/, '');
+    });
+
+    jQuery('.numbersOnly1').keyup(function () {
+        this.value = this.value.replace(/[^0-9\,]/, '');
+    });
+
+    $(document).ready(function () {
+        $('#ddlyear').change(function () {
+            hideTextBox();
+        });
+    //totalincome
+        //1
+       $('#txtsale_1').keyup(function () {
+            incomeOne();
+        })
+        $('#txtincome_1').keyup(function () {
+            incomeOne();
+        })
+        //2
+        $('#txtsale_2').keyup(function () {
+            incomeTwo();
+        })
+        $('#txtincome_2').keyup(function () {
+            incomeTwo();
+        })
+        //3
+        $('#txtsale_3').keyup(function () {
+            incomeThree();
+        })
+        $('#txtincome_3').keyup(function () {
+            incomeThree();
+        })
+        //4
+        $('#txtsale_4').keyup(function () {
+            incomeFour();
+        })
+        $('#txtincome_4').keyup(function () {
+            incomeFour();
+        })
+        //5
+        $('#txtsale_5').keyup(function () {
+            incomeFive();
+        })
+        $('#txtincome_5').keyup(function () {
+            incomeFive();
+        })
+
+        $('#btnincomeNext').click(function () {
+            InsertIncome();
+        })
+   //expenditure
+        //1
+            $('#txtconsumed_1').keyup(function () {
+                expenditureOne();
+            })
+            $('#txtconsumables_1').keyup(function () {
+                expenditureOne();
+            })
+            $('#txtmanpower_1').keyup(function () {
+                expenditureOne();
+            })
+            $('#txtflue_1').keyup(function () {
+                expenditureOne();
+            })
+            $('#txtotherdirect_1').keyup(function () {
+                expenditureOne();
+            })
+            $('#txtinventories_1').keyup(function () {
+                expenditureOne();
+            })
+            $('#txtadministrative_1').keyup(function () {
+                expenditureOne();
+            })
+            $('#txtselling_1').keyup(function () {
+                expenditureOne();
+            })
+        //2
+            $('#txtconsumed_2').keyup(function () {
+                expenditureTwo();
+            })
+            $('#txtconsumables_2').keyup(function () {
+                expenditureTwo();
+            })
+            $('#txtmanpower_2').keyup(function () {
+                expenditureTwo();
+            })
+            $('#txtflue_2').keyup(function () {
+                expenditureTwo();
+            })
+            $('#txtotherdirect_2').keyup(function () {
+                expenditureTwo();
+            })
+            $('#txtinventories_2').keyup(function () {
+                expenditureTwo();
+            })
+            $('#txtadministrative_2').keyup(function () {
+                expenditureTwo();
+            })
+            $('#txtselling_2').keyup(function () {
+                expenditureTwo();
+            })
+        //3
+            $('#txtconsumed_3').keyup(function () {
+                expenditureThree();
+            })
+            $('#txtconsumables_3').keyup(function () {
+                expenditureThree();
+            })
+            $('#txtmanpower_3').keyup(function () {
+                expenditureThree();
+            })
+            $('#txtflue_3').keyup(function () {
+                expenditureThree();
+            })
+            $('#txtotherdirect_3').keyup(function () {
+                expenditureThree();
+            })
+            $('#txtinventories_3').keyup(function () {
+                expenditureThree();
+            })
+            $('#txtadministrative_3').keyup(function () {
+                expenditureThree();
+            })
+            $('#txtselling_3').keyup(function () {
+                expenditureThree();
+            })
+        //4
+            $('#txtconsumed_4').keyup(function () {
+                expenditureFour();
+            })
+            $('#txtconsumables_4').keyup(function () {
+                expenditureFour();
+            })
+            $('#txtmanpower_4').keyup(function () {
+                expenditureFour();
+            })
+            $('#txtflue_4').keyup(function () {
+                expenditureFour();
+            })
+            $('#txtotherdirect_4').keyup(function () {
+                expenditureFour();
+            })
+            $('#txtinventories_4').keyup(function () {
+                expenditureFour();
+            })
+            $('#txtadministrative_4').keyup(function () {
+                expenditureFour();
+            })
+            $('#txtselling_4').keyup(function () {
+                expenditureFour();
+            })
+        //5
+            $('#txtconsumed_5').keyup(function () {
+                expenditureFive();
+            })
+            $('#txtconsumables_5').keyup(function () {
+                expenditureFive();
+            })
+            $('#txtmanpower_5').keyup(function () {
+                expenditureFive();
+            })
+            $('#txtflue_5').keyup(function () {
+                expenditureFive();
+            })
+            $('#txtotherdirect_5').keyup(function () {
+                expenditureFive();
+            })
+            $('#txtinventories_5').keyup(function () {
+                expenditureFive();
+            })
+            $('#txtadministrative_5').keyup(function () {
+                expenditureFive();
+            })
+            $('#txtselling_5').keyup(function () {
+                expenditureFive();
+            })
+
+
+   //PBT
+        //1
+            $('#txtdepriciation_1').keyup(function () {
+               PBTOne();
+            })
+            $('#txtfinancecost_1').keyup(function () {
+               PBTOne();
+            })
+        //2
+            $('#txtdepriciation_2').keyup(function () {
+                PBTTwo();
+            })
+            $('#txtfinancecost_2').keyup(function () {
+                PBTTwo();
+            })
+        //3
+            $('#txtdepriciation_3').keyup(function () {
+                PBTThree();
+            })
+            $('#txtfinancecost_3').keyup(function () {
+                PBTThree();
+            })
+        //4
+            $('#txtdepriciation_4').keyup(function () {
+                PBTFour();
+            })
+            $('#txtfinancecost_4').keyup(function () {
+                PBTFour();
+            })
+        //5
+            $('#txtdepriciation_5').keyup(function () {
+                PBTFive();
+            })
+            $('#txtfinancecost_5').keyup(function () {
+                PBTFive();
+            })
+            getcompdetails();
+    })
+ //all Income
+    //1
+
+    function incomeOne() {
+        var one = $('#txtsale_1').val() == "" ? 0 : $('#txtsale_1').val();
+        var two = $('#txtincome_1').val();
+        $('#txttotalincome_1').val(parseInt(one) + parseInt(two));
+        EBIDTAOne();
+    }
+    //2
+    function incomeTwo() {
+        var one = $('#txtsale_2').val();
+        var two = $('#txtincome_2').val();
+        $('#txttotalincome_2').val(parseInt(one) + parseInt(two));
+        EBIDTATwo();
+
+    }
+    //3
+    function incomeThree() {
+        var one = $('#txtsale_3').val();
+        var two = $('#txtincome_3').val();
+        $('#txttotalincome_3').val(parseInt(one) + parseInt(two));
+        EBIDTAThree();
+
+    }
+    //4
+     function incomeFour() {
+        var one = $('#txtsale_4').val();
+        var two = $('#txtincome_4').val();
+        $('#txttotalincome_4').val(parseInt(one) + parseInt(two));
+        EBIDTAFour();
+
+     }
+    //5
+     function incomeFive() {
+         var one = $('#txtsale_5').val();
+         var two = $('#txtincome_5').val();
+         $('#txttotalincome_5').val(parseInt(one) + parseInt(two));
+         EBIDTAFive();
+
+     }
+ //allexpenditure
+    //1
+ function expenditureOne() {
+            var one = $('#txtconsumed_1').val();
+            var two = $('#txtconsumables_1').val();
+            var three = $('#txtmanpower_1').val();
+            var four = $('#txtflue_1').val();
+            var five = $('#txtotherdirect_1').val();
+            var six = $('#txtinventories_1').val();
+            var seven = $('#txtadministrative_1').val();
+            var eight = $('#txtselling_1').val();
+            $('#txtExpenditure_1').val(parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight));
+            EBIDTAOne();
+ }
+
+    //2
+ function expenditureTwo() {
+     var one = $('#txtconsumed_2').val();
+     var two = $('#txtconsumables_2').val();
+     var three = $('#txtmanpower_2').val();
+     var four = $('#txtflue_2').val();
+     var five = $('#txtotherdirect_2').val();
+     var six = $('#txtinventories_2').val();
+     var seven = $('#txtadministrative_2').val();
+     var eight = $('#txtselling_2').val();
+     $('#txtExpenditure_2').val(parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight));
+     EBIDTATwo();
+
+ }
+    //3
+ function expenditureThree() {
+     var one = $('#txtconsumed_3').val();
+     var two = $('#txtconsumables_3').val();
+     var three = $('#txtmanpower_3').val();
+     var four = $('#txtflue_3').val();
+     var five = $('#txtotherdirect_3').val();
+     var six = $('#txtinventories_3').val();
+     var seven = $('#txtadministrative_3').val();
+     var eight = $('#txtselling_3').val();
+     $('#txtExpenditure_3').val(parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight));
+     EBIDTAThree();
+
+ }
+    //4
+ function expenditureFour() {
+     var one = $('#txtconsumed_4').val();
+     var two = $('#txtconsumables_4').val();
+     var three = $('#txtmanpower_4').val();
+     var four = $('#txtflue_4').val();
+     var five = $('#txtotherdirect_4').val();
+     var six = $('#txtinventories_4').val();
+     var seven = $('#txtadministrative_4').val();
+     var eight = $('#txtselling_4').val();
+     $('#txtExpenditure_4').val(parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight));
+     EBIDTAFour();
+
+ }
+    //5
+ function expenditureFive() {
+     var one = $('#txtconsumed_5').val();
+     var two = $('#txtconsumables_5').val();
+     var three = $('#txtmanpower_5').val();
+     var four = $('#txtflue_5').val();
+     var five = $('#txtotherdirect_5').val();
+     var six = $('#txtinventories_5').val();
+     var seven = $('#txtadministrative_5').val();
+     var eight = $('#txtselling_5').val();
+     $('#txtExpenditure_5').val(parseInt(one) + parseInt(two) + parseInt(three) + parseInt(four) + parseInt(five) + parseInt(six) + parseInt(seven) + parseInt(eight));
+     EBIDTAFive();
+
+ }
+
+   ///allEBIDTA
+    //1
+  function EBIDTAOne() {
+            var one = $('#txttotalincome_1').val();
+            var two = $('#txtExpenditure_1').val();
+            $('#txtEBIDTA_1').val(parseInt(one) - parseInt(two));
+            PBTOne();
+  }
+    //2
+  function EBIDTATwo() {
+      var one = $('#txttotalincome_2').val();
+      var two = $('#txtExpenditure_2').val();
+      $('#txtEBIDTA_2').val(parseInt(one) - parseInt(two));
+       PBTTwo();
+
+  }
+    //3
+  function EBIDTAThree() {
+      var one = $('#txttotalincome_3').val();
+      var two = $('#txtExpenditure_3').val();
+      $('#txtEBIDTA_3').val(parseInt(one) - parseInt(two));
+     PBTThree();
+
+  }
+    //4
+  function EBIDTAFour() {
+      var one = $('#txttotalincome_4').val();
+      var two = $('#txtExpenditure_4').val();
+      $('#txtEBIDTA_4').val(parseInt(one) - parseInt(two));
+      PBTFour();
+  }
+    //5
+  function EBIDTAFive() {
+      var one = $('#txttotalincome_5').val();
+      var two = $('#txtExpenditure_5').val();
+      $('#txtEBIDTA_5').val(parseInt(one) - parseInt(two));
+      PBTFive();
+
+  }
+ //allPBT
+    //1
+  function PBTOne() {
+            var one = $('#txtEBIDTA_1').val();
+            var two = $('#txtdepriciation_1').val();
+            var three = $('#txtfinancecost_1').val();
+            $('#txtPBT_1').val(parseInt(one) - parseInt(two)-parseInt(three));
+            TAXOne();
+            PATOne();
+  }
+    //2
+  function PBTTwo() {
+      var one = $('#txtEBIDTA_2').val();
+      var two = $('#txtdepriciation_2').val();
+      var three = $('#txtfinancecost_2').val();
+      $('#txtPBT_2').val(parseInt(one) - parseInt(two) - parseInt(three));
+      TAXTwo();
+      PATTwo();
+
+  }
+    //3
+  function PBTThree() {
+      var one = $('#txtEBIDTA_3').val();
+      var two = $('#txtdepriciation_3').val();
+      var three = $('#txtfinancecost_3').val();
+      $('#txtPBT_3').val(parseInt(one) - parseInt(two) - parseInt(three));
+      TAXThree();
+      PATThree();
+  }
+    //4
+  function PBTFour() {
+      var one = $('#txtEBIDTA_4').val();
+      var two = $('#txtdepriciation_4').val();
+      var three = $('#txtfinancecost_4').val();
+      $('#txtPBT_4').val(parseInt(one) - parseInt(two) - parseInt(three));
+      TAXFour();
+      PATFour();
+  }
+    //5
+  function PBTFive() {
+      var one = $('#txtEBIDTA_5').val();
+      var two = $('#txtdepriciation_5').val();
+      var three = $('#txtfinancecost_5').val();
+      $('#txtPBT_5').val(parseInt(one) - parseInt(two) - parseInt(three));
+      TAXFive();
+      PATFive();
+
+
+  }
+ //allTax
+    //1
+  function TAXOne() {
+           var one = $('#txtPBT_1').val();
+           $('#txttax_1').val((0.3399 * parseInt(one)).toFixed(2));
+           PATOne();
+  }
+    //2
+  function TAXTwo() {
+      var one = $('#txtPBT_2').val();
+      $('#txttax_2').val((0.3399 * parseInt(one)).toFixed(2));
+      PATTwo();
+  }
+    //3
+  function TAXThree() {
+      var one = $('#txtPBT_3').val();
+      $('#txttax_3').val((0.3399 * parseInt(one)).toFixed(2));
+      PATThree();
+  }
+    //4
+  function TAXFour() {
+      var one = $('#txtPBT_4').val();
+      $('#txttax_4').val((0.3399 * parseInt(one)).toFixed(2));
+      PATFour();
+  }
+    //5
+  function TAXFive() {
+      var one = $('#txtPBT_5').val();
+      $('#txttax_5').val((0.3399 * parseInt(one)).toFixed(2));
+      PATFive();
+  }
+    // all PAT
+    //1
+  function PATOne() {
+      var one = parseFloat($('#txtPBT_1').val()).toFixed(2);
+      var two = parseFloat($('#txttax_1').val()).toFixed(2);
+      $('#txtPAT_1').val((one - two).toFixed(2));
+  }
+    //2
+  function PATTwo() {
+      var one = parseFloat($('#txtPBT_2').val()).toFixed(2);
+      var two = parseFloat($('#txttax_2').val()).toFixed(2);
+      $('#txtPAT_2').val((one - two).toFixed(2));
+  }
+    //3
+  function PATThree() {
+      var one = parseFloat($('#txtPBT_3').val()).toFixed(2);
+      var two = parseFloat($('#txttax_3').val()).toFixed(2);
+      $('#txtPAT_3').val((one - two).toFixed(2));
+  }
+    //4
+  function PATFour() {
+      var one = parseFloat($('#txtPBT_4').val()).toFixed(2);
+      var two = parseFloat($('#txttax_4').val()).toFixed(2);
+      $('#txtPAT_4').val((one - two).toFixed(2));
+  }
+    //5
+  function PATFive() {
+      var one = parseFloat($('#txtPBT_5').val()).toFixed(2);
+      var two = parseFloat($('#txttax_5').val()).toFixed(2);
+      $('#txtPAT_5').val((one - two).toFixed(2));
+  }
+
+  function getcompdetails() {
+      var obj = {};
+      obj.type = "CDS";
+      obj.compid = 0;
+
+      $.ajax({
+          type: "POST",/*method type*/
+          contentType: "application/json; charset=utf-8",
+          url: "/Home/GetCompanyDetailList",
+          data: JSON.stringify(obj),
+          dataType: "json",
+          success: function (data) {
+              var objdata = JSON.parse(data);
+              $('#ddlcompany').empty();
+              var str = "";
+              var strzero = '<option  value="0">-----Select------</option>';
+              for (var i = 0; i < objdata.length; i++) {
+
+                  str = str + '<option  value=' + objdata[i].Id + '>' + objdata[i].Name + '</option>';
+              }
+              str = strzero + str;
+              $('#ddlcompany').append(str);
+              //$("#ddlcompany").prop('selectedIndex', 1);
+              //$("#ddlcompany").change();
+          },
+
+          error: function (result) {
+              alert(result);
+          }
+      });
+  }
+
+  function InsertIncome()
+  {
+      var cnt = $('#ddlyear').val();
+
+      var Income = new Array();
+
+      for (var i = 1; i <= cnt; i++) {
+
+          var Param_User = {
+
+              CompId: $('#ddlcompany').val(),
+              Year: $('#txtyear_' + i).val(),
+              Sales: $('#txtsale_' + i).val(),
+              OtherIncome: $('#txtincome_' + i).val(),
+              TotalIncome: $('#txttotalincome_' + i).val(),
+              Consumed: $('#txtconsumed_' + i).val(),
+              consumables: $('#txtconsumables_' + i).val(),
+              DirectManPower: $('#txtmanpower_' + i).val(),
+              PowerAndFuel: $('#txtflue_' + i).val(),
+              otherdirect: $('#txtotherdirect_' + i).val(),
+              inventories: $('#txtinventories_' + i).val(),
+              administrative: $('#txtadministrative_' + i).val(),
+              selling: $('#txtselling_' + i).val(),
+              Expenditure: $('#txtExpenditure_' + i).val(),
+              EBIDTA: $('#txtEBIDTA_' + i).val(),
+              depriciation: $('#txtdepriciation_ ' + i).val(),
+              financecost: $('#txtfinancecost_' + i).val(),
+              PBT: $('#txtPBT_' + i).val(),
+              Tax: $('#txttax_' + i).val(),
+              PAT: $('#txtPAT_' + i).val(),
+
+          }
+          Income.push(Param_User);
+      }
+
+      $.ajax({
+          type: "POST",/*method type*/
+          contentType: "application/json; charset=utf-8",
+          url: "/Income/InsertIncomeDetails",/*Target function that will be return result*/
+          data: JSON.stringify(Income),
+          dataType: "json",
+          success: function (data) {
+              data = JSON.parse(data);
+              var HTML = "";
+              $("#tdCUGrid").empty();
+              for (var i = 0; i < data.length; i++) {
+                  HTML = HTML + '<tr>';
+
+                  HTML = HTML + '<td align="left" style="padding-center: 0px;" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="7%">' + parseInt(i + 1) + '</td>';
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="15%">' + data[i].CompanyName + '</td><td align="left" style="padding-left: 4px"  width="12%">' + data[i].Years + '</td>';
+
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="20%">' + data[i].Total_Income + '</td>';
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="20%">' + data[i].Total_Expenditure + '</td>';
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="8%">' + data[i].EBIDTA + '</td>';
+
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%">' + data[i].PBT + '</td>';
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%">' + data[i].Tax + '</td>';
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%">' + data[i].PAT + '</td>';
+
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%"><span id="promotorspan" onclick="Download(' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Download</a></span></td>';
+                  HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%"><span id="promotorspan" onclick="deletecompdtls(' + data[i].Id + ',' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Delete</a></span></td>';
+                  HTML = HTML + '</tr>';
+
+              }
+              $("#tdCUGrid").html(HTML);
+              $('#tdCUGrid tr').hover(function () {
+                  $(this).addClass('highlight');
+              }, function () {
+                  $(this).removeClass('highlight');
+              });
+          },
+
+          error: function (result) {
+              alert(result);
+          }
+      });
+  }
+
+  function deletecompdtls(Id,CompId)
+  {
+      var Param_User = {
+          Id: Id,
+          CompId: CompId,
+          Action: "D"
+      };
+
+      if (confirm("Are you sure to delete this record.??")) {
+          $.ajax({
+              type: "POST",/*method type*/
+              contentType: "application/json; charset=utf-8",
+              url: "/Income/DownloadIncomeExcel",/*Target function that will be return result*/
+              data: JSON.stringify(Param_User),
+              dataType: "json",
+              success: function (data) {
+
+                  data = JSON.parse(data);
+                  var HTML = "";
+                  $("#tdCUGrid").empty();
+                  for (var i = 0; i < data.length; i++) {
+                      HTML = HTML + '<tr>';
+
+                      HTML = HTML + '<td align="left" style="padding-center: 0px;" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="7%">' + parseInt(i + 1) + '</td>';
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="15%">' + data[i].CompanyName + '</td><td align="left" style="padding-left: 4px"  width="12%">' + data[i].Years + '</td>';
+
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="20%">' + data[i].Total_Income + '</td>';
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="20%">' + data[i].Total_Expenditure + '</td>';
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="8%">' + data[i].EBIDTA + '</td>';
+
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%">' + data[i].PBT + '</td>';
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%">' + data[i].Tax + '</td>';
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%">' + data[i].PAT + '</td>';
+
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%"><span id="promotorspan" onclick="Download(' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Download</a></span></td>';
+                      HTML = HTML + '<td align="left" style="padding-left: 4px;"  width="10%"><span id="promotorspan" onclick="deletecompdtls(' + data[i].Id + ',' + data[i].Company + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Delete</a></span></td>';
+                      HTML = HTML + '</tr>';
+
+                  }
+                  $("#tdCUGrid").html(HTML);
+                  $('#tdCUGrid tr').hover(function () {
+                      $(this).addClass('highlight');
+                  }, function () {
+                      $(this).removeClass('highlight');
+                  });
+              },
+              error(tt) {
+              }
+          });
+      }
+  }
+
+  function Download(CompId)
+  {
+      var Param_User = {
+          Id: 0,
+          CompId: CompId,        
+          Action: "S"
+      };
+
+
+      $.ajax({
+          type: "POST",/*method type*/
+          contentType: "application/json; charset=utf-8",
+          url: "/Income/DownloadIncomeExcel",/*Target function that will be return result*/
+          data: JSON.stringify(Param_User),
+          dataType: "json",
+          success: function (data) {
+              
+              $('#exceldiv').html(data);
+              GenerateCSV();
+          },
+          error(tt) {
+          }
+      });
+  }
+
+  function GenerateCSV() {
+      var data_type = 'data:application/vnd.ms-excel';
+      var table_div = document.getElementById('exceldiv');
+      var table_html = table_div.outerHTML.replace(/ /g, '%20');
+      var a = document.createElement('a');
+      a.href = data_type + ', ' + table_html;
+      a.download = 'exported_table.xls';
+      a.click();
+  }
+
+
+ 
+
+</script>
+

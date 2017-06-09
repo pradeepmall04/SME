@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "UploadCompanyExcel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UploadCompanyExcel</h2>
+
+<form method="post" enctype="multipart/form-data">
+    
+<select id="ddlcompany">
+    <option value="0">---Select---</option>
+</select>
+
+    <select id="ddloption">
+        <option value="0">---Select---</option>
+        <option value="1">Income</option>
+        <option value="2">Equities And Liabilities</option>
+    </select>
+
+    <input type="file" name="file" id="file" />
+    <input type="hidden" name="hiddenfield" id="hdnfile" />
+    <input type="submit" id="submitbtn" />
+
+    
+</form>
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        getcompdetails();
+    });
+
+    $(function () {
+        $('#file').change(function () {
+            
+            var data = new FormData();
+            
+            var files = $("#file").get(0).files;
+
+            if (files.length > 0) {
+                data.append("HelpSectionImages", files[0]);
+            }
+            else {
+                common.showNotification('warning', 'Please select file to upload.', 'top', 'right');
+                return false;
+            }
+            var extension = $("#file").val().split('.').pop().toUpperCase();
+
+            $.ajax({
+                url: '/Income/SaveProfileImage',
+                type: "POST",
+                processData: false,
+                data: data,//'{"CompId":"' + $("#ddlcompany").val() + '","Type":"' + $("#ddloption").val() + '"}',
+                dataType: 'json',
+                contentType: false,
+                success: function (response) {
+                    if (response != null || response != '')
+                        $('#hdnfile').val(response);
+                        $("#file").val('');
+                },
+                error: function (er) { }
+
+            });
+            return false;
+        });
+
+        $('#submitbtn').click(function () {
+            insertExcel();
+        });
+
+        
+
+    });
+
+    function insertExcel()
+    {
+        var obj = {};
+        obj.compId = $('#ddlcompany').val();
+        obj.Type = $('#ddloption').val();
+        obj.path = $('#hdnfile').val();
+        
+            $.ajax({
+                type: "POST",/*method type*/
+                contentType: "application/json; charset=utf-8",
+                url: "/Income/IncomeExcelInsert",
+                data: JSON.stringify(obj),
+                dataType: "json",
+                success: function (data) {
+                 
+                },
+
+                error: function (result) {
+                    alert(result);
+                }
+            });            
+    }
+
+    function getcompdetails() {
+        var obj = {};
+        obj.type = "CDS";
+        obj.compid = 0;
+
+        $.ajax({
+            type: "POST",/*method type*/
+            contentType: "application/json; charset=utf-8",
+            url: "/Home/GetCompanyDetailList",
+            data: JSON.stringify(obj),
+            dataType: "json",
+            success: function (data) {
+                var objdata = JSON.parse(data);
+                $('#ddlcompany').empty();
+                var str = "";
+                var strzero = '<option  value="0">-----Select------</option>';
+                for (var i = 0; i < objdata.length; i++) {
+
+                    str = str + '<option  value=' + objdata[i].Id + '>' + objdata[i].Name + '</option>';
+                }
+                str = strzero + str;
+                $('#ddlcompany').append(str);
+                //$("#ddlcompany").prop('selectedIndex', 1);
+                //$("#ddlcompany").change();
+            },
+
+            error: function (result) {
+                alert(result);
+            }
+        });
+    }
+
+</script>

@@ -1,0 +1,736 @@
+﻿
+@{
+    ViewBag.Title = "AddCompany";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/date.js"></script>
+<script src="~/Content/assets/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Scripts/CommonFunction.js"></script>
+<link href="/Resources/Styles/allstyles.css" rel="stylesheet">
+<script src="/Resources/Scripts/allscripts.js"></script>
+<link href="~/Resources/Styles/jquery.datepick.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.datepick.js"></script>
+<script src="~/Scripts/jquery.plugin.min.js"></script>
+
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script>
+    //$("#txtCompDBE").datepicker();
+    //$(function () {
+    //    $("#txtCompDBE").datepicker();
+    //});
+</script>
+  
+
+<style>
+    .hoverClass:hover {
+        font-weight: 600;
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: Silver;
+    }
+
+    .topheight {
+        margin-top: 70px !important;
+        margin-left: 70px !important;
+    }
+
+    .selected {
+        background-color: #01bbe9 !important;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+     .bg {
+        background-color: #d9edf7 !important;
+    }
+
+    .highlight {
+        background-color: #86bed9 !important;
+    }
+    .selecthigh {
+        background-color: #8ac007 !important;
+    }
+    .intro {
+        width: 250px;
+    }
+
+    .lbl {
+        width: 140px;
+    }
+
+    .lbll {
+        width: 145px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+
+    .txt {
+        height: 32px;
+        width: 180px;
+    }
+
+    .txthw {
+        height: 32px;
+        width: 400px;
+    }
+
+    .txtm {
+        height: 32px;
+        width: 300px;
+    }
+</style>
+<div class="row">
+    <table style="width:800px" ;>
+        <tr style="height:69px;">
+            <td> <br /></td>
+        </tr>
+        <tr>
+            <td style="width:110px"><br /></td>
+            <td>
+                <table style="width:670px;">
+                    <tr>
+                        <td><span id="lblcompanyid" style="font:bold;"></span></td>
+                        <td><span id="spncompanyid" style="font:bold;"></span></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="ddlCompPrefer" class="lbl">Constitution:</label>
+                        </td>
+                        <td>
+                            <select name="preferred" style="height:32px;width:180px" id="ddlCompPrefer">
+                                <option value="0">-----Select------</option>                               
+                            </select>
+                        </td>
+                        <td>
+                            <label for="txtCompName" class="lbl">Name of Enterprise:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompName" placeholder="Company Name" id="txtCompName" class="txt" />
+                        </td>
+                    </tr>
+
+                    <tr style="height:40px;">
+                        <td>
+                            <label for="textCompRAddres" class="lbl">REGD Office Address:</label>
+                        </td>
+                        <td colspan="3">
+                            <textarea name="textCompRAddres" id="textCompRAddres" style="width:516px;height:60px;"></textarea>
+                        </td>
+                    </tr>
+                    <tr style="height:40px;">
+                        <td>
+                            <label for="ddlCompCState" class="lbl">State:</label>
+                        </td>
+                        <td>
+                            <select name="ddlCompCState" style="height:32px;width:180px" id="ddlCompCState" />
+                        </td>
+                        <td style="text-align:center">
+
+                            <label for="ddlCompCCity" class="lbl">City:</label>
+                        </td>
+                        <td>
+                            <select name="ddlCompCCity" style="height:32px;width:180px" id="ddlCompCCity">
+                                <option value="0">-----Select------</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="txtCompCPIN" class="lbl">Pin:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompCPIN" placeholder="PIN" id="txtCompCPIN" class="txt numbersOnly" maxlength="6" />
+                        </td>
+                        <td colspan="2"></td>
+                    </tr>
+
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="txtCompDBE" class="lbl">DOE:</label>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Date Of Establishment" name="txtCompDBE" id="txtCompDBE" data-date-format="dd-mm-yyyy" class="txt"/>
+                        </td>
+                        <td style="text-align:center">
+                            <label for="txtCompPan" class="lbl">PAN:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompPan" placeholder="PAN Number" id="txtCompPan" class="txt" maxlength="10" />
+                        </td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="textCompPAddress" class="lbl">Address of Factory/Shop:</label>
+                        </td>
+                        <td colspan="3">
+                            <textarea name="textCompPAddress" id="textCompPAddress" style="width:517px;height:60px;"></textarea>
+                        </td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="ddlCompFState" class="lbl">State:</label>
+                        </td>
+                        <td>
+                            <select name="ddlCompFState" style="height:32px;width:180px" id="ddlCompFState" />
+                        </td>
+                        <td style="text-align:center">
+
+                            <label for="ddlCompFCity" class="lbl">City:</label>
+                        </td>
+                        <td>
+                            <select name="ddlCompFCity" style="height:32px;width:180px" id="ddlCompFCity">
+                                <option value="0">-----Select------</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="txtCompPPIN" class="lbl">PIN:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompPPIN" placeholder="PIN" id="txtCompPPIN" class="txt numbersOnly" maxlength="6" />
+                        </td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="textCompPAddress" class="lbl">Permanent Address:</label>
+                        </td>
+                        <td colspan="3">
+                            <textarea name="textCompPAddress" id="textCompPermanentAddress" style="width:516px;height:60px;"></textarea>
+                        </td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="ddlCompPState" class="lbl">State:</label>
+                        </td>
+                        <td>
+                            <select name="ddlCompPState" style="height:32px;width:180px" id="ddlCompPState" />
+
+
+                        </td>
+                        <td style="text-align:center">
+                            <label for="ddlCompPCity" class="lbl">City:</label>
+
+                        </td>
+                        <td>
+                            <select name="ddlCompPCity" style="height:32px;width:180px" id="ddlCompPCity">
+                                <option value="0">-----Select------</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td>
+                            <label for="txtCompPPIN" class="lbl">PIN:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompPPIN" placeholder="PIN" id="txtCompPermanentPPIN" class="txt numbersOnly" maxlength="6" />
+                        </td>
+                        <td style="text-align:center">
+                            <label for="txtCompEmail" class="lbl">Email:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompEmail" placeholder="Email" id="txtCompEmail" class="txt" />
+                        </td>
+                    </tr>
+                    <tr style="height:39px;">
+                        <td><label for="txtFName" class="lbl">Landline:</label></td>
+                        <td>
+                            <input type="text" name="txtCompPhone" placeholder="Phone Number" id="txtCompPhone" class="txt numbersOnly" maxlength="12" />
+                        </td>
+                        <td style="text-align:center">
+                            <label for="txtCell" class="lbl">Mobile:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="txtCompCell" placeholder="Cell Number" id="txtCompCell" class="txt numbersOnly" maxlength="12" />
+                        </td>
+                    </tr>
+
+                    <tr style="height:39px;"></tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="3" align="center">
+                            <button type="button" class="btn btn-primary" id="btnCompanyNext">Next</button>
+                            <button type="button" class="btn btn-primary" id="btnCompanyReset">Reset</button>
+                            <button type="button" class="btn btn-primary" id="btnCompanyCancel">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr style="height:50px;">
+                        <td colspan="2">
+                            <div id="divmsg" style="text-align:center; color:green; font:bold;">
+                               
+</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div style="width: 90%; margin-left:auto; margin-right:auto;">
+        <table id="tdGrid_head" style="border: thin solid #C0C0C0;border-radius: 0px; border-collapse: separate; width: 80%; padding:6px;" class="btn-primary">
+            <tr style="font-weight: bold;">
+                <th align="left" style="padding-left: 0px;" class="hidden">id</th>
+                <th align="left" style="padding-left: 4px; width: 5%">Sr No</th>
+                <th align="left" style="padding-left: 4px; width: 10%">Code</th>
+                <th align="left" style="padding-left: 4px; width: 20%">Name</th>
+                <th align="left" style="padding-left: 4px; width: 10%">Type</th>
+                <th align="left" style="padding-left: 4px; width: 10%">Phone</th>
+                <th align="left" style="padding-left: 4px; width: 10%">Email</th>
+                <th align="left" style="padding-left: 4px; width: 5%">Action</th>
+            </tr>
+        </table>
+    </div>
+    <div style="width: 90%; overflow-x: hidden; max-height: 300px; margin-left:auto; margin-right:auto;">
+        <table id="tdGrid" style="border: thin solid #C0C0C0; border-radius: 0px; border-collapse: separate; width: 80%; padding:6px;"></table>
+    </div>
+    <div>
+        <table>
+            <tr style="height:50px">
+                <td>
+                    </br>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+        $("#txtCompDBE").datepicker({
+            dateFormat: 'dd-mm-yy',            
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1930:' + (new Date).getFullYear(),
+            defaultDate: new Date()
+        });
+
+        GetState();
+        GetAllCompany();
+        GetConstitution();
+
+        $("#btnCompanyNext").click(function () {
+            if(CompanyValidation())
+            InsertCompany();
+        });
+
+        $("#btnCompanyReset").click(function () {
+            Reset();
+        });
+
+        //Company
+        $('#ddlCompCState').change(function () {
+            BindCompCCity($('#ddlCompCState').val());
+        });
+
+        $('#ddlCompFState').change(function () {
+            BindCompFCity($('#ddlCompFState').val());
+        });
+
+        $('#ddlCompPState').change(function () {
+            BindCompPCity($('#ddlCompPState').val());
+        });
+    });
+
+    //Validation for Number only
+    jQuery('.numbersOnly').keyup(function () {
+        this.value = this.value.replace(/[^0-9\.,]/, '');
+    });
+
+    //Validation for Character only
+    jQuery('.CharacterOnly').keyup(function () {
+        this.value = this.value.replace(/[^a-z\. ,]/, '');
+    });
+
+
+    function GetConstitution() {
+        var HTML = "";
+        $.ajax({
+            contenttype: 'application/json; charset=utf-8',
+            datatype: 'json',
+            type: 'post',
+            url: '/home/GetConstitution',
+            async: false,
+            data: "",
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    var items = [];
+
+                    $.each(data, function (i, item) {
+                        items.push('<option  value="' + item.Id + '">' + item.Constitution + '</option>');
+                    });
+                    $('#ddlCompPrefer').append(items.join(''));
+                }
+            },
+            error: function (data) {
+                alert(JSON.parse(result));
+            }
+        });
+    }
+
+
+    function getdatepick()
+    {
+        $('#txtCompDBE').datepick();
+    }
+
+    //Common
+    function GetState() {
+        var HTML = "";
+        $.ajax({
+            contenttype: 'application/json; charset=utf-8',
+            datatype: 'json',
+            type: 'post',
+            url: '/home/State',
+            async: false,
+            data: "",
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    var items = [];
+                    items.push('<option value="0">-----Select------</option>');
+                    $.each(data, function (i, item) {
+                        items.push('<option  value="' + item.Id + '">' + item.StateName + '</option>');
+                    });
+                    $('#ddlCompCState').append(items.join(''));
+                    $('#ddlCompFState').append(items.join(''));
+                    $('#ddlCompPState').append(items.join(''));
+                    $('#ddlPromCState').append(items.join(''));
+                    $('#ddlPromPState').append(items.join(''));
+                    $('#ddlSummState').append(items.join(''));
+                }
+            },
+            error: function (data) {
+                alert(JSON.parse(result));
+            }
+        });
+    }
+
+    //Company
+    function BindCompCCity(Stateid) {
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: "{Id:'" + Stateid + "' }",
+            type: 'POST',
+            url: '/home/City',
+            async: false,
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    var items = [];
+
+                    $('#ddlCompCCity').empty();
+
+                    items.push('<option value="0">-----Select------</option>');
+                    $.each(data, function (i, item) {
+                        items.push('<option  value="' + item.Id + '">' + item.CityName + '</option>');
+                    });
+                    $('#ddlCompCCity').append(items.join(''));
+                }
+            },
+            error: function (data) {
+                alert(JSON.parse(result));
+            }
+        });
+    }
+
+    function BindCompFCity(Stateid) {
+        
+        debugger;
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: "{Id:'" + Stateid + "' }",
+
+            type: 'POST',
+            url: '/home/City',
+            async: false,
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    var items = [];
+
+                    $('#ddlCompFCity').empty();
+
+                    items.push('<option value="0">-----Select------</option>');
+                    $.each(data, function (i, item) {
+                        items.push('<option  value="' + item.Id + '">' + item.CityName + '</option>');
+                    });
+                    $('#ddlCompFCity').append(items.join(''));
+                }
+            },
+            error: function (data) {
+                alert(JSON.parse(result));
+            }
+        });
+    }
+
+    function BindCompPCity(Stateid) {
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            data: "{Id:'" + Stateid + "' }",
+
+            type: 'POST',
+            url: '/home/City',
+            async: false,
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    var items = [];
+
+                    $('#ddlCompPCity').empty();
+
+                    items.push('<option value="0">-----Select------</option>');
+                    $.each(data, function (i, item) {
+                        items.push('<option  value="' + item.Id + '">' + item.CityName + '</option>');
+                    });
+                    $('#ddlCompPCity').append(items.join(''));
+                }
+            },
+            error: function (data) {
+                alert(JSON.parse(result));
+            }
+        });
+    }
+
+    //Save
+    function InsertCompany() {      
+        var param_Company = {
+            Type: $('#ddlCompPrefer').val(),
+            Name: $('#txtCompName').val(),
+            Address: $('#textCompRAddres').val(),
+            State: $('#ddlCompCState').val(),
+            City: $('#ddlCompCCity').val(),
+            PinCode: $('#txtCompCPIN').val(),
+            DOE: $('#txtCompDBE').val(),
+            Pan: $('#txtCompPan').val(),
+            FactoryAddress: $('#textCompPAddress').val(),
+            FactoryState: $('#ddlCompFState').val(),
+            FactoryCity: $('#ddlCompFCity').val(),
+            FactoryPinCode: $('#txtCompPPIN').val(),
+            PermanentAddress: $('#textCompPermanentAddress').val(),
+            PermanentState: $('#ddlCompPState').val(),
+            PermanentCity: $('#ddlCompPCity').val(),
+            PermanentPinCode: $('#txtCompPermanentPPIN').val(),
+            Email: $('#txtCompEmail').val(),
+            PhoneNumber: $('#txtCompPhone').val(),
+            Telephone: $('#txtCompCell').val()
+        };
+        var msg = "";
+       
+        if ($('#spncompanyid').text() == "")
+        {
+            param_Company.Action = "I";
+            msg = "Record saved successfully";
+        }
+        else
+        {
+            param_Company.Action = "U";
+            msg = "Record updated successfully";
+            param_Company.Id = $('#spncompanyid').text();
+        }
+
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/InsertCompanyDetails',
+            async: false,
+            data: JSON.stringify(param_Company),
+            success: function (result) {
+                if (result.length > 2) {
+
+                    var data = JSON.parse(result);
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="5%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">C0' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="20%">' + data[i].Name + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + CompanyType(data[i].Type) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].PhoneNumber + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].Email + '</td><td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="companyedit(' + data[i].Id + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Edit</a></span></td>';
+                        HTML = HTML + '</tr>';
+                    }                
+                    $("#tdGrid").html(HTML);
+                    
+                    $('#tdGrid tr').hover(function () {
+                        $(this).addClass('highlight');
+                    }, function () {
+                        $(this).removeClass('highlight');
+                    });
+                }
+                $("#divmsg").html(msg);
+                Reset();
+            }
+        });
+    }
+
+    function GetDatenew(value) {
+
+        var newspl = "";
+        if (value != null) {
+            var split = value.split('T');
+            var results = split[0];
+
+            var splitD = results.split("-");
+
+            newspl = splitD[2] + '-' + splitD[1] + '-' + splitD[0];
+        }
+
+        return newspl;
+    }
+
+    function GetAllCompany() {
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/GetAllCompanyDetails',
+            async: false,
+            data: "",
+            success: function (result) {
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+                    $("#tdGrid").empty();
+                    for (var i = 0; i < data.length; i++) {
+                        HTML = HTML + '<tr>';
+                        HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="5%">' + parseInt(i + 1) + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">C0' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="20%">' + data[i].Name + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + CompanyType(data[i].Type) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].PhoneNumber + '</td>';
+                        HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].Email + '</td><td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="companyedit(' + data[i].Id + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Edit</a></span></td>';
+                        HTML = HTML + '</tr>';
+                    }
+                    $("#tdGrid").html(HTML);
+                }
+
+                //$('#tdGrid tr').hover(function () {
+                //    $(this).addClass('selecthighAnother');
+                //}, function () {
+                //    $(this).removeClass('selecthighAnother');
+                //});
+            }
+        });
+    }
+
+    function Reset()
+    {
+        $('#ddlCompPrefer').val(0);
+        $('#txtCompName').val('');
+        $('#textCompRAddres').val('');
+        $('#ddlCompCState').val(0);
+        $('#ddlCompCCity').val(0);
+        $('#txtCompCPIN').val('');
+        $('#txtCompDBE').val('');
+        $('#txtCompPan').val('');
+        $('#textCompPAddress').val('');
+        $('#ddlCompFState').val(0);
+        $('#ddlCompFCity').val(0);
+        $('#txtCompPPIN').val('');
+        $('#textCompPermanentAddress').val('');
+        $('#ddlCompPState').val(0);
+        $('#ddlCompPCity').val(0);
+        $('#txtCompPermanentPPIN').val('');
+        $('#txtCompEmail').val('');
+        $('#txtCompPhone').val('');
+        $('#txtCompCell').val('');
+        $('#spncompanyid').text('');
+        $('#lblcompanyid').text('');
+    }
+
+
+
+    //Convert int to Company Type
+    function CompanyType(Type) {
+        return Type = 1 ? 'Propritership' : Type = 2 ? 'Partnership' : Type = 3 ? 'Pvt  Ltd' :
+               Type = 4 ? 'Closely Held Ltd Co' : Type = 5 ? 'Listed Co' : Type = 6 ? 'Trust' :
+               Type = 7 ? 'LLP' : Type = 8 ? 'HUF' : 'N/A';
+    }
+
+    function companyedit(ID)
+    {
+        
+        var HTML = "";
+        $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: '/Home/GetCompanyDetailList',
+            async: false,
+            data: '{"Type": "CDS","compid":"'+ID+'"}',
+            success: function (result) {
+                
+                if (result.length > 2) {
+                    var data = JSON.parse(result);
+
+                    $('#lblcompanyid').text("Company ID");
+                    $('#spncompanyid').text(data[0].Id);
+
+                    $('#ddlCompPrefer').val(data[0].Type);
+                    $('#txtCompName').val(data[0].Name);
+                    $('#textCompRAddres').val(data[0].Address);
+                    $('#ddlCompCState').val(data[0].State);
+                    $('#ddlCompCState').change();
+                    $('#ddlCompPState').val(data[0].PermanentState);
+                    $('#ddlCompPState').change();
+                    $('#ddlCompFState').val(data[0].FactoryState);
+                    $('#ddlCompFState').change();
+                    $('#ddlCompCCity').val(data[0].City);
+                    $('#txtCompCPIN').val(data[0].PinCode);
+                    
+                    var test = data[0].DOE.split(' ');
+                    var d = test[0].split('-');
+                    var date = d[1] + '-' + d[0] + '-' + d[2];
+
+                    $('#txtCompDBE').val(date);
+                    $('#txtCompPan').val(data[0].PanNo);
+                    $('#textCompPAddress').val(data[0].PermanentAddress);                                       
+                    $('#ddlCompFCity').val(data[0].FactoryCity);
+                    $('#txtCompPPIN').val(data[0].FactoryPinCode);
+                    $('#textCompPermanentAddress').val(data[0].PermanentAddress);                    
+                    $('#ddlCompPCity').val(data[0].PermanentCity);
+                    $('#txtCompPermanentPPIN').val(data[0].PermanentPinCode);
+                    $('#txtCompEmail').val(data[0].Email);
+                    $('#txtCompPhone').val(data[0].PhoneNumber);
+                    $('#txtCompCell').val(data[0].Telephone);
+                    
+                    //$("#tdGrid").empty();
+                    //for (var i = 0; i < data.length; i++) {
+                    //    HTML = HTML + '<tr>';
+                    //    HTML = HTML + '<td align="left" style="padding-center: 0px" class="hidden" width="0%">' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="5%">' + parseInt(i + 1) + '</td>';
+                    //    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">C0' + data[i].Id + '</td><td align="left" style="padding-left: 4px"  width="20%">' + data[i].Name + '</td>';
+                    //    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + CompanyType(data[i].Type) + '</td><td align="left" style="padding-left: 4px"  width="10%">' + data[i].PhoneNumber + '</td>';
+                    //    HTML = HTML + '<td align="left" style="padding-left: 4px"  width="10%">' + data[i].Email + '</td><td align="left" style="padding-left: 4px"  width="5%"><span id="facilityspan" onclick="companyedit(' + data[i].Id + ')"><a class="delete" id="deleteac" href="javascript:void(0)">Edit</a></span></td>';
+                    //    HTML = HTML + '</tr>';
+                    //}
+                    //$("#tdGrid").html(HTML);
+                }
+
+                //$('#tdGrid tr').hover(function () {
+                //    $(this).addClass('selecthighAnother');
+                //}, function () {
+                //    $(this).removeClass('selecthighAnother');
+                //});
+            }
+        });
+    }
+</script>
